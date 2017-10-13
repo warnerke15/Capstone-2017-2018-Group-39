@@ -1,0 +1,78 @@
+\documentclass[letterpaper,10pt,draftclsnofoot,onecolumn]{article}
+
+\usepackage{graphicx}                                        
+\usepackage{amssymb}                                         
+\usepackage{amsmath}                                         
+\usepackage{amsthm}                                          
+
+\usepackage{alltt}                                           
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+
+\usepackage{balance}
+%\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\newcommand{\toc}{\tableofcontents}
+
+%\usepackage{hyperref}
+
+\def\name{Henry Fowler}
+
+%pull in the necessary preamble matter for pygments output
+%\input{pygments.tex}
+
+%% The following metadata will show up in the PDF properties
+%\hypersetup{
+%  colorlinks = false,
+%  urlcolor = black,
+%  pdfauthor = {\name},
+%  pdfkeywords = {cs444 ``operating systems 2'' },
+%  pdftitle = {CS 444 Project 1: Getting Acquainted},
+%  pdfsubject = {CS 444 Project 1},
+%  pdfpagemode = UseNone
+% }
+
+\parindent = 0.0 in
+\parskip = 0.1 in
+
+\begin{document}
+
+\title{Healthy Dogs! Software for Managing Pet Safety at a Veterinary Hospital}
+\author{Problem Statement \\ \newline Henry Fowler}
+\date{CS 461: Capstone Fall 2017}
+\maketitle
+
+\begin{abstract}
+The Oregon State University (OSU) Veterinary Hospital is need of a new software communication system to help manage their daily operations and improve the workflow of the business. An updated communication system will provide an environment for employees to manage and complete their tasks with better precision and speed. It will eliminate a waste of both paper and time as well as allowing the hospital to track goals on response times. Our group working with the OSU Veterinary Hospital will create a new communication system that will help to improve the hospitals performance and ability to communicate information with owners. 
+\end{abstract}
+
+\pagebreak
+
+
+\section{Problem Description}
+The OSU Veterinary Hospital provides care for animals coming from locations all over Oregon. Pet owners across the state rely on the services provided by the OSU Veterinary Hospital to keep their pets healthy and happy. These owners are often very busy and it is very inconvenient for them to check on their pet’s status by calling or having to wait all day for news. The hospital serves as a primary referral hospital in the Willamette Valley and must be able to communicate with patients and their local Veterinarians who might live anywhere in the state.
+
+The current software system used by the hospital to manage their daily operations is decades old and doesn’t efficiently work to manage appointments, track patients, or communicate within the hospital and with outside Veterinarians. This software causes many unnecessary errors and patient and owner suffering that could be avoided with a better system. The hospital needs a new software package that will not only provide a system that doesn’t hinder workflow, but will improve it and allow for increased efficiency. There are generic products that are currently available on the market, but none of them are flexible enough to meet the needs of the hospital, so a customized system is needed to solve their problems.
+
+The hospital will still need to use the old system for many of its feature, so they need a system that will be able to integrate with the current system. One flaw of the current system from a workflow perspective is that it is owner focused and not patient focused. The workers would like to be able to look at records or history for a certain patient but instead can only see it by an owner who might have multiple pets. The current system also causes a lot of unnecessary printing of papers and moving around the hospital for employees. In its current state, the workflow process involves a receptionist taking a call from an owner, entering the owner’s question into the system, printing out the question and taking it to a spinner where a doctor or tech will look at it. Then, the doctor or tech will write another message on the note and take it back to reception where they can call the owner and let them know if they need to schedule an appointment or what the doctors recommendations are. This process is not only inefficient but leaves room for error with losing pieces of paper or misreading handwritten notes and is something that could be improved by a more digital system. Another issue is that there is no method for entering future appointments so it can’t be seen in the current system whether a patient has an appointment already scheduled or not. There is also not a system for categorizing the notes taken down about a call from an owner to be able to label it as a billing question, medical question, or something else.
+
+
+
+\section{Proposed Solution}
+Our proposed solution to the problem is to create, conceptualize, and develop a new communication system that if approved of would be integrated with the current system. The new system will provide the hospital with the ability to easily track and find information about patients and take a patient centric approach as opposed to the current owner centered one.  It will allow for the reception team to create a message in the system for a patient when they take a call and assign a category to that message to indicate whether it was about a medical question, billing question, or something else. They would then add actions as well as owners for that action to the note so that the proper people will see it and can add their input. That process would continue until all actions are completed for a message and then the whole chain of edits to that message would be viewable in one place on the system. There would also be features that allowed for easy access to information like what vaccines an animal had been given, so that if a veterinarian from another clinic called and asked the person taking the call would be able to look up the patient and immediately have an answer instead of having to scroll through a long list of messages to see if one of them contains information about the pet having received a certain vaccine. Another feature of the system is that it will be able to show some reports on how quickly actions are taken after patient calls, allowing the hospital to track goals like having a 24 hour response time. A final feature of the system would be to allow for employees to have profiles where they could be assigned to departments that would determine what information was available to them. Then if they needed access to different information for a day or because they changed jobs, their profile could be changed and the information they needed would be available to them.
+
+\section{Performance Metrics}
+There are several metrics that will help us determine if the project is a success based upon the desired features of the product. The first metric is that the system will be able to assign a category to a message taken down by reception. The system must also allow for searching or filtering by category to only show messages that are a part of a given category. Another metric is that the system will allow for searching for information by a given pet. This will bring up a history of all created messages for that pet to be viewed or edited. There also will be a feature that allows for a chain of actions and notes to be shown together that came from the same original message. The system must be able to allow adding future appointments so that it can easily be seen when an appointment has already been scheduled. Last, there needs to be profiles that can be assigned to employees and edited to allow them to see the information that is necessary to complete their jobs.
+
+\end{document}
