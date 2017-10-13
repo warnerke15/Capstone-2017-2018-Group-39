@@ -1,0 +1,97 @@
+\documentclass[letterpaper,10pt,draftclsnofoot,onecolumn]{article}
+
+\usepackage{graphicx}                                        
+\usepackage{amssymb}                                         
+\usepackage{amsmath}                                         
+\usepackage{amsthm}                                          
+
+\usepackage{alltt}                                           
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+
+\usepackage{balance}
+%\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\newcommand{\toc}{\tableofcontents}
+
+%\usepackage{hyperref}
+
+\def\name{Henry Fowler}
+
+%pull in the necessary preamble matter for pygments output
+%\input{pygments.tex}
+
+%% The following metadata will show up in the PDF properties
+%\hypersetup{
+%  colorlinks = false,
+%  urlcolor = black,
+%  pdfauthor = {\name},
+%  pdfkeywords = {cs461 ``senior capstone'' },
+%  pdftitle = {Problem Statement},
+%  pdfsubject = {CS 461 Senior Capstone},
+%  pdfpagemode = UseNone
+% }
+
+\parindent = 0.0 in
+\parskip = 0.1 in
+
+\begin{document}
+
+\begin{center}
+\begin{huge}
+Healthy Dogs! Software for Managing Pet Safety at a Veterinary Hospital\\
+Problem Statement \\
+\end{huge}
+\begin{large}
+Kailyn Hellwege\\ 
+CS 461 Senior Capstone \\ 
+Fall 2017 \\ 
+\end{large}
+\end{center}
+
+\begin{large}
+\textbf{Abstract} \\
+\end{large}
+The Oregon State University Veterinary Hospital currently uses an outdated system of communicating that is inefficient and error prone. The solution is to create a customized electronic communication system to provide better tracking of messages within the hospital to improve the experience for the veterinarians, staff, owners, and patients. It will allow the hospital to track and analyze their response times to phone calls and reduce the amount of wasted paper and time from printing out messages and running them around the hospital. Most importantly, it will be easy to learn, easy to use, and improve overall efficiency of the hospital. 
+\newline
+
+
+\pagebreak
+
+
+\section{Problem Description}
+
+Having an efficient and easy-to-use software system for managing operations is integral for any company, and the Oregon State University (OSU) Veterinary Hospital, a primary veterinary referral hospital in Oregon, is no exception. The hospital partners with veterinarians to provide high-quality care to both small animals, such as dogs and cats, as well as large animals, such as horses and livestock. The hospital has many primary goals, including providing service to animal owners, serving as a referral center for veterinary practitioners, and teaching veterinary students. Organized into several service areas, the hospital meets the needs of many animals, offering cardiology services, internal medicine services, oncology services, rehabilitation services, and surgery services. 
+
+Currently, the hospital uses an old system that it has outgrown, and it needs a customized software system to help manage everyday hospital operations, including tracking patients, managing appointments, and communicating with veterinarians within the hospital, among other tasks. The current system does not provide efficient communication, and it is prone to errors. For instance, if an owner calls the hospital with a medical question, the process is very slow and manual, with lots of movement around a large hospital. The receptionist would log the message into the computer, print it out, and physically walk the paper across the hospital to put in a spinning queue. When a doctor or other staff member looks at it, they will write an answer or necessary action on the paper, physically carry the paper to the next location. Eventually, after it reaches all the necessary staff, it is returned to the receptionist, who is then able to call the owner back to provide them with the information they requested, whether that is an answer to a question or to schedule an appointment. There are numerous places in this current system where things can go wrong. Papers can easily be lost or delivered to the wrong location. There is no way to track where a message is at any given time, or to determine the route that it took to get back to the receptionist. Handwriting can also be misread. The hospital has a goal to answer all medical questions within 24 hours, and with this system, that can be hard to do. Additionally, the current system is owner centered, and this can be a nuisance when owners have multiple pets. 
+
+A new communication system for the OSU Veterinary Hospital is imperative for the future to help ease patient and owner suffering and increase efficiency of the hospital by mirroring ideal workflow and improving the performance of the hospital and helping it meet its goals. 
+
+
+
+\section{Proposed Solution}
+
+To help the hospital meet its goals and improve the way staff communicates in the hospital, a new communication system is essential. Our team will design and develop a more current hospital communication system that will streamline scheduling appointments and internal hospital communications. By mirroring the ideal workflow and the way messages are moved throughout the hospital, we will create a communication system where staff will be able to choose where a message is routed and assign a category, such as billing or medical, and it will be put in a queue for the necessary staff to look at when they have a chance. Then, notes can be added, and it can be rerouted to a new location. At the end, when the message gets back to reception or its final location, the whole chain of where the message has been will be visible. This will help eliminate some of the paper waste as well as reduce the amount of errors in the system and time spend running the papers around the hospital. 
+
+In addition to the improved communication, we will provide reports for the hospital to analyze different aspects of the communication process, such as response time for phone calls, so they can track how well they are meeting their goal of 24-hour response time to calls. Another feature we plan to implement is to allow easy access to patient information from a patient dashboard, such as which vaccines an animal has previously been given, the dates of previous appointments, and dates of appointments scheduled for the future. This will eliminate the need to scroll through all the messages and information about a pet to find specific information about the pet receiving that certain vaccine or when they last had an appointment. Lastly, the new system would allow staff to have profiles, where they could select which categories or departments they would like to receive information about. This would allow employees to quickly change which department they are a part of on any given day if the frequently worked in multiple departments. 
+
+The new system will implement many new and useful features, but it is not a replacement for the current system. It will need to be able to merge with the current system, as the new one is just an improvement on hospital communications and does not provide any billing or other important features that the current one does. Overall, an improved communication system is crucial to provide a better experience for the hospital, patients, and owners alike.
+
+
+
+\section{Performance Metrics}
+
+There are several metrics that will help evaluate the success of the project based on the hospital’s requested features for the improved communication system. The most important metric is that messages must be able to be tracked and there must be a way to view the entire chain of where the message has been routed to along with all the notes added to the message. Each message will be assigned a category when recorded by reception as well. The new system also will allow for searching by a pet to bring up a history of all the messages relating to that pet. Past appointments as well as future appointments must also be visible from this system. Finally, there will also be staff profiles that will allow them to choose which departments or category of messages they would like to receive.  
+
+\end{document}
