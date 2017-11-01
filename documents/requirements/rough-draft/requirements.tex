@@ -98,6 +98,7 @@ Owner - a person who owns a pet that is a client of the hospital
 Patient - an animal who has/is going to be treated at the hospital 
 VetHosp - the hospital management system used by the OSU Veterinary Hospital for keeping patient and owner records
 Mobile Devices - smartphones or tablets
+Workflow - a process in which tasks or assignments are started, worked on, and completed
 
 \subsection{References}
 IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications
@@ -181,6 +182,5 @@ This web application will need to be accessible from any internet accessible dev
 \subsection{Design Constraints}
 ConnectBasket will be constrained only by any government or hospital regulations on message security or reliability. Regulations may require audit trails or set a maximum downtime for the application, which will restrict the design as these come to light.
 
-In addition, eventual integration with VetHosp is planned for the future. While it is not a design constraint, it will make integration much simpler and easier to design in such a way to make the integration with VetHosp easier.
-
+In addition, while not a mandatory constraint, eventual integration with VetHosp is the long term goal for this project. If the project is built in such a way as to ease the connection between the two, this design choice may save a significant amount of time. However, with a lack of knowledge about VetHosp, designing in such a way is unlikely and thus, not a mandatory element of the design.
 \end{document}
