@@ -66,7 +66,7 @@
         }
         \begin{abstract}
         % 6. Fill in your abstract    
-        This document describes in detail the requirements for the ConnectBasket development team for 2017-2018. The document will describe the purpose and scope of the project as well as describing the users that will interact with the finished project. It will describe in detail each of the specific requirements as well as some additional stretch goals to be completed if there is time.
+        This document describes in detail the requirements for the ConnectBasket development team for 2017-2018. The document will describe the purpose and scope of the project as well as describing the users that will interact with the finished project. It will describe each of the specific requirements as well as assumptions and dependencies that go along with them.
         \end{abstract}     
     \end{singlespace}
 \end{titlepage}
@@ -87,18 +87,25 @@ This document's audience is the client, as well as certain staff members at the 
 
 
 \subsection{Scope}
-ConnectBasket will be a website for the OSU Veterinary Hospital that will streamline the way messages are moved around the hospital and provide a better way to track the route that messages have taken. When an owner calls the hospital, receptionists will be able to type a message into the computer, assign it a category, and route it to the necessary staff members, which may be service specific vet techs, house officers, or faculty. Those staff members will be alerted, either by email or text, that they have a message waiting for them in ConnectBasket, and once viewed, notes can be added and the message can be re-routed to other staff members. After a message has been addressed by the necessary staff, the message can be closed, meaning no more notes can be added. The audit trail of when the message was created and closed will be visible, along with all the notes, timestamps of notes, and staff who added the notes.
+ConnectBasket will be a web based portal for the OSU Veterinary Hospital that will streamline the way messages are moved around the hospital and provide a better way to track the route that messages have taken. When an owner calls the hospital, receptionists will be able to type a message into the computer, assign it a category, and route it to the necessary staff members, which may be service specific vet techs, house officers, or faculty. Those staff members will be alerted, either by email or text, that they have a message waiting for them in ConnectBasket, and once viewed, notes can be added and the message can be re-routed to other staff members. After a message has been addressed by the necessary staff, the message can be closed, meaning no more notes can be added. The audit trail of when the message was created and closed will be visible, along with all the notes, timestamps of notes, and staff who added the notes.
 
 
 \subsection{Definitions, Acronyms, and Abbreviations}
-Capstone - CS 461 class at Oregon State that the developers of ConnectBasket are in 
-OSU - Oregon State University
-Hospital - referring to the OSU Veterinary Hospital
-Owner - a person who owns a pet that is a client of the hospital
-Patient - an animal who has/is going to be treated at the hospital 
-VetHosp - the hospital management system used by the OSU Veterinary Hospital for keeping patient and owner records
-Mobile Devices - smartphones or tablets
+\begin{itemize}
+\item Capstone - CS 461 class at Oregon State that the developers of ConnectBasket are in
+ 
+\item OSU - Oregon State University
 
+\item Hospital - referring to the OSU Veterinary Hospital
+
+\item Owner - a person who owns a pet that is a client of the hospital
+
+\item Patient - an animal who has/is going to be treated at the hospital 
+
+\item VetHosp - the hospital management system used by the OSU Veterinary Hospital for keeping patient and owner records
+
+\item Mobile Devices - smartphones or tablets
+\end{itemize}
 \subsection{References}
 IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications
 
@@ -108,20 +115,20 @@ The second section of this document will contain a further description of the Co
 \section{Overall Description}
 
 \subsection{Product Perspective}
-The ConnectBasket website will be a stand alone system that will have additional functionality to connect to the current VetHosp system used by the hospital. ConnectBasket will use patient and owner information stored in the VetHosp system to connect information collected with the correct patients and owners, given that access to the data in VetHosp is provided to the Capstone development team.
+The ConnectBasket web based portal will be a stand alone system that will have additional functionality to connect to the current VetHosp system used by the hospital. ConnectBasket will use patient and owner information stored in the VetHosp system to connect information collected with the correct patients and owners, given that access to the data in VetHosp is provided to the Capstone development team.
 
 \subsubsection{User Interfaces}
 There will need to be some level of security requiring users to login to access the information in the system. The system will provide users with the ability to search for a patient or owner and to enter new messages for them as well as view older messages and the audit trail associated with the message.
 
 \subsubsection{Hardware Interfaces}
-Staff will be able to access the system from their mobile devices as well as desktop or laptop computers.
+Staff will be able to access the system from their desktop or laptop computers as well as mobile devices.
 
 \subsubsection{Software Interfaces}
-ConnectBasket must be able to interface with the VetHosp program in order to connect information collected with the information about patients and owners stored in VetHosp. Access to the patient and owner information stored in VetHosp will be required for a system that can be integrated with VetHosp.
+ConnectBasket might be able to interface with the VetHosp program in order to connect information collected with the information about patients and owners stored in VetHosp. Access to the patient and owner information stored in VetHosp will be required for a system that could be integrated with VetHosp.
 
 \subsection{Product Functions}
 \subsubsection{User Stories}
-The receptionists at the hospital will need to be able to take calls from owners and then enter a message into ConnectBasket and forward it on to necessary staff members, such as vet techs or doctors. After that, the staff receiving the message can perform the action requested of them, and add any notes to the message. Then, it can be rerouted to other staff members. At the end of the chain the message will be routed back to scheduling or reception where they can contact the owner with information or to set up an appointment. They will then mark the chain as closed, and it will be able to be viewed later by staff members with permission to view audit logs.
+The receptionists at the hospital will need to be able to take calls from owners, enter a message into ConnectBasket, and forward it on to necessary staff members, such as vet techs or doctors. After that, the staff receiving the message can perform the action requested of them, and add any notes to the message. Then, it can be rerouted to other staff members. At the end of the chain, the message will be routed back to scheduling or reception, where they can contact the owner with information or to set up an appointment. They will then mark the chain as closed, and it will be able to be viewed later by staff members with permission to view audit logs.
 \subsubsection{Function Dependencies}
 See Appendix I.
 
@@ -129,53 +136,53 @@ See Appendix I.
 Users of ConnectBasket will be staff members of the hospital. The users will have a variety of different education levels and experience. Therefore, the system will need by designed so that technical expertise is not required in order to properly use it.
 
 \subsection{Constraints}
-The performance of the ConnectBasket application will be limited by a staff member's internet connection. Staff should not use the service on unsecure networks, as messages sent with it should have some degree of confidentiality due to the nature of the work, the hospital's policies, and government regulations. This limits where the application can be accessed from, as non-trusted networks may expose these messages. Staff may also only access this application with a verified user account to use these features.
+The performance of the ConnectBasket application will be limited by a staff member's internet connection. Staff should not use the service on unsecure networks, as messages sent with it should have some degree of confidentiality due to the nature of the work, the hospital's policies, and government regulations. This limits where the application can be accessed from, as non-trusted networks may expose these messages. Staff may also only access this application with a verified user account.
 
 \subsection{Assumptions and Dependencies}
-It will be assumed that staff will not be attempting to use non-English languages for messaging. This system will depend on the hospital's existing VetHosp software, and integration with it is a goal for this project. Integration will depend on the VetHosp software being available to the developers and the level of access the Capstone development team will have to it. VetHosp integration will also depend on the hospital's IT team arranging an integration of ConnectBasket with VetHosp. Any changes that need to be made to the VetHosp system for integration will need to be done by the team in charge of developing VetHosp, not the Capstone development team.
+It will be assumed that staff will not be attempting to use non-English languages for messaging. This system might depend on the hospital's existing VetHosp software, and integration with it is a goal for this project. Integration will depend on the VetHosp software being available to the developers and the level of access the Capstone development team will have to it. VetHosp integration will also depend on the hospital's IT team arranging an integration of ConnectBasket with VetHosp. Any changes that need to be made to the VetHosp system for integration will need to be done by the team in charge of developing VetHosp, not the Capstone development team. However, ConnectBasket will be capable of operating independently without any integration.
 
 \section{Specific Requirements}
 
 \subsection{External interface requirements}
 
 \subsubsection{VetHosp}
-ConnectBasket will be integrated with VetHosp as it nears completion, so that it can pull information from VetHosp as needed to populate fields and reduce separate instances of data lookup. Detailed information about VetHosp is not currently available to the development team, and successful integration will depend on the level of access provided to the Capstone development team.
+ConnectBasket might be integrated with VetHosp as it nears completion, so that it can pull information from VetHosp as needed to populate fields and reduce separate instances of data lookup. Detailed information about VetHosp is not currently available to the development team, and successful integration will depend on the level of access provided to the Capstone development team.
 
 \subsection{System features}
 
 \subsubsection{Creation of Messages}
-ConnectBasket shall allow receptionists to create messages and route them to other parts of the hospital. Receptionists and other staff should be able to route messages with patient information to the relevant locations in the hospital. These messages should be secure and not exposed to public channels, and may need to be encrypted as well.
+ConnectBasket will allow receptionists to create messages and route them to other parts of the hospital. Receptionists and other staff should be able to route messages with patient information to the relevant locations in the hospital. These messages should be secure and not exposed to public channels, and may need to be encrypted as well.
 
 \subsubsection{Message Auto Population}
-ConnectBasket shall allow message composers to easily write messages by auto populating some fields of the message, such as the current date and patient and owner names. By auto filling and not allowing free text for certain fields, message creation will be more efficient and less error-prone. These fields will be prefilled for convenience and to send off messages quicker and in a standard format. This feature will also include utilizing drop-down menus instead of plain text to reduce error for other fields, such as recipients of messages and category of messages.
+ConnectBasket will allow message composers to easily write messages by auto populating some fields of the message, such as the current date and patient and owner names. By auto filling and not allowing free text for certain fields, message creation will be more efficient and less error-prone. These fields will be prefilled for convenience and to send off messages quicker and in a standard format. This feature will also include utilizing drop-down menus instead of plain text to reduce error for other fields, such as recipients of messages and category of messages.
 
 This feature will be useful for both convenience and safety, as constraining messages to at least some pre-defined standard will reduce the likelihood of human error in medical situations.
 
 \subsubsection{Message Notification}
-ConnectBasket shall send message recipients notifications when a message has been routed to them or a category their profile belongs to. Notifications shall be delivered as a text message, email, or both, depending on the preferences of the staff member. Staff members will have the option to receive alerts simply after a message is received or after a message is unread for a portion of time.
+ConnectBasket will send message recipients notifications when a message has been routed to them or a category their profile belongs to. Notifications will be delivered as a text message, email, or both, depending on the preferences of the staff member. Staff members will have the option to receive alerts simply after a message is received or after a message is unread for a portion of time.
 
 \subsubsection{Message Review and Forwarding}
-ConnectBasket shall allow message recipients to review their messages online via any internet-accessible device, should the connection or other factors not restrict them from doing so. Staff who have viewed a message shall be capable of rerouting this same message to other necessary staff, along with any comments or addendums added by the previous recipient. 
+ConnectBasket will allow message recipients to review their messages online via any internet-accessible device, should the connection or other factors not restrict them from doing so. Staff who have viewed a message will be capable of rerouting this same message to other necessary staff, along with any comments or addendums added by the previous recipient. 
 
 \subsubsection{Message Resolution}
-ConnectBasket shall allow message recipients to resolve messages as closed, should the task or job mentioned within it be completed. This closed state should remove the message from all staff member's queues, allowing them to focus on other tasks that have not been resolved.
+ConnectBasket will allow message recipients to resolve messages as closed, should the task or job mentioned within it be completed. This closed state should remove the message from all staff member's queues, allowing them to focus on other tasks that have not been resolved.
 	
 Ideally, this feature will include more than just a closed state; it will include additional states that show other reasons for a task to no longer be active, such as cancelled, duplicate, or stopped, to provide more information about the status of a task.
 
 \subsubsection{Message Audit Record}
-ConnectBasket shall allow staff with sufficient permissions to view a message's  history for audit or review. Authorized staff will  be able to see when and where the message was created, when and where it was routed, and when and where it was closed. The name of any staff member who took any action should also be recorded, along with other activity regarding a message. 
+ConnectBasket will allow staff with sufficient permissions to view a message's  history for audit or review. Authorized staff will  be able to see when and where the message was created, when and where it was routed, and when and where it was closed. The name of any staff member who took any action should also be recorded, along with other activity regarding a message. 
 
 Providing an audit trail for all messages will provide the hospital with valuable information and allow them to track metrics such as the average amount of time the hospital takes to respond to calls and common reasons for owners calling the hospital. 
 
 \subsubsection{Message Recipient Roles and Profile Roles}
-ConnectBasket shall allow staff to select and be assigned to one or more roles that reflect their duties and responsibilities at the hospital. Staff will have profiles to manage their roles, with the ability to change their roles at will. When messages are routed to a specific department, any staff member that has selected the associated role to that department will receive the message in a queue accessible by anyone assigned to the role. These staff members will be able to take ownership of the message to interact with it, or interact with it to a lesser degree without taking ownership of the message. All of the regular message features that are accessible to individual staff members will also be accessible to the all the staff members that receive a message in a role. 
+ConnectBasket will allow staff to select and be assigned to one or more roles that reflect their duties and responsibilities at the hospital. Staff will have profiles to manage their roles, with the ability to change their roles at will. When messages are routed to a specific department, any staff member that has selected the associated role to that department will receive the message in a queue accessible by anyone assigned to the role. These staff members will be able to take ownership of the message to interact with it, or interact with it to a lesser degree without taking ownership of the message. All of the regular message features that are accessible to individual staff members will also be accessible to the all the staff members that receive a message in a role. 
 
 Staff in one location can not assume, and should not have to assume, whether a certain employee is available or whether a task falls under their responsibilities. Assigning messages to a role and putting them in queues removes the necessity for staff to understand structure in other departments, and allows tasks and messages to be passed faster and with less room for error.
 
 \subsection{Performance Requirements}
 
 \subsubsection{Web Service}
-This web application will need to be accessible from any internet accessible device. Staff will be doing vital work through this application, and so it must be accessible to them, no matter what device they have. However, there are constraints on how accessible this is. Internal messaging must remain confidential and secure, and staff should have secure profiles to restrict access to malicious persons. ConnectBasket must be reliable and have minimal downtime, as this application going down could cripple the work of the hospital staff once it is deployed. Downtime should be kept to a maximum of two hours a week once in a fully completed state. Two hours per week allows for security patching and maintenance should it be required, though this number may change depending on the specific processes as they are defined.
+This web based portal will need to be accessible from any internet accessible device. Staff will be doing vital work through this application, and so it must be accessible to them, no matter what device they have. However, there are constraints on how accessible this is. Internal messaging must remain confidential and secure, and staff should have secure profiles to restrict access to malicious persons. ConnectBasket must be reliable and have minimal downtime, as this application going down could cripple the work of the hospital staff once it is deployed. Downtime should be kept to a maximum of two hours a week once in a fully completed state. Two hours per week allows for security patching and maintenance should it be required, though this number may change depending on the specific processes as they are defined.
 
 \subsection{Design Constraints}
 ConnectBasket will be constrained only by any government or hospital regulations on message security or reliability. Regulations may require audit trails or set a maximum downtime for the application, which will restrict the design as these come to light.
