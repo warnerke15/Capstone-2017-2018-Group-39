@@ -1,0 +1,133 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		ConnectBasket Development Team}
+\def \CapstoneTeamNumber{		39}
+\def \GroupMemberOne{			Henry Fowler}
+\def \CapstoneProjectName{		ConnectBasket}
+\def \CapstoneSponsorCompany{	OSU MIME}
+\def \CapstoneSponsorPerson{		Dr. Chinweike Eseonu}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{		%Problem Statement
+				Requirements Document
+				%Technology Review
+				%Design Document
+				%Progress Report
+				}
+			
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	\includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        % 6. Fill in your abstract    
+        This document describes the three main parts of the ConnectBasket project that Henry Fowler will be responsible for and compares and contrasts different technologies that can be used to implement those parts of the project.
+        \end{abstract}     
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Server Operating System}
+
+\subsection{Overview}
+
+\subsection{Criteria}
+
+\subsection{Potential Choices}
+
+\subsubsection{Linux Ubuntu Server}
+Ubuntu is a distribution of Linux that is very popular on desktop computers, but also has a server version that is growing in popularity /cite{ubuntu}. Unlike the very popular Red Hat Linux distribution, Ubuntu is free /cite{ubuntu}. Updates and maintenance of the code and security of Ubuntu are made by the global community as well as a paid development team /cite{ubuntu}. There is 24x7 support available that can be very important if a quick response is need to critical errors /cite{ubuntu}. Ubuntu is an easy system to setup with an installation that can be completed in as little as 15 minutes /cite{ubuntu}. Like other versions of Linux, Ubuntu Server is very easy to maintain and rarely requires reboots, making it ideal for an application that requires very little downtime /cite{ubuntu}. 
+
+\subsubsection{Windows Server}
+
+\subsubsection{Solaris}
+
+\subsection{Discussion}
+
+\subsection{Conclusion}
+
+\section{Web Server Software}
+
+\subsection{Overview}
+
+\subsection{Criteria}
+
+\subsection{Potential Choices}
+
+\subsubsection{Apache HTTP}
+
+\subsubsection{Cherokee}
+
+\subsubsection{NGINX}
+
+\subsection{Discussion}
+
+\subsection{Conclusion}
+
+\section{Database}
+
+\subsection{Overview}
+
+\subsection{Criteria}
+
+\subsection{Potential Choices}
+
+\subsubsection{MySQL}
+
+\subsubsection{SQLite}
+
+\subsubsection{Microsoft SQL Server}
+
+\subsection{Discussion}
+
+\subsection{Conclusion}
+
+\end{document}
