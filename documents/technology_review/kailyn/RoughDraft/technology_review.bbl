@@ -1,0 +1,53 @@
+\begin{thebibliography}{10}
+
+\bibitem{cdn}
+``What is a cdn?.''
+  \url{https://www.cloudflare.com/learning/cdn/what-is-a-cdn/}.
+
+\bibitem{cloudflare}
+``Fast, global content delivery network.''
+  \url{https://www.cloudflare.com/cdn/}.
+
+\bibitem{akamaicdn}
+``Cdn services.''
+  \url{https://www.akamai.com/us/en/resources/cdn-services.jsp}.
+
+\bibitem{amazoncloudfront}
+``Amazon cloudfront.'' \url{https://aws.amazon.com/cloudfront/}.
+
+\bibitem{framework}
+C.~Wodehouse, ``What is a framework?.''
+  \url{https://www.upwork.com/hiring/development/understanding-software-frameworks/}.
+
+\bibitem{asp.net}
+``Asp.net - introduction.''
+  \url{https://www.tutorialspoint.com/asp.net/asp.net_introduction.htm}.
+
+\bibitem{asp}
+A.~Hasan, ``Top 12 main advantages of asp.net framework.''
+  \url{http://www.arpatech.com/blog/top-advantages-of-asp-net-framework/}, 3
+  2017.
+
+\bibitem{angular}
+``Angularjs - overview.''
+  \url{https://www.tutorialspoint.com/angularjs/angularjs_overview.htm}.
+
+\bibitem{react}
+``React.'' \url{https://www.tutorialspoint.com/reactjs/reactjs_overview.htm}.
+
+\bibitem{mvc}
+Jithin, ``What is mvc? advantages and disadvantages of mv.''
+  \url{https://www.interserver.net/tips/kb/mvc-advantages-disadvantages-mvc/},
+  10 2016.
+
+\bibitem{mvp}
+T.~Snyder, ``Mvc or mvp pattern – whats the difference?.''
+  \url{https://www.infragistics.com/community/blogs/todd_snyder/archive/2007/10/17/mvc-or-mvp-pattern-whats-the-difference.aspx},
+  10 2007.
+
+\bibitem{mvvm}
+B.~Jacobs, ``What are the benefits of model-view-viewmodel.''
+  \url{https://cocoacasts.com/what-are-the-benefits-of-model-view-viewmodel/},
+  11 2016.
+
+\end{thebibliography}
