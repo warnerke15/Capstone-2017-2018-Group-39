@@ -108,6 +108,19 @@ Unix, which Solaris is based off of, has been around a long time compared to Win
 \subsection{Conclusion}
 The best server operating system to use for this project is Ubuntu Server. Solaris is not free and does not provide as many features as Windows Server or Ubuntu, so it is definitely not the right choice for this project. Windows Server might provide slightly more features than Ubuntu, but all the server will be used for is to host a simple web application, so things like allowing users to run desktop applications remotely are not important for this project. For all of the important features to this project like setup, support, downtime, and maintenance, Windows Server and Ubuntu are not that different and both would be good choices. The main difference is that Ubuntu is free, and for that reason, it is a better choice than Windows Server for this project.
 
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |l|l|l|l| } 
+\hline
+\textbf{Criteria} & \textbf{Ubuntu Server} & \textbf{Windows Server} & \textbf{Solaris} \\ \hline
+Cost & Free & \$100+ & Free version available \\ \hline
+Difficulty of setup & Very easy & Slightly difficult & Easy \\ \hline
+Available support & 24 x 7 support available & Some support available & Sun provides support \\ \hline
+Necessary downtime & Very little & Very little & Very little \\ \hline
+Maintenance needed & Almost none & Some maintenance needed & Some maintenance needed \\ \hline
+\end{tabular}
+\end{table}
+
 \section{Web Server Software}
 
 \subsection{Overview}
@@ -130,6 +143,18 @@ Apache HTTP and NGINX are both widely used web servers compared to Cherokee, whi
 
 \subsection{Conclusion}
 For this project, the best choice of web server software is Apache. It provides all of the features that are necessary for the project, and can run on almost any operating system, where NGINX can not. Cherokee is also a good choice, but is not as widely used and does not have as much support or documentation as Apache.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |l|l|l|l| } 
+\hline
+\textbf{Criteria} & \textbf{Apache HTTP} & \textbf{Cherokee} & \textbf{NGINX} \\ \hline
+Cost & Free & Free & Free \\ \hline
+Documentation & Very well documented & Some documentation & Well documented \\ \hline
+Setup time & Fast & Very fast & Fast \\ \hline
+Necessary downtime & Very little & Very little & Very little \\ \hline
+\end{tabular}
+\end{table}
 
 \section{Database}
 
@@ -155,6 +180,18 @@ SQLite is a slightly less feature rich product compared to MySQL and Microsoft S
 
 \subsection{Conclusion}
 The best database management system for this project is MySQL. The speed of SQLite is better than the other two, but is not worth the tradeoff of lost functionality for this application. Microsoft SQL Server provides slightly more features, documentation, and support than MySQL, but they are not important enough to the project to offset the large cost difference between the two.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |l|l|l|l| } 
+\hline
+\textbf{Criteria} & \textbf{MySQL} & \textbf{SQLite} & \textbf{Microsoft SQL Server} \\ \hline
+Cost & Free & Free & Around \$1000 \\ \hline
+Speed & Fast & Extremely fast & Fast \\ \hline
+Reporting capability & Good & Average & Excellent \\ \hline
+Compatability & Works with any system & Designed for smaller systems & Works best with other Microsoft products \\ \hline
+\end{tabular}
+\end{table}
 
 \newpage
 \bibliographystyle{ieeetr}
