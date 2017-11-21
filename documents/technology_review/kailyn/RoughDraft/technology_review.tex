@@ -1,0 +1,159 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		ConnectBasket Development Team}
+\def \CapstoneTeamNumber{		39}
+\def \GroupMemberOne{			Kailyn Hellwege}
+\def \CapstoneProjectName{		ConnectBasket}
+\def \CapstoneSponsorCompany{	OSU MIME}
+\def \CapstoneSponsorPerson{		Dr. Chinweike Eseonu}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{		%Problem Statement
+				Requirements Document
+				%Technology Review
+				%Design Document
+				%Progress Report
+				}
+			
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	\includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        % 6. Fill in your abstract    
+        This document describes the three main parts of the ConnectBasket project that Kailyn Hellwege will be responsible for and compares and contrasts different technologies that can be used to implement those parts of the project.
+        \end{abstract}     
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Content Delivery Networks}
+
+\subsection{Overview}
+A content delivery network, or CDN, is a group of servers that are distributed geographically that work together to quickly deliver Internet content, such as images, videos, and HTML pages \cite{cdn}. Currently, most web traffic is served through CDNs, and CDN's can also help protect against some malicious attacks \cite{cdn}.There are four main reasons to use a CDN: to improve website load times, to reduce bandwidth costs, to increase content availability, and to improve website security \cite{cdn}. 
+
+\subsection{Criteria}
+For this project, security is an important factor to consider. Since the ConnectBasket website will likely contain patient and owner information, it is important that the website is secure. Another important factor to consider for the ConnectBasket project is price. We want the cost to stay as low as possible, and so choosing a free or low cost CDN is important to the project. 
+
+
+\subsection{Potential Choices}
+
+\subsubsection{Cloudflare}
+The CDN that Cloudflare provides is designed to optimize security and performance, has multiple price levels, and is easy to set up \cite{cloudflare}. Cloudflare's CDN provides a flat price per month that does not depend on bandwidth \cite{cloudflare}. There are four pricing levels \cite{cloudflare}. The free version is for personal websites \cite{cloudflare}. The Pro version is twenty dollars per month for professional websites \cite{cloudflare}. The Business version is two hundred dollars per month for websites and businesses requiring advanced security and performance\cite{cloudflare}. Finally, the Enterprise version is for companies requiring enterprise-grade security and performance, and Cloudflare muse be contacted to determine a monthly price \cite{cloudflare}. In addition, setting up Cloudflare is easy, taking less than five minutes to set up a domain.
+
+\subsubsection{Akamai}
+Akamai serves thirty percent of Internet traffic, and it optimizes networks for content delivery \cite{akamaicdn}. Akamai's CDN has three components \cite{akamaicdn}. The Aura Edge Exchange allows operators to deliver video content to customers \cite{akamaicdn}. The Aura Control System is a set of tools that allows operators to manage components such as performance and CDN security \cite{akamaicdn}. Lastly, Akamai Federeation allows operators to work with the Akamai Intelligent Platform, which is a cloud-computing platform \cite{akamaicdn}.  
+
+\subsubsection{Amazon CloudFront}
+The Amazon CloudFront CDN is built on the Amazon Web Service (AWS) infrastructure, and there are forty-four Availability zones in sixteen regions, and there are plans for further expansion \cite{amazoncloudfront}. This large network provides high performance for customers all over the world \cite{amazoncloudfront}. CloudFront is a highly secure CDN, and for no additional cost, all customers benefit from the protections of AWS Shield Standard \cite{amazoncloudfront}. Amazon CloudFront is easily integrated and works best with other AWS services, such as Amazon Simple Storage Service and Amazon API Gateway \cite{amazoncloudfront}. For pricing, there are no fixed fees or long term contracts; payment is only for the data transfer and requests used to deliver content to customers \cite{amazoncloudfront}.
+
+
+\subsection{Discussion}
+Cloudflare and Amazon seem to have opposite pricing systems. Cloudflare has a fixed pricing system, where the amount of traffic per month does not affect how much is paid. In contrast, for Amazon CloudFront has a variable pricing system, where payment is only for the amount of data transfer and requests. Akamai does not provide pricing information, and so a price comparison is not possible. All three have a high level of security, and so they would all be good choices for that factor.
+
+\subsection{Conclusion}
+The best CDN for this project is Cloudflare because it has a fixed cost, which means there will not be any spikes in cost in any given month. Amazon CloudFront would be a good CDN, especially since it integrates well with other AWS services, but it seems to be the best choice only if other AWS services are being used, and we are not using other AWS services.
+
+
+\section{Web Development Frameworks}
+
+\subsection{Overview}
+A web development framework is considered to be tools and resources used by software developers to create and manage websites \cite{webdevframeworks}. Web development frameworks extend the capabilities of a language and provide libraries so developers do not have to start from scratch and hand-code everything \cite{framework}. A framework may include libraries, APIs, security, and compilers, among other things \cite{framework}.
+
+\subsection{Criteria}
+One important criteria for this project for web development frameworks is that it needs to be easily scalable to many different devices and sizes of devices. This is important because the ConnectBasket website will need to be accessible from staff's desktop or laptop computers as well as a variety of smartphone devices. Another key factor is it needs to be simple as opposed to cluttered with a large number of features that will likely go unused. This project is relatively simple, and so tons of features are not necessary. Additionally, a framework that is flexible would be best. 
+
+\subsection{Potential Choices}
+
+\subsubsection{ASP.NET} 
+ASP.NET was created by Microsoft, and it is used to create interactive and data-driven web applications\cite{asp.net}. ASP.NET works with HTML to create dynamic web pages \cite{asp}. One advantage of ASP.NET is that it provides built-in Windows authentication, so it is secure \cite{asp}. In addition, an ASP.NET application can be written in a variety of languages, including C\# and Visual Basic \cite{asp.net}. 
+
+\subsubsection{AngularJS}
+AngularJS is a JavaScript based web application framework that is open source and currently maintained by Google \cite{angular}. AngularJS uses HTML as a template and extends HTML syntax to describe a website or application's components easily \cite{angular}. AngularJS provides data binding capability to HTML, provides reusable components, and is unit testable, among many other features \cite{angular}. In addition, AngularJS is available on all major browsers and smartphones \cite{angular}. One disadvantage of AngularJS is that it is not secure, and so server side authentication is needed to keep an application secure \cite{angular}.
+
+\subsubsection{ReactJS}
+ReactJS is a JavaScript library that makes it easy to build user interfaces by creating reusable UI components\cite{react}. ReactJS involves thinking about everything as a component \cite{react}. Advantages of ReactJS include that it can be used with other frameworks, and can be used on the client side or the server side \cite{react}. One major disadvantage of ReactJS is that other tools will need to be combined with React to get a complete set of tools that is required for development \cite{react}. 
+
+\subsection{Discussion}
+AngularJS and ReactJS are both JavaScript based, while ASP.NET is very flexible because it can be written in many languages, including C\# and Visual Basic. Angular JS is useful because it is available on all major browsers and smartphones, but a downside is that it is not secure. In contrast, ASP.NET is secure and provides built-in Windows authentication. ReactJS would be good for creating reusable components, but it would possibly require additional tools for successful development. AngularJS also can easily create reusable components.
+
+\subsection{Conclusion}
+ASP.NET is the best framework for the ConnectBasket website. It is flexible and can be written in multiple languages, and it has useful built-in Windows authentication. 
+
+\section{Design Patterns}
+
+\subsection{Overview}
+Software design patterns are a very important part of any software application. One very important feature of this project is to provide a user interface that will be accepted by users who are reluctant to change. This means how users are able to interact with the data is very important and modeling a system that closely reflects their current system in a more efficient way is critical.
+
+\subsection{Criteria}
+Major factors to consider when choosing a software design pattern for this project is how well will the system be able to model data in a way that our system needs it to. We need to have users inputting data into the system which need to be able to display that information to other users. There are needs for data to be filtered for specific users as well as displayed as an overall summary for some users.
+\subsection{Potential Choices}
+
+\subsubsection{MVC}
+MVC is a software design pattern for implementing a user interface \cite{mvc}. It separates an application into three parts known as the model, view, and controller \cite{mvc}. The model is the structure of the data in the application and how the data is represented in the application \cite{mvc}. View is the component that makes the data displayable to the user in a useful way \cite{mvc}. The controller supplies an interface between the model and view components, taking the data from the model and converting it into something that can be used by the view component to display to the user \cite{mvc}. MVC supports the development of multiple different views for one model so the same information can be displayed in multiple ways if that is important for the application \cite{mvc}. It is also a very fast development process because one person or team can develop the view component while another works on the controller and another works on the model \cite{mvc}. This design pattern requires multiple developer for it to work properly \cite{mvc}.
+
+\subsubsection{MVP}
+MVP is a software design pattern that is based on similar concepts to the MVC design pattern \cite{mvp}. It separates an application into four different components that are responsible for determining how a user can interact with the system \cite{mvp}. Those components are the view, view interface, presenter, and model \cite{mvp}. The view is responsible for determining how the user will see the information displayed while the view interface connects the view to the presenter \cite{mvp}. The presenter connects the view to the model, which is responsible for the data that is displayed by the view \cite{mvp}. A view will usually only be connected to one presenter \cite{mvp}. Testing can be done easily with this design pattern because all interactions are done through an interface \cite{mvp}. Development is speed up by the fact that multiple programmers can split up the components and work on them separately \cite{mvp}.
+
+\subsubsection{MVVM}
+MVVM is a software design patter that is an extension of the MVC design pattern \cite{mvvm}. MVVM has four components that are Model, View, Controller, and View Model \cite{mvvm}. The MVVM pattern has view models convert data from the model layer into something that can be usable by the view layer which keeps the code for controllers from growing too large \cite{mvvm}. In MVVM, the controller no longer depends on the model so it is much easier to test. Views are only used to present the data they are given \cite{mvvm}. The view controller interacts with both the view model and view layers and the view model also interacts with the model \cite{mvvm}.
+
+\subsection{Discussion}
+MVVM and MVP are both similar to MVC, and provide some additional features compared to MVC. In contrast to the four components of MVVM and MVP, MVC only has three components which can make it a simpler and easier to use pattern. MVVM and MVP have an additional components which further modularizes the functionality of each component and makes it easier to test.
+
+\subsection{Conclusion}
+The best design pattern to use for this project is MVC. The user interface for this project will not be very complicated, so, while having additional components might improve testability, it will not be worth it for the increased complexity. Having three components also provides the option for dividing the components between the three person development team, with one team member working on each component.
+
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{technology_review}
+
+\end{document}

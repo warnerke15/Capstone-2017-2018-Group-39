@@ -16,8 +16,8 @@
 
 % 2. Uncomment the appropriate line below so that the document type works
 \def \DocType{		%Problem Statement
-				Requirements Document
-				%Technology Review
+				%Requirements Document
+				Technology Review
 				%Design Document
 				%Progress Report
 				}
@@ -78,56 +78,78 @@
 \section{Server Operating System}
 
 \subsection{Overview}
+For this project there will need to be a server to host the web based services involved in the project. There are many different choices of operating systems that can run on a server and this section will analyze three different options and show that one will be the best fit for the project.
 
 \subsection{Criteria}
+The criteria that will be used to choose the best server operating system for this project will be the cost, difficulty of setup, available support, necessary downtime, and amount of maintenance needed. For this project using low cost or free technologies will be very useful in keeping the overall budget low. There is a relatively small time window for development of the project, so a fast and easy installation is very important. It will also be important to have to have a low maintenance system that will continue to work after the development team is gone.
 
 \subsection{Potential Choices}
 
 \subsubsection{Linux Ubuntu Server}
-Ubuntu is a distribution of Linux that is very popular on desktop computers, but also has a server version that is growing in popularity /cite{ubuntu}. Unlike the very popular Red Hat Linux distribution, Ubuntu is free /cite{ubuntu}. Updates and maintenance of the code and security of Ubuntu are made by the global community as well as a paid development team /cite{ubuntu}. There is 24x7 support available that can be very important if a quick response is need to critical errors /cite{ubuntu}. Ubuntu is an easy system to setup with an installation that can be completed in as little as 15 minutes /cite{ubuntu}. Like other versions of Linux, Ubuntu Server is very easy to maintain and rarely requires reboots, making it ideal for an application that requires very little downtime /cite{ubuntu}. 
+Ubuntu is a distribution of Linux that is very popular on desktop computers, but also has a server version that is growing in popularity \cite{ubuntu}. Unlike the very popular Red Hat Linux distribution, Ubuntu is free \cite{ubuntu}. Updates and maintenance of the code and security of Ubuntu are made by the global community as well as a paid development team \cite{ubuntu}. There is 24x7 support available that can be very important if a quick response is need to critical errors \cite{ubuntu}. Ubuntu is an easy system to setup with an installation that can be completed in as little as 15 minutes \cite{ubuntu}. Like other versions of Linux, Ubuntu Server is very easy to maintain and rarely requires reboots, making it ideal for an application that requires very little downtime \cite{ubuntu}. 
 
 \subsubsection{Windows Server}
+The Windows Server operating systems have been very popular with businesses since they first came out \cite{windows}. Many tools are provided that will work very well with Windows Server, including Microsoft SQL Server and Internet Information Services \cite{windows}. A large number of successful businesses use Windows Server, which means that there are many examples of how to use it as a part of a business \cite{windows}. Windows Server is considered by many to be the best server operating system for mission-critical systems, meaning that there is very little downtime required when using Windows Server \cite{windows}. Windows Server has built in tools to help improve power efficiency of the server that can help lower power consumption for a company \cite{windows}. A virtualization platform is also included with Windows server which can allow for easily migrating the system from one physical machine to another or allowing users to remotely access applications and run them like they were locally installed \cite{windows}.
 
 \subsubsection{Solaris}
+Solaris is a version of Unix that has been developed as a server operating system \cite{solaris}. Solaris was created by Sun and they are also responsible for supporting it \cite{solaris}. This makes Solaris a good operating system for a user who will need a lot of help in setting up their system \cite{solaris}. Solaris is based off of Unix, which is an operating system that has been around a long time and is trusted by many businesses \cite{solaris}. A problem with Solaris is that it will not run on many different hardware systems including most HP and IBM systems \cite{solaris}. Solaris is not free, although there is a version of Solaris that is more similar to Linux and can be optained for free with optional paid support \cite{solaris}.
 
 \subsection{Discussion}
+Unix, which Solaris is based off of has been around a long time compared to Windows Server and Linux Ubuntu Server, but is not currently as popular as either of the other two. Linux Ubuntu Server is completely free with optional support packages that can be purchased, in contrast to Windows Server and Solaris which both cost money. All of the operating systems provide key features that make any server operating system useful such as security, support, easy setup. It might be slightly harder to get support when using a Linux system than the other two because Linux isn't owned by anyone.
 
 \subsection{Conclusion}
+The best server operating system to use for our project is Ubuntu Server. Solaris isn't free and doesn't really provide as many features as Windows Server or Ubuntu so it is definitely not the right choice for our project. Windows Server might provide slightly more features than Ubuntu, but all we are using the server for is to host a simple web application, so things like allowing users to run desktop applications remotely aren't important for our project. For all of the important features to our project like setup, support, downtime, and maintenance, Windows Server and Ubuntu aren't that different and both would be good choices. The main difference is that Ubuntu is free, and for that reason a better choice than Windows Server for this project.
 
 \section{Web Server Software}
 
 \subsection{Overview}
-
+Web server software is essential to running a website. There are many different options to use and it will be important for this project to have one that meets all of the needs of the project.
 \subsection{Criteria}
-
+The main important factors for this project are a web server software that is well documented and fast to setup, as well as cheap and able to run at fast speeds with relatively little downtime. With the short time period for development it will be critical to have a web server that is up and running quickly. Also a low cost is very important to this project. The web application will be very important to daily operations of the hospital making small amounts of downtime another important factor in evaluation.
 \subsection{Potential Choices}
 
 \subsubsection{Apache HTTP}
+The Apache Web Server is very powerful and provides many useful features to its users \cite{apache}. It is an open source software, making it free to use and also gives users of this software the ability to modify its source code to meet their needs \cite{apache}. Features include a control panel, customizable error messages, authentication schemes, Domain Name Service, Simple Mail Transfer Protocol, and File Transfer Protocol \cite{apache}. Apache can run on almost any operating system including Windows, MacOS, Linux, and Unix \cite{apache}. There is also support for many different programming languages including PHP and Python, and the ability to have SSL and TSL encryption for websites \cite{apache}.
 
 \subsubsection{Cherokee}
+Cherokee is a high performing web server that runs with good speed and is easy to set up \cite{cherokee}. It supports many other technologies, such as PHP and SSL encryption, and can be run of many different operating systems including Linux, Unix, and Windows \cite{cherokee}. Cherokee also provides updates that do not require any downtime \cite{cherokee}. Another important feature of Cherokee is that it provides an easy to use configuration interface called cherokee-admin \cite{cherokee}. Cherokee is also free and has a an open source code base that can be modified by anyone who wants to make changes to adjust the system to meet their needs \cite{cherokee}.
 
 \subsubsection{NGINX}
+NGINX is a system that has been optimized to handle a large number of simultaneous connections \cite{nginx}. It provides support for PHP and Python as well as email protocols like SMTP, POP3, and IMAP \cite{nginx}. It is a very fast system that maximizes hardware efficiency \cite{nginx}. NGINX mainly only supports Linux and Unix based systems, and has very little support for Windows and other operating systems \cite{nginx}. There is plenty of documentation explaining how to use NGINX and training to learn more about the system \cite{nginx}. This software is open source and free to use with an optional purchase that includes support.
 
 \subsection{Discussion}
+Apache HTTP and NGINX are both widely used web servers compared to Cherokee which is a much less used product. All three are open source and available for free and provide many of the same features and support. NGINX doesn't support very many operating systems compared to both Apache and Cherokee which support almost any operating system.
 
 \subsection{Conclusion}
+For this project the best choice of web server software is Apache. It provides all of the features that are necessary for the project and can run on almost any operating system where NGINX can not. Cherokee is also a good choice but is not as widely used and does not have as much support or documentation as Apache.
 
 \section{Database}
 
 \subsection{Overview}
+A database will be a very important part of this project. User information as well as information about patients will need to be stored in the database. The web application will rely heavily on interaction with the database to provide the features users will need.
 
 \subsection{Criteria}
+Important factors to consider when selecting a database for this project are the cost, speed, compatability with chosen operating systems and web servers, and ability to provide easy ways to report on the data it holds. As always it will be important to keep the cost of the project low. Users will need to enter information while on phone calls with owners of the patients, so speed will be important as they don't want to waste the time of the person on the phone. Reporting on the data collected will be very important for administrators to evaluate the success of the hospital and the new system.
 
 \subsection{Potential Choices}
 
 \subsubsection{MySQL}
+MySQL is an open source database management tool that provides many important features \cite{mysql}. MySQL is known for its excellent data security and is used by many popular websites including Facebook and Twitter \cite{mysql}. It provides high performance and excellent scalability that gives it great speeds for any size system and allows it to only take up as much space as needed \cite{mysql}. MySQL comes with a guarantee of no downtime and can work with almost any operating system and web server \cite{mysql}.
 
 \subsubsection{SQLite}
+SQLite is a relational database management system that is imbedded into the system that is using it \cite{sqlite}. It is a file-based database that interacts directly with the system making it very fast and efficient \cite{sqlite}. The system is easily portable because it is contained in a single file on the system \cite{sqlite}. SQLite uses a slightly modified SQL that has only a few features removed \cite{sqlite}. It does not provide any ability to manage different users access to the database like some other management systems might \cite{sqlite}.
 
 \subsubsection{Microsoft SQL Server}
+Microsoft SQL Server is a very easy to use and powerful database management system \cite{sqlserver}. It provides integration with tools like SQL Server Management Studio and SQL Server Profiler that help users manage their database \cite{sqlserver}. There is a lot of support and documentation provided for SQL Server and it is much easier to learn and get help with than many other SQL based products \cite{sqlserver}. SQL server is a paid product and purchasing comes with support from Microsoft \cite{sqlserver}.
 
 \subsection{Discussion}
+SQLite is a slightly less feature rich product compared to MySQL and Microsoft SQL Server. All of these systems can work with many different operating systems and web servers. Microsoft SQL Server is a paid product in contrast to MySQL and SQLite which can both be used for free.
 
 \subsection{Conclusion}
+The best database management system for this project is MySQL. The speed of SQLite is better than the other two, but is not worth the tradeoff of lost functionality for this application. Microsoft SQL Server provides slightly more features, documentation, and support than MySQL, but they are not important enough to the project to offset the large cost difference between the two.
+
+\newpage
+\bibliographystyle{ieeetr}
+\bibliography{technology_review}
 
 \end{document}
