@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {4.2}Criteria}{5}
 \contentsline {subsection}{\numberline {4.3}Potential Choices}{5}
 \contentsline {subsubsection}{\numberline {4.3.1}MySQL}{5}
-\contentsline {subsubsection}{\numberline {4.3.2}SQLite}{5}
+\contentsline {subsubsection}{\numberline {4.3.2}SQLite}{6}
 \contentsline {subsubsection}{\numberline {4.3.3}Microsoft SQL Server}{6}
 \contentsline {subsection}{\numberline {4.4}Discussion}{6}
 \contentsline {subsection}{\numberline {4.5}Conclusion}{6}

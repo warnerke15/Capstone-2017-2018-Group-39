@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{ubuntu}
+K.~Hess, ``Ubuntu server: The linux server operating systems dark horse.''
+  \url{https://www.serverwatch.com/trends/article.php/3870141/Ubuntu-Server-The-Linux-Server-Operating-Systems-Dark-Horse.htm},
+  3 2010.
+
+\bibitem{windows}
+O.~Rist, ``Windows server top 5 benefits for today’s workforce.''
+  \url{https://blogs.technet.microsoft.com/windowsserverexperts/2010/02/08/windows-server-top-5-benefits-for-todays-workforce/},
+  2 2010.
+
+\bibitem{solaris}
+K.~Milberg, ``When to use solaris vs. linux: Operating system comparison.''
+  \url{http://searchdatacenter.techtarget.com/tip/When-to-use-Solaris-vs-Linux-Operating-system-comparison},
+  12 2008.
+
+\bibitem{apache}
+D.~Sullivan, ``Advantages of apache web server.''
+  \url{https://www.techwalla.com/articles/advantages-of-apache-web-server}.
+
+\bibitem{cherokee}
+A.~L. Ortega, ``Cherokee basics.''
+  \url{http://cherokee-project.com/doc/basics_why_cherokee.html}.
+
+\bibitem{nginx}
+A.~Leslie, ``Nginx vs. apache (pro/con review, uses, \& hosting for each).''
+  \url{http://www.hostingadvice.com/how-to/nginx-vs-apache/}, 7 2017.
+
+\bibitem{mysql}
+T.~Branson, ``8 major advantages of using mysql.''
+  \url{https://www.datamation.com/storage/8-major-advantages-of-using-mysql.html},
+  11 2016.
+
+\bibitem{sqlite}
+O.~Tezer, ``Sqlite vs mysql vs postgresql: A comparison of relational database
+  management systems.''
+  \url{https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems},
+  2 2014.
+
+\bibitem{sqlserver}
+G.~Farrar, ``Microsoft sql server: Advantages and challenges from the
+  virtualization admin’s view.''
+  \url{https://turbonomic.com/blog/microsoft-sql-server-advantages-challenges-virtualization-admins-view/},
+  8 2016.
+
+\end{thebibliography}
