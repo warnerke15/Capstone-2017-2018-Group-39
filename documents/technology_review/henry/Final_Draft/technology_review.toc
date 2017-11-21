@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Reason for Project}{2}
+\contentsline {subsection}{\numberline {1.2}Overview of Project}{2}
+\contentsline {section}{\numberline {2}Server Operating System}{2}
+\contentsline {subsection}{\numberline {2.1}Overview}{2}
+\contentsline {subsection}{\numberline {2.2}Criteria}{2}
+\contentsline {subsection}{\numberline {2.3}Potential Choices}{2}
+\contentsline {subsubsection}{\numberline {2.3.1}Linux Ubuntu Server}{2}
+\contentsline {subsubsection}{\numberline {2.3.2}Windows Server}{3}
+\contentsline {subsubsection}{\numberline {2.3.3}Solaris}{3}
+\contentsline {subsection}{\numberline {2.4}Discussion}{3}
+\contentsline {subsection}{\numberline {2.5}Conclusion}{3}
+\contentsline {section}{\numberline {3}Web Server Software}{4}
+\contentsline {subsection}{\numberline {3.1}Overview}{4}
+\contentsline {subsection}{\numberline {3.2}Criteria}{4}
+\contentsline {subsection}{\numberline {3.3}Potential Choices}{4}
+\contentsline {subsubsection}{\numberline {3.3.1}Apache HTTP}{4}
+\contentsline {subsubsection}{\numberline {3.3.2}Cherokee}{4}
+\contentsline {subsubsection}{\numberline {3.3.3}NGINX}{4}
+\contentsline {subsection}{\numberline {3.4}Discussion}{5}
+\contentsline {subsection}{\numberline {3.5}Conclusion}{5}
+\contentsline {section}{\numberline {4}Database}{5}
+\contentsline {subsection}{\numberline {4.1}Overview}{5}
+\contentsline {subsection}{\numberline {4.2}Criteria}{5}
+\contentsline {subsection}{\numberline {4.3}Potential Choices}{5}
+\contentsline {subsubsection}{\numberline {4.3.1}MySQL}{5}
+\contentsline {subsubsection}{\numberline {4.3.2}SQLite}{5}
+\contentsline {subsubsection}{\numberline {4.3.3}Microsoft SQL Server}{6}
+\contentsline {subsection}{\numberline {4.4}Discussion}{6}
+\contentsline {subsection}{\numberline {4.5}Conclusion}{6}
+\contentsline {section}{References}{7}
