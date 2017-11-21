@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{setspace}
-
+\usepackage{array}
 \usepackage{geometry}
 \geometry{textheight=9.5in, textwidth=7in}
 
@@ -115,6 +115,17 @@ Cloudflare and Amazon seem to have opposite pricing systems. Cloudflare has a fi
 \subsection{Conclusion}
 The best CDN for this project is Cloudflare because it has a fixed cost, which means there will not be any spikes in cost in a given month. In addition, the amount of traffic to the ConnectBasket website is unknown, so a fixed cost is more reliable. Amazon CloudFront would be a good CDN, especially since it integrates well with other AWS services, but it seems to be the best choice only if other AWS services are being used, and we are not using other AWS services.
 
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{.2\linewidth}|p{.2\linewidth}|p{.2\linewidth}|p{.2\linewidth}| } 
+\hline
+\textbf{Criteria} & \textbf{Cloudflare} & \textbf{Akamai} & \textbf{Amazon CloudFront} \\ \hline
+Cost & Fixed cost per month & Unknown & Variable cost per month \\ \hline
+Difficulty of setup & Very easy, taking less than five minutes & Easy, with 24/7 support from Akamai & Easy when used with other AWS services\\ \hline
+Security & Secure & Secure & Secure \\ \hline
+\end{tabular}
+\end{table}
+
 
 \section{Web Development Frameworks}
 
@@ -141,7 +152,18 @@ AngularJS and ReactJS are both JavaScript based, while ASP.NET is very flexible 
 \subsection{Conclusion}
 AngularJS is the best web development framework for the ConnectBasket project. The main reason for choosing AngularJS is because it is designed to quickly produce dynamic and elegant websites. It is well-documented and maintained by Google, which makes it a sensible choice. Even though it does not have user authenication, that is something that can easily be implemented using another technology. 
 
-\section{Design Patterns}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{.2\linewidth}|p{.2\linewidth}|p{.2\linewidth}|p{.2\linewidth}| } 
+\hline
+\textbf{Criteria} & \textbf{ASP.NET} & \textbf{AngularJS} & \textbf{ReactJS} \\ \hline
+Flexibilty & Can be written in multiple languages & Works with all major browsers and smartphones & Works with all major browsers and smartphones \\ \hline
+Complexity & Moderately complex & Simple & Simple\\ \hline
+Integration with other tools & Works best with other Microsoft products & Easily integrates with other tools & Easily integrates with other tools \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Software Design Patterns}
 
 \subsection{Overview}
 Software design patterns are a important part of any software application. One very important feature of this project is to provide a user interface that will be accepted by users who are reluctant to change. This means how users are able to interact with the data is very important and modeling a system that closely reflects their current system in a more efficient way is critical.
@@ -165,6 +187,16 @@ MVVM and MVP are both similar to MVC, and provide some additional features compa
 
 \subsection{Conclusion}
 The best design pattern to use for this project is MVC. The user interface for this project will not be very complicated, so, while having additional components might improve testability, it will not be worth it for the increased complexity. Having three components also provides the option for dividing the components between the three person development team, with one team member working on each component.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{.2\linewidth}|p{.2\linewidth}|p{.2\linewidth}|p{.2\linewidth}| } 
+\hline
+\textbf{Criteria} & \textbf{MVC} & \textbf{MVP} & \textbf{MVVM} \\ \hline
+Components & Model, view, controller & View, view interface, presenter, model & Model, view, controller, view model \\ \hline
+Number of components & 3 & 4 & 4 \\ \hline
+\end{tabular}
+\end{table}
 
 \newpage
 \bibliographystyle{ieeetr}

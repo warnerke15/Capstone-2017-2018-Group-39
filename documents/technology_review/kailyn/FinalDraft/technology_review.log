@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  20 NOV 2017 23:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.10.17)  21 NOV 2017 12:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **technology_review.tex
 (./technology_review.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
-aded.
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -20,7 +19,9 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/psnfss/ot1
+ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 -- Using IEEE Computer Society mode.
@@ -117,65 +118,85 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/graphics/g
+raphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/graphics/k
+eyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/graphics/g
+raphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/graphics/t
+rig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/graphics-c
+fg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/graphics-d
+ef/dvips.def
+File: dvips.def 2016/07/10 v3.1a Driver-dependent file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/url/url.st
+y
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/setspace/s
+etspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/tools/arra
+y.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen128
+\extrarowheight=\dimen129
+\NC@list=\toks16
+\extratabsurround=\skip44
+\backup@length=\skip45
+)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/geometry/g
+eometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/generic/oberdiek
+/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/generic/oberdiek
+/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/generic/ifxetex/
+ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count94
 \Gm@cntv=\count95
 \c@Gm@tempcnt=\count96
-\Gm@bindingoffset=\dimen128
-\Gm@wd@mp=\dimen129
-\Gm@odd@mp=\dimen130
-\Gm@even@mp=\dimen131
-\Gm@layoutwidth=\dimen132
-\Gm@layoutheight=\dimen133
-\Gm@layouthoffset=\dimen134
-\Gm@layoutvoffset=\dimen135
-\Gm@dimlist=\toks16
-)
-(./technology_review.aux)
+\Gm@bindingoffset=\dimen130
+\Gm@wd@mp=\dimen131
+\Gm@odd@mp=\dimen132
+\Gm@even@mp=\dimen133
+\Gm@layoutwidth=\dimen134
+\Gm@layoutheight=\dimen135
+\Gm@layouthoffset=\dimen136
+\Gm@layoutvoffset=\dimen137
+\Gm@dimlist=\toks17
+) (./technology_review.aux)
 \openout1 = `technology_review.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -233,13 +254,14 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <20.075> not available
 LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <24.09> not available
 (Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 47.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 63.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+
+(/nfs/guille/a2/rh80apps/tex_live/tex_live-2016/texmf-dist/tex/latex/psnfss/ot1
+phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
-
-[1]
+ [1]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
@@ -265,7 +287,35 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 102.
- [3] [4] [5] [6] (./technology_review.bbl
+ [3] [4]
+Underfull \hbox (badness 5064) in paragraph at lines 160--160
+[]|\OT1/ppl/m/n/9.53561 Works with all ma-
+ []
+
+
+Underfull \hbox (badness 5064) in paragraph at lines 160--160
+[]|\OT1/ppl/m/n/9.53561 Works with all ma-
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 162--162
+[]|\OT1/ppl/m/n/9.53561 Easily in-te-grates with
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 162--162
+[]|\OT1/ppl/m/n/9.53561 Easily in-te-grates with
+ []
+
+[5]
+Underfull \hbox (badness 4713) in paragraph at lines 196--196
+[]|\OT1/ppl/m/n/9.53561 View, view in-ter-face,
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6] (./technology_review.bbl
 LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8.03> on input line 5.
@@ -297,12 +347,12 @@ el.'' $https : / / cocoacasts . com / what-[]are-[]the-[]bene^^Lts-[]of-[]model
 
 ) [7] (./technology_review.aux) ) 
 Here is how much of TeX's memory you used:
- 2088 strings out of 495064
- 34227 string characters out of 3182224
- 92244 words of memory out of 3000000
- 5290 multiletter control sequences out of 15000+200000
- 31249 words of font info for 78 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 26i,5n,19p,1007b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 2148 strings out of 493014
+ 36167 string characters out of 6122796
+ 101329 words of memory out of 5000000
+ 5706 multiletter control sequences out of 15000+600000
+ 31249 words of font info for 78 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 26i,9n,19p,1007b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on technology_review.dvi (8 pages, 36488 bytes).
+Output written on technology_review.dvi (8 pages, 39288 bytes).
