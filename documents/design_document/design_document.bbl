@@ -1,0 +1,49 @@
+\begin{thebibliography}{10}
+
+\bibitem{ubuntu}
+K.~Hess, ``Ubuntu server: The linux server operating systems dark horse.''
+  \url{https://www.serverwatch.com/trends/article.php/3870141/Ubuntu-Server-The-Linux-Server-Operating-Systems-Dark-Horse.htm},
+  3 2010.
+
+\bibitem{apache}
+D.~Sullivan, ``Advantages of apache web server.''
+  \url{https://www.techwalla.com/articles/advantages-of-apache-web-server}.
+
+\bibitem{mysql}
+T.~Branson, ``8 major advantages of using mysql.''
+  \url{https://www.datamation.com/storage/8-major-advantages-of-using-mysql.html},
+  11 2016.
+
+\bibitem{cdn}
+``What is a cdn?.''
+  \url{https://www.cloudflare.com/learning/cdn/what-is-a-cdn/}.
+
+\bibitem{cloudflare}
+``Fast, global content delivery network.''
+  \url{https://www.cloudflare.com/cdn/}.
+
+\bibitem{webdevframework}
+M.~Rouse, ``web development framework (wdf).''
+  \url{http://searchcontentmanagement.techtarget.com/definition/web-development-framework-WDF}.
+
+\bibitem{framework}
+C.~Wodehouse, ``What is a framework?.''
+  \url{https://www.upwork.com/hiring/development/understanding-software-frameworks/}.
+
+\bibitem{angular}
+``Angularjs - overview.''
+  \url{https://www.tutorialspoint.com/angularjs/angularjs_overview.htm}.
+
+\bibitem{mvc}
+Jithin, ``What is mvc? advantages and disadvantages of mv.''
+  \url{https://www.interserver.net/tips/kb/mvc-advantages-disadvantages-mvc/},
+  10 2016.
+
+\bibitem{viewpoints}
+N.~Rozanki and E.~Woods, ``Viewpoints.''
+  \url{https://www.viewpoints-and-perspectives.info/home/viewpoints/}.
+
+\bibitem{angularjs}
+``Angularjs.'' \url{https://angularjs.org/}.
+
+\end{thebibliography}
