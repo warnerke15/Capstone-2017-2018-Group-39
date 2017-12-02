@@ -14,6 +14,21 @@ T.~Branson, ``8 major advantages of using mysql.''
   \url{https://www.datamation.com/storage/8-major-advantages-of-using-mysql.html},
   11 2016.
 
+\bibitem{notifications}
+M.~Grech, ``Twilio vs. nexmo: The head to head showdown for developers.''
+  \url{https://getvoip.com/blog/2017/01/05/twilio-vs-nexmo/}, 1 2017.
+
+\bibitem{huge}
+panique {\em et~al.}, ``Huge.'' \url{https://github.com/panique/huge/}, 4 2017.
+
+\bibitem{userfrosting}
+``Modern user management framework for php.''
+  \url{https://www.userfrosting.com/}.
+
+\bibitem{bestpractical}
+B.~Practical, ``Request tracker.''
+  \url{https://bestpractical.com/request-tracker/}.
+
 \bibitem{cdn}
 ``What is a cdn?.''
   \url{https://www.cloudflare.com/learning/cdn/what-is-a-cdn/}.
