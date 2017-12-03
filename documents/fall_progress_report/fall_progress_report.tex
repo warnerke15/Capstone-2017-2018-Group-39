@@ -1,0 +1,305 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		ConnectBasket Development Team}
+\def \CapstoneTeamNumber{		39}
+\def \GroupMemberOne{			Henry Fowler}
+\def \GroupMemberTwo{			Kailyn Hellwege}
+\def \GroupMemberThree{			Taylor Kirkpatrick}
+\def \CapstoneProjectName{		ConnectBasket}
+\def \CapstoneSponsorCompany{	OSU MIME}
+\def \CapstoneSponsorPerson{		Dr. Chinweike Eseonu}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{		%Problem Statement
+				%Requirements Document
+				%Technology Review
+				%Design Document
+				Progress Report
+				}
+			
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	\includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+                \NameSigPair{\GroupMemberThree}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        % 6. Fill in your abstract    
+        This document describes the progress made by Capstone Group 39 in planning the development of the ConnectBasket web application. The purpose and goals of the project will be discussed as well as the current state the project is in. A look at the weekly progress made by the development team will also be given, detailing any plans, problems, and progress that was made during each week.
+
+        \end{abstract}     
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Project Purpose}
+This project will create a web application called ConnectBasket that will serve as a new tool for the Oregon State University Veterinary Hospital to improve communication within the hospital and externally with patient owners and other hospitals. The current workflow in the hospital involves receptionists taking calls, typing a message into the system, printing out that message, and walking it across the hospital to a veterinary technician or doctor to look at and add a handwritten note to. After that, the doctor or technician will carry the message to another doctor or technician, or back to reception or scheduling, who will call the initial caller and answer the question they had or schedule an appointment for them. The main purpose of this project is to eliminate the paper aspects of this process and make an electronic system that allows messages to be created and sent to other employees of the hospital, and notes to be added to those messages. It will then be able to display messages back to users with all of their associated notes. This project will help increase the efficiency of communication at the hospital as well as provide a less error-prone system that allows users to see a complete history of all messages.
+
+\section{Project Goals}
+\begin{itemize}
+\item Allow users to create a message which will be associated with a patient and an owner of that patient
+\item Allow messages to have a status to tell whether they are open or closed
+\item Allow messages to be routed to other users or groups of users
+\item Allow notes to be added to messages
+\item Allow users to select a group or groups to be a part of
+\item Provide an audit log of all messages created over a given time period
+\item Increase the overall efficiency of messages being transported throughout the hospital 
+\item Reduce the amount of paper being printed
+\item Reduce errors in the communication process of the hospital 
+\end{itemize}
+
+\section{Current State of Project}
+The project is currently just a design with implementation planned to start during the first week of winter term. The development team has examples of what the hospital would like the application to look like, which were used in making the design decisions for the project. At this time, the development does not know if the hospital already has a server that can be used, or if they will need to get one for the project. Decisions have been made about the server operating system, web server software, database, notification system, user profile framework, issue tracking framework, content delivery network, web development framework, and software design pattern that will be used for the project. A tentative schedule for development of the project in the future has been made and will guide the work done in the next two terms.
+
+\section{Problems Encountered}
+A couple of problems were encountered by the development team this term. One of the main issues was the office politics that exist at the hospital. The project for the Capstone class was created because the current IT team at the hospital was taking too long to implement a new communication system into their current system, but the IT team was not informed of the Capstone project. The development team has not been able to communicate with the IT team at all, which has made it more difficult to design a system that will work well with what the hospital is currently using. However, after discussing further with the client, it was made clear that the Capstone project will be a stand alone product that is not expected to integrate with the current system.
+
+Another small problem this term was communication and scheduling conflicts within the group and with the client. One of the development team members was working remotely for this term, which made communications within the team more difficult. Also, the client was very busy and out of the country for part of the term, which combined with having the development team in two different locations and working along with taking classes made scheduling a meeting where all members could attend very difficult or impossible. For this reason, meetings were held infrequently and usually without all members of the development team present. Next term, all members of the development team will be in Corvallis, which should improve communication during the development phase of the project.
+
+\section{Weekly Blogs}
+
+\subsection{Week 1}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Each student needs to look at the list of projects and enter/submit the ones that they like
+\item Each student needs to finish resume and biography to turn in on Thursday
+\item Each student needs to set up OneNote for the term and to copy and paste biography into OneNote
+\end{itemize}
+
+\subsubsection{Progress}
+Each team member finished looking at the list of projects and submitted their preferences. The team members also finished their resumes and biographies that were due on Tuesday in class. Each team member set up OneNote so they could copy and paste the biography to the Biography page under the General Tab. 
+
+\subsubsection{Summary}
+On Monday, team members each added new information and edited their resumes. Team members printed out resumes afterwards to bring to class to turn in. Team members also wrote a biography and set up OneNote. Team members also read through all of the projects and took notes on which ones sounded interesting and narrowed it down to five to submit for project preferences. On Tuesday, team members  actually submitted their preferences.
+
+\subsection{Week 2}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Get group assignments 
+\item Contact group members
+\item Contact client
+\end{itemize}
+
+\subsubsection{Problems}
+Email from TA was not sent to one group member (Henry Fowler), but it was forwarded it to him by another group member, so the problem was resolved.
+Client is out of the country until 10/10/17, so group is unable to meet before the rough draft is due for the Problem Statement.
+
+\subsubsection{Progress}
+Team members got group assignments and contacted the each other as well as the client. Group is still in the process of trying to find a meeting time that works to meet with the client. Group also selected which days they are available to meet with the TA on a Doodle Poll that he emailed to the group on Thursday. 
+\subsubsection{Summary}
+On Tuesday, team members got group assignments in class. The group name  is "Healthy Dogs! Software for Managing Pet Safety at a Veterinary Hospital" and the group members are Henry Fowler, Kailyn Hellwege,  and Taylor Kirkpatrick. Team members got each others email and phone number for communication, and emailed the client. On Wednesday, group got a response, but the client is out of the country until Tuesday, October 10th, and the time he suggested to meet is when two group members have an exam on Tuesday. Group responded saying they were unable to meet at that time, and included a doodle poll for both the client and the group to fill out so they could determine the best time to meet for everyone. The group has not yet gotten a response. 
+
+\subsection{Week 3}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Finish problem statement
+\item Meet with TA
+\item Set up a time to meet with client
+\item Meet with client
+\end{itemize}
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Wrote first draft of problem statement
+\item Met with TA
+\item Got an email back from client and decided to meet on Thursday
+\item Met with client for an hour on Thursday
+\item Rewrote/edited rough draft with details from meeting
+\end{itemize}
+\subsubsection{Summary}
+The group  finished a rough draft of problem statement on Monday, but the group still had not met with our client yet, so it was very vague and contained a lot of assumptions. The group also met with the TA, Daniel, for the weekly meeting. The group emailed the client again and then got a response for when they could meet. We met our client on Thursday at 2 pm at the veterinary hospital. We got a lot more details about what they really want for the project. On Friday, I rewrote the rough draft and incorporated the details we talked about in the meeting. 
+
+\subsection{Week 4}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Combine group's individual problem statements into one group problem statement
+\item Meet with client to discuss more details of project
+\item Email client to get verification for problem statement
+\item Meet with TA
+\end{itemize}
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Monday - Combined problem statements into one
+\item Monday - Emailed client final draft of problem statement for verification
+\item Tuesday  - Met with TA
+\item Thursday - Met with Kelly Warner at the vet hospital, Dr. Eseonu was not there, but group was able to get a lot of clarification about what is wanted for the project
+
+\end{itemize}
+\subsubsection{Summary}
+On Monday, the group worked on merging the group's individual problem statements into one. Once the problem statement was finalized, we sent it to our client for verification. On Tuesday, the group met with theTA in Kelley. On Thursday, the group met with Kelly Warner at the vet hospital to talk to her more about what exactly the hospital is looking for in this project.
+\subsection{Week 5}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Write Rough Draft of Requirements Document
+\item Meet with TA
+\item Meet with Client
+\end{itemize}
+
+
+\subsubsection{Problems}
+The group is slightly concerned about the politics between the hospital and their IT department. The group is worried that the group might not be able to have access to the database or to get any information on how the hospital's current system was written.
+
+The group is also concerned that the scope of the project is growing too large. After a couple meetings, it seems that the hospital expects more than we might be able to complete. 
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Monday - Created document and outline for Requirements
+\item Tuesday - Met with TA
+\item Wednesday - Worked on requirements rough draft
+\item Wednesday - Went to Kirsten's office hours to mention the politics going on at the vet hospital, and she told the group not to worry about it
+\item Thursday - Meeting at the vet hospital
+\item Thursday - Emailed Kevin to set up a meeting to address our concerns about the politics with IT and that the project scope might be growing too big.
+\item Friday - Finished up Requirements Rough Draft
+\end{itemize}
+
+\subsubsection{Summary}
+The group worked on writing the rough draft of the Requirements document throughout the week. The group met with the TA on Tuesday. He seemed concerned about the politics with IT, so the group decided to go talk to Kirsten on Wednesday morning. Kirsten did not seem to think it would be an issue, and told the group it was not the group's problem to worry about. On Thursday, the group met with the client (Dr. Eseonu), Kelly Warner, and Dr. de Morais, and during the meeting, some issues came up that were concerning. It appears that we are expected to have a fully functioning stand alone system that will be integrated with their current system, VetHosp. However, the group has no access to the code for the current system and have no idea how it was written. The group also does not have access to the database, which is necessary to be able to make the system they want. But, because of the politics with IT, the group is not allowed to contact them to get access to these things. Because of these complications, the group emailed Kevin to hopefully meet sometime next week to discuss our concerns about the scope of the project. On Friday, the group finished the rough draft of the Requirements document. 
+
+\subsection{Week 6}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Revise and finish Requirements
+\item Meet with TA
+\item Meet with Client
+\item Get Requirements verified
+
+\end{itemize}
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Monday - Worked on Requirements
+\item Tuesday - Met with TA. Worked on Requirements
+\item Wednesday - Finished Requirements and sent to client for any suggestions
+\item Thursday - Met with client, who wanted a couple changes to Requirements. Later, the group made those changes and sent him the final draft and requested verification to send to Kirsten and Kevin.
+\item Friday - Received verification email to Kevin and  Kirsten. 
+
+\end{itemize}
+\subsubsection{Summary}
+This week was mostly spent working on the final draft of the requirements. The group met with the TA on Tuesday. The group sent out the final draft on Wednesday morning to client to see if there were any changes that needed to be made. Thursday, the group met with our client to go over a couple small changes. The group made those changes and sent the client the final version. On Friday morning, the group received an email also sent to Kirsten and Kevin saying that our Requirements document was satisfactory. 
+\subsection{Week 7}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item TA Meeting
+\item Meet with Kirsten
+\item Start Technology Review document
+
+\end{itemize}
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Tuesday - Met with Kirsten and talked about concerns we had last week, but a lot of it was cleared up at the last client meeting. She said the group could put fake data in a database if the group does not end up not getting access to the one at the vet hospital.
+\item Tuesday - Weekly TA meeting
+\item Wednesday - Started brainstorming topics for the technology review
+
+\end{itemize}
+\subsubsection{Summary}
+This week, the group met with Kirsten on Tuesday. She told the group that they could create a database and put fake data in if they do not get access to the hospital database. She also suggested that they make a chart of stakeholders, since there are so many different people that are involved in the project in different ways. The group had the weekly TA meeting also on Tuesday. For the rest of the week, the group worked on brainstorming ideas for the Technology Review for the rough draft due next Tuesday.
+\subsection{Week 8}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Weekly TA Meeting
+\item Finish Technology Review
+
+\end{itemize}
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Monday - Finished Technology Review rough draft
+\item Tuesday - Peer reviewed Technology Review in class. Also had the weekly TA meeting
+\item Thursday - Emailed our client about meeting this week, and ended up not meeting
+
+\end{itemize}
+\subsubsection{Summary}
+The main thing the group did this week was finish up the Technology Review rough draft on Monday night. On Tuesday in class, each group member found someone who was not in the group to peer review our paper. After class, the group had our weekly TA meeting at 2. On Thursday, the group emailed the client to determine if they needed to meet this week, and they ended up not meeting this Thursday.
+\subsection{Week 9}
+
+\subsubsection{Plans}
+\begin{itemize}
+\item Finish and turn in Technology Review
+\end{itemize}
+
+\subsubsection{Progress}
+\begin{itemize}
+\item Monday/Tuesday - Edited and made last minute changes to Technology Review and turned it in
+\item Friday - Set up rough outline for Design Document
+\end{itemize}
+\subsubsection{Summary}
+This week, group members finished up most of their Technology Reviews. Each group member individually emailed it to Kirsten to turn in on Tuesday. On Friday, the group very roughly set up a rough draft for the Design Document.
+\subsection{Week 10}
+
+\subsubsection{Plans}
+\begin{itemize}
+Finish Design Document
+Meet with client
+Start Fall Progress Report
+
+\end{itemize}
+\subsubsection{Problems}
+The group emailed the client early in the week and never heard back about meeting this week. 
+
+\subsubsection{Progress}
+Worked on Design Document throughout the week.  Met with Kirsten on Monday to look at examples of Design Documents. Finished Design Document on Friday. On Saturday, the group recorded the audio for the Fall Progress Report. 
+
+\subsubsection{Summary}
+On Monday, group members went to Kirsten's office hours to look at examples of past students' Design Documents. The group made an outline based on those examples. On Tuesday morning, the group emailed the client, hoping to set up a time to meet late in the week. The group worked more on completing the Design Document. Wednesday afternoon, the group emailed the client again, letting him know all of the group's classes were cancelled on Thursday so we could meet at any time. Thursday and Friday, the group made the final edits to the Design Document and put it on Github and the group OneNote to turn in. Saturday morning, the group recorded the audio for the Fall Progress Report. 
+
+\section{Retrospective}
+
+\end{document}
