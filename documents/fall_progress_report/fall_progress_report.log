@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  2 DEC 2017 22:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.18)  4 DEC 2017 09:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -175,7 +175,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen135
 \Gm@dimlist=\toks16
 )
-No file fall_progress_report.aux.
+(./fall_progress_report.aux)
 \openout1 = `fall_progress_report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -190,6 +190,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
+
 -- Lines per column: 39 (approximate, difference = 14.73578pt).
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
@@ -225,75 +226,53 @@ LaTeX Font Info:    ... okay on input line 35.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-! LaTeX Error: File `coe_v_spot1' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.39 ...	\includegraphics[height=4cm]{coe_v_spot1}
-                                                  
-? q
-OK, entering \batchmode...
+File: coe_v_spot1.eps Graphic file (type eps)
+<coe_v_spot1.eps>
 LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <20.075> not available
 (Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 49.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <24.09> not available
 (Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 49.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 67.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 67.
- [1]
+
+[1]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 76.
-No file fall_progress_report.toc.
+ (./fall_progress_report.toc
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.53561> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6.6749> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.7678> on input line 6.
+ [1])
 \tf@toc=\write3
 \openout3 = `fall_progress_report.toc'.
 
- [1]
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 88.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9.53561> on input line 88.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6.6749> on input line 88.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.7678> on input line 88.
- [2
+ [2] [3
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
- [3] [4] [5] [6]
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.293 \end{itemize}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
- [7] [8] (./fall_progress_report.aux) ) 
+ [4] [5] [6] [7] [8] [9]
+(./fall_progress_report.aux) ) 
 Here is how much of TeX's memory you used:
  2047 strings out of 495064
- 33678 string characters out of 3182224
- 93231 words of memory out of 3000000
- 5257 multiletter control sequences out of 15000+200000
+ 33760 string characters out of 3182224
+ 94231 words of memory out of 3000000
+ 5258 multiletter control sequences out of 15000+200000
  29426 words of font info for 72 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 26i,5n,19p,1265b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,9n,19p,1265b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on fall_progress_report.dvi (9 pages, 22484 bytes).
+Output written on fall_progress_report.dvi (10 pages, 46904 bytes).
