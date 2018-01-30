@@ -1,0 +1,22 @@
+/*
+Beaver Orange: #DC4405
+Paddletail Black: #000000
+Bucktooth White: #FFFFFF
+*/
+
+.main-navigation
+{
+	background-color: #DC4405;
+}
+
+.nav-main-item
+{
+	color: #FFFFFF;
+}
+
+.image-caption
+{
+	color: #000000;
+	text-align: center;
+	margin: auto;
+}
