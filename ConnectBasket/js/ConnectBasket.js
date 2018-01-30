@@ -13,7 +13,7 @@ $routeProvider
 // Home
 .when("/Home", {templateUrl: "modules/Home/Home.html"})
 // Pages
-.when("/Login", {templateUrl: "modules/Login/Login.html"})
+.when("/Login", {templateUrl: "modules/Login/Login.html", controller: "LoginController"})
 
 .when("/CreateUser", {templateUrl: "modules/CreateUser/CreateUser.html"})
 

@@ -1,17 +1,37 @@
-<div class="col-xs-2">
-	</div>
-	<div class="col-xs-2">
-		<a href="#"><img src="images/profile.png" class="img-circle person" alt="profile" width="100%"></a>
-	</div>
-	<div class="col-xs-1">
-	</div>
-	<div class="col-xs-2">
-		<a href="#"><img src="images/profile.png" class="img-circle person" alt="profile" width="100%"></a>
-	</div>
-	<div class="col-xs-1">
-	</div>
-	<div class="col-xs-2">
-		<a href="#"><img src="images/profile.png" class="img-circle person" alt="profile" width="100%"></a>
-	</div>
-	<div class="col-xs-2">
-	</div>
+<div class="col-xs-3">
+</div>
+
+<div class="col-xs-6 orangeBox">
+<form ng-app="ConnectBasketWebApp" ng-controller="LoginController" name="LoginForm" novalidate>
+
+<div class="center">
+	<label for="user">Username:</label>
+	<input type="text" name="user" ng-model="user" required>
+	<span class="error" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+	<span ng-show="myForm.user.$error.required">Username is required.</span>
+	</span>
+	</p>
+</div>
+<div class="center">
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password" ng-model="password" required />
+	<span ng-show="form.password.$dirty && form.password.$error.required" class="error">Password is required</span>
+</div>
+
+<div class="center">
+<button type="submit" ng-disabled="LoginForm.$invalid || dataLoading">Login</button>
+</div>
+
+</form>
+</div>
+
+<div class="col-xs-3">
+</div>
+
+<script>
+var app = angular.module('ConnectBasketWebApp', []);
+app.controller('LoginController', function($scope) {
+	$scope.user = 'John Doe';
+    $scope.password = 'abcdefgh';
+});
+</script>

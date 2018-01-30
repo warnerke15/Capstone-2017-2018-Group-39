@@ -20,3 +20,20 @@ Bucktooth White: #FFFFFF
 	text-align: center;
 	margin: auto;
 }
+
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
+.orangeBox
+{
+	border: solid #DC4405 1px;
+	padding: 15px;
+}
+
+.error
+{
+	color: red;
+}
