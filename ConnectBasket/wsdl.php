@@ -3,8 +3,13 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 include 'config.php';//make the cofig file include
 global $details;//make the connection vars global
+
+
+$data = json_decode( file_get_contents('php://input') );
+
+header("Location: http://www.google.com" + $data->method);
  
-if($_POST['method'] == "check_login")
+if($data->method == "check_login")
 {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -39,13 +44,19 @@ if($_POST['method'] == "check_login")
 }
 
 
-else if($_POST['method'] == "create_user")
+else if($data->method == "create_user")
 {
-	$firstname = $_POST['firstname'];
+	header('Location: http://www.google.com');
+	/*$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	$email = $_POST['email'];
+	$email = $_POST['email'];*/
+	$firstname = $data->firstname;
+	$lastname = $data->lastname;
+	$username = $data->username;
+	$password = $data->password;
+	$email = $data->email;
 	$hashpass = password_hash($password, PASSWORD_DEFAULT);
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	
