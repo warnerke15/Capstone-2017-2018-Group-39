@@ -94,7 +94,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	var success = false;	
 		
     $scope.formSubmit = function() {
-		$http.post("http://localhost/wsdl.php?method=create_user,username=" + $scope.username + ",password=" + $scope.password + ",email=" + $scope.email + ",firstname=" + $scope.first + ",lastname=" + $scope.last)
+		$http.post("http://http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php?method=create_user,username=" + $scope.username + ",password=" + $scope.password + ",email=" + $scope.email + ",firstname=" + $scope.first + ",lastname=" + $scope.last)
 		.then(function (response) {success = response.data.success;});
 		if (success)
 		{
