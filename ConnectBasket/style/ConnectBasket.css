@@ -63,6 +63,10 @@ body {
 	color: red;
 }
 
+.homecircle {
+	border: 7px solid #dcdcdc;
+}
+
 .button {
 	background-color: #dc4405;
 	color: white;
