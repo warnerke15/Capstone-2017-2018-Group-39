@@ -59,6 +59,11 @@ app.run(function($rootScope, $location, $state, LoginService) {
         url : '/createpet',
         templateUrl : 'modules/CreatePet.html',
         controller : 'CreatePetController'
+      })
+	  .state('editprofile', {
+        url : '/editprofile',
+        templateUrl : 'modules/EditProfile.html',
+        controller : 'EditProfileController'
       });
   }]);
 
@@ -79,7 +84,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
   });
   
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
-    $rootScope.title = "HOME";
+    $rootScope.title = "WELCOME TO CONNECTBASKET";
     
   });
   
@@ -99,4 +104,23 @@ app.run(function($rootScope, $location, $state, LoginService) {
     };
     
   });
+  
+  app.directive('passwordDirective', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attr, mCtrl) {
+      function myValidation(value) {
+        if (value.length >= 8) {
+          mCtrl.$setValidity('length', true);
+		  console.log('hello');
+        } else {
+          mCtrl.$setValidity('length', false);
+		  console.log('goodbye');
+        }
+        return value;
+      }
+      mCtrl.$parsers.push(myValidation);
+    }
+  };
+});
   
