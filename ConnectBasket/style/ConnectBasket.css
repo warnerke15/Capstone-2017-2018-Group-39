@@ -3,11 +3,25 @@ Beaver Orange: #DC4405
 Paddletail Black: #000000
 Bucktooth White: #FFFFFF
 */
+body {
+	font-family: 'Concert One', cursive;
+}
 
 .main-navigation
 {
 	background-color: #DC4405;
 }
+
+.nav.navbar-nav.navbar-right li a {
+	color: white;
+	font-size: 1.4em;
+}
+
+.nav.navbar-nav.navbar-right .dropdown-menu>li>a{
+	color: black;
+	font-size: 1.4em;
+}
+
 
 .site-margins
 {
@@ -32,6 +46,11 @@ Bucktooth White: #FFFFFF
 	text-align: center;
 	margin: auto;
 }
+
+.margin {
+	margin: 20px;
+}
+
 
 .orangeBox
 {

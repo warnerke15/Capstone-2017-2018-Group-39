@@ -14,10 +14,20 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a ui-sref="login">Login</a>
+                <li><a ui-sref="login"><span class="glyphicon glyphicon-check"></span> LOGIN</a>
                 </li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-comment"></span> MESSAGES <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="addnewmessage">Add New Message</a>
+						</li>
+                        <li><a ui-sref="viewmessages">View Messages</a>
+						</li>
+                    </ul>
+                </li>
+				<li><a ui-sref="editprofile"> <span class="glyphicon glyphicon-pencil"></span> EDIT PROFILE</a>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Create <b class="caret"></b></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> ADMIN <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a ui-sref="creatuser">Create User</a>
 						</li>
