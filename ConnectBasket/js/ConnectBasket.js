@@ -60,6 +60,11 @@ app.run(function($rootScope, $location, $state, LoginService) {
         templateUrl : 'modules/CreatePet.html',
         controller : 'CreatePetController'
       })
+	  .state('createuser', {
+        url : '/createuser',
+        templateUrl : 'modules/CreateUser.html',
+        controller : 'CreateUserController'
+      })
 	  .state('editprofile', {
         url : '/editprofile',
         templateUrl : 'modules/EditProfile.html',
@@ -79,6 +84,23 @@ app.run(function($rootScope, $location, $state, LoginService) {
       } else {
         $scope.error = "Incorrect username/password !";
       }   
+    };
+	    
+  });
+  
+  app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http) {
+    $rootScope.title = "CREATE USER";
+		
+	var success = false;	
+		
+    $scope.formSubmit = function() {
+		$http.post("http://localhost/wsdl.php?method=create_user,username=" + $scope.username + ",password=" + $scope.password + ",email=" + $scope.email + ",firstname=" + $scope.first + ",lastname=" + $scope.last)
+		.then(function (response) {success = response.data.success;});
+		if (success)
+		{
+			$state.transitionTo('home');
+		}
+		
     };
 	    
   });
@@ -112,10 +134,8 @@ app.run(function($rootScope, $location, $state, LoginService) {
       function myValidation(value) {
         if (value.length >= 8) {
           mCtrl.$setValidity('length', true);
-		  console.log('hello');
         } else {
           mCtrl.$setValidity('length', false);
-		  console.log('goodbye');
         }
         return value;
       }

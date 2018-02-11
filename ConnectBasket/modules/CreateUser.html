@@ -1,36 +1,93 @@
-<h2 class="center">CREATE USER</h2>
-
 <div class="col-xs-3">
 </div>
 
 <div class="col-xs-6 orangeBox">
-<form ng-app="ConnectBasketWebApp" ng-controller="CreateUserController" name="CreateUserForm" novalidate>
+<form name="CreateUserForm" ng-submit="formSubmit()" novalidate>
+	<p>
+		<span style="color:red">* All fields are required</span>
+	</p>
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<span style="color:red" ng-show="CreateUserForm.first.$dirty && CreateUserForm.first.$invalid">
+				<span ng-show="CreateUserForm.first.$error.required">First name is required.</span>
+			</span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<label for="first">First Name:</label>
+		</div>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" name="first" ng-model="first" required placeholder="Enter your first name">
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<span style="color:red" ng-show="CreateUserForm.last.$dirty && CreateUserForm.last.$invalid">
+				<span ng-show="CreateUserForm.last.$error.required">Last name is required.</span>
+			</span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<label for="last">Last Name:</label>
+		</div>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" name="last" ng-model="last" required placeholder="Enter your last name">
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<span style="color:red" ng-show="CreateUserForm.email.$dirty && CreateUserForm.email.$invalid">
+				<span ng-show="CreateUserForm.email.$error.required">Email is required.</span>
+				<span ng-show="CreateUserForm.email.$error.email">Invalid email address.</span>
+			</span>	
+		</div>
+	</div>
+	<div class="form-group row">		
+		<div class="col-xs-3">
+		<label for="email">Email:</label>
+		</div>
+		<div class="col-xs-9">
+		<input type="email" class="form-control" name="email" ng-model="email" required placeholder="Enter your email address">
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<span style="color:red" ng-show="CreateUserForm.username.$dirty && CreateUserForm.username.$invalid">
+				<span ng-show="CreateUserForm.username.$error.required">Username is required.</span>
+			</span>
+		</div>
+	</div>
+	<div class="form-group row">		
+		<div class="col-xs-3">
+		<label for="username">Username:</label>
+		</div>
+		<div class="col-xs-9">
+		<input type="text" class="form-control" name="username" ng-model="username" placeholder="Enter your username" required />
+		</div>
+	</div> 
+	<div class="form-group row">
+		<div class="col-xs-3">
+			<span style="color:red" ng-show="CreateUserForm.password.$dirty && CreateUserForm.password.$invalid">
+				<span ng-show="CreateUserForm.password.$error.required">Password is required.</span>
+				<span ng-show="CreateUserForm.password.$error.length && !CreateUserForm.password.$error.required">Password must be at least 8 characters long.</span>
+			</span>
+		</div>
+	</div>
+	<div class="form-group row">		
+		<div class="col-xs-3">
+		<label for="password">Password:</label>
+		</div>
+		<div class="col-xs-9">
+		<input type="password" class="form-control" name="password" ng-model="password" placeholder="Enter your password" required password-directive/>
+		</div>
+	</div>
 
-<div class="center">
-	<label for="user">Username:</label>
-	<input type="text" name="user" ng-model="user" required placeholder="Enter your username">
-</div>
-<div class="center">
-	<label for="user">First Name:</label>
-	<input type="text" name="first" ng-model="first" required placeholder="Enter your first name">
-</div>
-<div class="center">
-	<label for="user">Last Name:</label>
-	<input type="text" name="last" ng-model="last" required placeholder="Enter your last name">
-</div>
-<div class="center">
-	<label for="user">Email:</label>
-	<input type="email" name="email" ng-model="email" required placeholder="Enter your email address">
-</div>
-<div class="center">
-	<label for="password">Password:</label>
-	<input type="password" name="pass" ng-model="pass" required placeholder="Enter your password"/>
-</div>
-
-<div class="center">
-<button type="submit" ng-disabled="LoginForm.$invalid">Login</button>
-</div>
-
+	<div class="form-group">
+		<button type="submit" class="button">CREATE</button>
+		<span class="text-danger">{{ error }}</span>
+	</div>
 </form>
 </div>
 
