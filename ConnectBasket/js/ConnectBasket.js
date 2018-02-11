@@ -89,13 +89,13 @@ app.run(function($rootScope, $location, $state, LoginService) {
   });
   
   app.factory('LoginService', function() {
-    var admin = 'admin';
-    var pass = 'pass';
+
     var isAuthenticated = false;
     
     return {
       login : function(username, password) {
-        isAuthenticated = username === admin && password === pass;
+        $http.post("http://localhost/wsdl.php?method=check_login,username=" + username + ",password=" + password)
+		.then(function (response) {isAuthenticated = response.data.success;});
         return isAuthenticated;
       },
       isAuthenticated : function() {
