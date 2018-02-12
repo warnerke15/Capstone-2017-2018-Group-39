@@ -106,15 +106,20 @@ app.run(function($rootScope, $location, $state, LoginService) {
 			'email' : $scope.email
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
-		.then(function (response) {success = response.data.success; console.log('Response: ' + response.data.success);});
-		if (success)
+		.then(function (response) 
 		{
-			$state.transitionTo('home');
-		}
-		else 
-		{
-			console.log('Failure ' + success);
-		}
+			success = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+		
 		
     };
 	    
