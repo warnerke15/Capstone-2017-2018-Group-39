@@ -130,14 +130,34 @@ app.run(function($rootScope, $location, $state, LoginService) {
     
   });
   
-  app.factory('LoginService', function() {
+  app.factory('LoginService', function($http, $state) {
 
     var isAuthenticated = false;
+	var http = $http;
+	var state = $state;
     
     return {
       login : function(username, password) {
-        $http.post("http://localhost/wsdl.php?method=check_login,username=" + username + ",password=" + password)
-		.then(function (response) {isAuthenticated = response.data.success;});
+        http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'create_user',
+			'username' : username,
+			'password' : password,
+		};
+		http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			isAuthenticated = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (isAuthenticated)
+			{
+				state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + isAuthenticated);
+			}
+		});
         return isAuthenticated;
       },
       isAuthenticated : function() {
