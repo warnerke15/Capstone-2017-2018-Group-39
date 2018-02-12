@@ -65,6 +65,16 @@ app.run(function($rootScope, $location, $state, LoginService) {
         templateUrl : 'modules/CreateUser.html',
         controller : 'CreateUserController'
       })
+	  .state('addmessage', {
+        url : '/addmessage',
+        templateUrl : 'modules/AddMessage.html',
+        controller : 'AddMessageController'
+      })
+	  .state('viewmessages', {
+        url : '/viewmessages',
+        templateUrl : 'modules/ViewMessages.html',
+        controller : 'ViewMessagesController'
+      })
 	  .state('editprofile', {
         url : '/editprofile',
         templateUrl : 'modules/EditProfile.html',
