@@ -6,8 +6,6 @@ global $details;//make the connection vars global
 
 
 $data = json_decode( file_get_contents('php://input') );
-
-header("Location: http://www.google.com" + $data->method);
  
 if($data->method == "check_login")
 {
@@ -46,7 +44,6 @@ if($data->method == "check_login")
 
 else if($data->method == "create_user")
 {
-	header('Location: http://www.google.com');
 	/*$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$username = $_POST['username'];
@@ -59,7 +56,10 @@ else if($data->method == "create_user")
 	$email = $data->email;
 	$hashpass = password_hash($password, PASSWORD_DEFAULT);
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
-	
+	if ($conn->connect_error)
+	{
+		header("Location: http://www.google.com");
+	}
 	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, Email) Values(?,?,?,?,?)');
 	$stmt->bind_param('sssss', $username,$firstname,$lastname,$hashpass,$email); 
 
