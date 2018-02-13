@@ -60,6 +60,11 @@ app.run(function($rootScope, $location, $state, LoginService) {
         templateUrl : 'modules/CreatePet.html',
         controller : 'CreatePetController'
       })
+	  .state('createowner', {
+        url : '/createowner',
+        templateUrl : 'modules/CreateOwner.html',
+        controller : 'CreateOwnerController'
+      })
 	  .state('createuser', {
         url : '/createuser',
         templateUrl : 'modules/CreateUser.html',
