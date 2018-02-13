@@ -15,8 +15,8 @@ if($data->method == "check_login")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT Username, FirstName, LastName, EmailAddress FROM Users WHERE Username=? and Password=?');
-	$stmt->bind_param('ss', $username,$hashpass); 
+	$stmt = $conn->prepare('SELECT Username, FirstName, LastName, EmailAddress, Password FROM Users WHERE Username=?');
+	$stmt->bind_param('s', $username); 
 	
 	$username = $data->username;
 	$password = $data->password;
@@ -25,20 +25,24 @@ if($data->method == "check_login")
 	$stmt->execute();
 
 	$result = $stmt->get_result();
-	if ($result->num_rows > 0)
+	if ($result->num_rows == 1)
 	{
-		$success = true;
+		while ($row = $result->fetch_assoc()) {
+			if(password_verify($password, $row['Password']))
+			{
+				$User = $row['Username'];
+				$FirstName = $row["FirstName"];
+				$LastName = $row['LastName'];
+				$Email = $row['EmailAddress'];
+				$success = true;
+			}
+		}
 	}
 	else
 	{
 		$success = false;
 	}
-	while ($row = $result->fetch_assoc()) {
-		$User = $row['Username'];
-		$FirstName = $row["FirstName"];
-		$LastName = $row['LastName'];
-		$Email = $row['EmailAddress'];
-	}
+	
 
 	$jsonData=array();
 	$jsonData['success']=$success;
