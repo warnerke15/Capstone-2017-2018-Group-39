@@ -15,7 +15,7 @@ if($data->method == "check_login")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT Count(UsersTableID) FROM Users WHERE Username=? and Password=?');
+	$stmt = $conn->prepare('SELECT Username, FirstName, LastName, EmailAddress FROM Users WHERE Username=? and Password=?');
 	$stmt->bind_param('ss', $username,$hashpass); 
 	
 	$username = $data->username;
@@ -33,12 +33,19 @@ if($data->method == "check_login")
 	{
 		$success = false;
 	}
-	//while ($row = $result->fetch_assoc()) {
-		// do something with $row
-	//}
+	while ($row = $result->fetch_assoc()) {
+		$User = $row['Username'];
+		$FirstName = $row["FirstName"];
+		$LastName = $row['LastName'];
+		$Email = $row['EmailAddress'];
+	}
 
 	$jsonData=array();
 	$jsonData['success']=$success;
+	$jsonData['first']=$FirstName;
+	$jsonData['last']=$LastName;
+	$jsonData['username']=$User;
+	$jsonData['email']=$Email;
  
 	$conn->close();
 	echo json_encode($jsonData);

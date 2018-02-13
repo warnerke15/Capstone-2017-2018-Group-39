@@ -136,13 +136,22 @@ app.run(function($rootScope, $location, $state, LoginService) {
   });
   
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
-    $rootScope.title = "WELCOME TO CONNECTBASKET";
+    $rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
+	
+	if (!LoginService.isAuthenticated())
+	{
+		$state.transitionTo('login');
+	}
     
   });
   
   app.factory('LoginService', function($http, $state) {
 
     var isAuthenticated = false;
+	var firstName = '';
+	var lastName = '';
+	var username = '';
+	var email = '';
 	var http = $http;
 	var state = $state;
     
@@ -150,7 +159,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
       login : function(username, password) {
         http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
-			'method' : 'create_user',
+			'method' : 'check_login',
 			'username' : username,
 			'password' : password,
 		};
@@ -158,7 +167,14 @@ app.run(function($rootScope, $location, $state, LoginService) {
 		.then(function (response) 
 		{
 			isAuthenticated = response.data.success; 
+			firstName = response.data.first;
+			lastName = response.data.last;
+			username = response.data.username;
+			email = response.data.email;
 			console.log('Response: ' + response.data.success);
+			console.log('Name: ' + response.data.first + ' ' + response.data.last);
+			console.log('email: ' + response.data.email);
+			console.log('username: ' + response.data.username);
 			if (isAuthenticated)
 			{
 				state.transitionTo('home');
@@ -172,6 +188,9 @@ app.run(function($rootScope, $location, $state, LoginService) {
       },
       isAuthenticated : function() {
         return isAuthenticated;
+      },
+	  firstName : function() {
+        return firstName;
       }
     };
     
