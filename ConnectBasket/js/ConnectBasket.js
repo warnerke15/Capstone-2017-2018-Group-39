@@ -143,9 +143,14 @@ app.run(function($rootScope, $location, $state, LoginService) {
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
     $rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 	
+	
 	if (!LoginService.isAuthenticated())
 	{
 		$state.transitionTo('login');
+	}
+	else
+	{
+		$rootScope.isAuth = true;
 	}
     
   });
@@ -217,4 +222,6 @@ app.run(function($rootScope, $location, $state, LoginService) {
     }
   };
 });
+
+
   

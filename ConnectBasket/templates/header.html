@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a ui-sref="login"><span class="glyphicon glyphicon-check"></span> LOGIN</a>
                 </li>
-				<li class="dropdown">
+				<li class="dropdown" ng-if="isAuth">
                     <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-comment"></span> MESSAGES <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a ui-sref="addmessage">Add New Message</a>
@@ -25,8 +25,8 @@
 						</li>
                     </ul>
                 </li>
-				<li><a ui-sref="editprofile"> <span class="glyphicon glyphicon-pencil"></span> EDIT PROFILE</a>
-                <li class="dropdown">
+				<li ng-if="isAuth"><a ui-sref="editprofile"> <span class="glyphicon glyphicon-pencil"></span> EDIT PROFILE</a>
+                <li class="dropdown" ng-if="isAuth">
                     <a class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> ADMIN <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a ui-sref="createuser">Create User</a>
