@@ -30,16 +30,6 @@ $routeProvider
 
 var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
-app.run(function($rootScope, $location, $state, LoginService) {
-    $rootScope.$on('$stateChangeStart', 
-      function(event, toState, toParams, fromState, fromParams){ 	  
-		
-      });
-    
-      if(!LoginService.isAuthenticated()) {
-        $state.transitionTo('login');
-      }
-  });
   
   app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -228,6 +218,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
       isAuthenticated : function() {
 		if (!isAuthenticated)
 		{
+			console.log("Not currently authenticated. Check PHP Session");
 			http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 			$data = {
 				'method' : 'check_auth',
