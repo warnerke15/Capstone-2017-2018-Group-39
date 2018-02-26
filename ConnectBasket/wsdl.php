@@ -1,4 +1,5 @@
 <?php
+session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 include 'config.php';//make the cofig file include
@@ -50,12 +51,32 @@ if($data->method == "check_login")
 	$jsonData['last']=$LastName;
 	$jsonData['username']=$User;
 	$jsonData['email']=$Email;
+	
+	$_SESSION['authenticated'] = true;
+	$_SESSION['firstname'] = $FirstName;
+	$_SESSION['lastname'] = $LastName;
+	$_SESSION['email'] = $Email;
+	$_SESSION['username'] = $User;
+	
  
 	$conn->close();
 	echo json_encode($jsonData);
  
 }
 
+else if($data->method == "check_login")
+{	
+	
+	$jsonData=array();
+	$jsonData['authenticated']=$_SESSION['authenticated'];
+	$jsonData['firstname']=$_SESSION['firstname'];
+	$jsonData['lastname']=$_SESSION['lastname'];
+	$jsonData['username']=$_SESSION['username'];
+	$jsonData['email']=$_SESSION['email'];
+	
+ 	echo json_encode($jsonData);
+ 
+}
 
 else if($data->method == "create_user")
 {

@@ -197,6 +197,27 @@ app.run(function($rootScope, $location, $state, LoginService) {
         return isAuthenticated;
       },
       isAuthenticated : function() {
+		if (!isAuthenticated)
+		{
+			http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+			$data = {
+				'method' : 'check_auth',
+			};
+			http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data) 
+			.then(function (response) 
+			{
+				isAuthenticated = response.data.authenticated; 
+				firstName = response.data.firstname;
+				lastName = response.data.lastname;
+				username = response.data.username;
+				email = response.data.email;
+				console.log('Response: ' + response.data.success);
+				console.log('Name: ' + response.data.first + ' ' + response.data.last);
+				console.log('email: ' + response.data.email);
+				console.log('username: ' + response.data.username);
+				
+			});
+		}
         return isAuthenticated;
       },
 	  firstName : function() {
