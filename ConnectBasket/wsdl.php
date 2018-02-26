@@ -89,6 +89,16 @@ else if($data->method == "check_auth")
  
 }
 
+else if($data->method == "logout")
+{	
+	// remove all session variables
+	session_unset(); 
+
+	// destroy the session 
+	session_destroy(); 
+	
+}
+
 else if($data->method == "create_user")
 {
 	$firstname = $data->firstname;

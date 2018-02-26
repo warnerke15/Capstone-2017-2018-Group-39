@@ -50,6 +50,11 @@ app.run(function($rootScope, $location, $state, LoginService) {
         templateUrl : 'modules/Login.html',
         controller : 'LoginController'
       })
+	  .state('logout', {
+        url : '/logout',
+        templateUrl : 'modules/Logout.html',
+        controller : 'LogoutController'
+      })
       .state('home', {
         url : '/home',
         templateUrl : 'modules/Home.html',
@@ -103,8 +108,32 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	    
   });
   
+  app.controller('LogoutController', function($scope, $rootScope, $stateParams, $state, LoginService) {
+    $rootScope.title = "LOGOUT";
+		
+    http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+	$data = {
+		'method' : 'logout',
+	};
+	http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data);
+	
+	LoginService.unauthenticate();
+	    
+  });
+  
   app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http) {
-    $rootScope.title = "CREATE USER";
+    
+	//Put this code at the top of every controller
+	if (!LoginService.isAuthenticated())
+	{
+		$state.transitionTo('login');
+	}
+	else
+	{
+		$rootScope.isAuth = true;
+	}
+	
+	$rootScope.title = "CREATE USER";
 		
 	var success = false;	
 		
@@ -143,7 +172,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
     $rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 	
-	
+	//Put this code at the top of every controller
 	if (!LoginService.isAuthenticated())
 	{
 		$state.transitionTo('login');
@@ -222,6 +251,9 @@ app.run(function($rootScope, $location, $state, LoginService) {
       },
 	  firstName : function() {
         return firstName;
+      },
+	  unauthenticate : function() {
+        isAuthenticated = false;
       }
     };
     
