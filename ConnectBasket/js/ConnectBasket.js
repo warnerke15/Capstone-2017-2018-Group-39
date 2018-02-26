@@ -32,8 +32,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
 app.run(function($rootScope, $location, $state, LoginService) {
     $rootScope.$on('$stateChangeStart', 
-      function(event, toState, toParams, fromState, fromParams){ 
-          console.log('Changed state to: ' + toState);
+      function(event, toState, toParams, fromState, fromParams){ 	  
+		
       });
     
       if(!LoginService.isAuthenticated()) {
@@ -123,7 +123,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	    
   });
   
-  app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http) {
+  app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     
 	//Put this code at the top of every controller
 	if (!LoginService.isAuthenticated())
@@ -177,6 +177,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	//Put this code at the top of every controller
 	if (!LoginService.isAuthenticated())
 	{
+		console.log("Not Authenticated");
 		$state.transitionTo('login');
 	}
 	else
@@ -212,10 +213,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
 			lastName = response.data.last;
 			username = response.data.username;
 			email = response.data.email;
-			console.log('Response: ' + response.data.success);
-			console.log('Name: ' + response.data.first + ' ' + response.data.last);
-			console.log('email: ' + response.data.email);
-			console.log('username: ' + response.data.username);
+			
 			if (isAuthenticated)
 			{
 				state.transitionTo('home');

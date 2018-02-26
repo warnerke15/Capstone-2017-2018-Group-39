@@ -52,7 +52,7 @@ if($data->method == "check_login")
 	$jsonData['username']=$User;
 	$jsonData['email']=$Email;
 	
-	$_SESSION['authenticated'] = true;
+	$_SESSION['authenticated'] = $success;
 	$_SESSION['firstname'] = $FirstName;
 	$_SESSION['lastname'] = $LastName;
 	$_SESSION['email'] = $Email;
@@ -68,7 +68,7 @@ else if($data->method == "check_auth")
 {	
 	
 	$jsonData=array();
-	if ($_SESSION['authenticated'])
+	if (isset($_SESSION['authenticated']))
 	{
 		$jsonData['authenticated']=$_SESSION['authenticated'];
 		$jsonData['firstname']=$_SESSION['firstname'];
