@@ -211,8 +211,8 @@ app.run(function($rootScope, $location, $state, LoginService) {
 				lastName = response.data.lastname;
 				username = response.data.username;
 				email = response.data.email;
-				console.log('Response: ' + response.data.success);
-				console.log('Name: ' + response.data.first + ' ' + response.data.last);
+				console.log('Response: ' + response.data.authenticated);
+				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
 				console.log('email: ' + response.data.email);
 				console.log('username: ' + response.data.username);
 				

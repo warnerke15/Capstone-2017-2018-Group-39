@@ -68,11 +68,22 @@ else if($data->method == "check_auth")
 {	
 	
 	$jsonData=array();
-	$jsonData['authenticated']=$_SESSION['authenticated'];
-	$jsonData['firstname']=$_SESSION['firstname'];
-	$jsonData['lastname']=$_SESSION['lastname'];
-	$jsonData['username']=$_SESSION['username'];
-	$jsonData['email']=$_SESSION['email'];
+	if ($_SESSION['authenticated'])
+	{
+		$jsonData['authenticated']=$_SESSION['authenticated'];
+		$jsonData['firstname']=$_SESSION['firstname'];
+		$jsonData['lastname']=$_SESSION['lastname'];
+		$jsonData['username']=$_SESSION['username'];
+		$jsonData['email']=$_SESSION['email'];
+	}
+	else
+	{
+		$jsonData['authenticated']=false;
+		$jsonData['firstname']=$_SESSION['firstname'];
+		$jsonData['lastname']=$_SESSION['lastname'];
+		$jsonData['username']=$_SESSION['username'];
+		$jsonData['email']=$_SESSION['email'];
+	}	
 	
  	echo json_encode($jsonData);
  
