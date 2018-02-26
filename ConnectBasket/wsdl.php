@@ -64,7 +64,7 @@ if($data->method == "check_login")
  
 }
 
-else if($data->method == "check_login")
+else if($data->method == "check_auth")
 {	
 	
 	$jsonData=array();
