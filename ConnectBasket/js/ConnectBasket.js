@@ -242,7 +242,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	  firstName : function() {
         return firstName;
       },
-	  firstName : function() {
+	  getAuthenticated : function() {
         return isAuthenticated;
       },
 	  unauthenticate : function() {
