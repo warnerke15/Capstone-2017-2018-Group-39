@@ -117,6 +117,8 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	};
 	http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data);
 	
+	$rootScope.isAuth = false;
+	
 	LoginService.unauthenticate();
 	    
   });
