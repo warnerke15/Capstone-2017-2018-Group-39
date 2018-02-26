@@ -108,14 +108,14 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	    
   });
   
-  app.controller('LogoutController', function($scope, $rootScope, $stateParams, $state, LoginService) {
+  app.controller('LogoutController', function($scope, $rootScope, $stateParams, $state, LoginService, $http) {
     $rootScope.title = "LOGOUT";
 		
-    http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 	$data = {
 		'method' : 'logout',
 	};
-	http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data);
+	$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data);
 	
 	$rootScope.isAuth = false;
 	
