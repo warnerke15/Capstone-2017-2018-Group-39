@@ -235,13 +235,15 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
 				console.log('email: ' + response.data.email);
 				console.log('username: ' + response.data.username);
-				
+				getAuthenticated();
 			});
 		}
-        return isAuthenticated;
       },
 	  firstName : function() {
         return firstName;
+      },
+	  firstName : function() {
+        return isAuthenticated;
       },
 	  unauthenticate : function() {
         isAuthenticated = false;
