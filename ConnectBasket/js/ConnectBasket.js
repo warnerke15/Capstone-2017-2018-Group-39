@@ -30,16 +30,6 @@ $routeProvider
 
 var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
-app.run(function($rootScope, $location, $state, LoginService) {
-    $rootScope.$on('$stateChangeStart', 
-      function(event, toState, toParams, fromState, fromParams){ 
-          console.log('Changed state to: ' + toState);
-      });
-    
-      if(!LoginService.isAuthenticated()) {
-        $state.transitionTo('login');
-      }
-  });
   
   app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -49,6 +39,11 @@ app.run(function($rootScope, $location, $state, LoginService) {
         url : '/login',
         templateUrl : 'modules/Login.html',
         controller : 'LoginController'
+      })
+	  .state('logout', {
+        url : '/logout',
+        templateUrl : 'modules/Logout.html',
+        controller : 'LogoutController'
       })
       .state('home', {
         url : '/home',
@@ -103,8 +98,34 @@ app.run(function($rootScope, $location, $state, LoginService) {
 	    
   });
   
-  app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http) {
-    $rootScope.title = "CREATE USER";
+  app.controller('LogoutController', function($scope, $rootScope, $stateParams, $state, LoginService, $http) {
+    $rootScope.title = "LOGOUT";
+		
+    $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+	$data = {
+		'method' : 'logout',
+	};
+	$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data);
+	
+	$rootScope.isAuth = false;
+	
+	LoginService.unauthenticate();
+	    
+  });
+  
+  app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    
+	//Put this code at the top of every controller
+	if (!LoginService.isAuthenticated())
+	{
+		$state.transitionTo('login');
+	}
+	else
+	{
+		$rootScope.isAuth = true;
+	}
+	
+	$rootScope.title = "CREATE USER";
 		
 	var success = false;	
 		
@@ -177,9 +198,10 @@ app.run(function($rootScope, $location, $state, LoginService) {
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
     $rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 	
-	
+	//Put this code at the top of every controller
 	if (!LoginService.isAuthenticated())
 	{
+		console.log("Not Authenticated");
 		$state.transitionTo('login');
 	}
 	else
@@ -215,10 +237,7 @@ app.run(function($rootScope, $location, $state, LoginService) {
 			lastName = response.data.last;
 			username = response.data.username;
 			email = response.data.email;
-			console.log('Response: ' + response.data.success);
-			console.log('Name: ' + response.data.first + ' ' + response.data.last);
-			console.log('email: ' + response.data.email);
-			console.log('username: ' + response.data.username);
+			
 			if (isAuthenticated)
 			{
 				state.transitionTo('home');
@@ -231,10 +250,38 @@ app.run(function($rootScope, $location, $state, LoginService) {
         return isAuthenticated;
       },
       isAuthenticated : function() {
-        return isAuthenticated;
+        if (!isAuthenticated)
+		{
+			console.log("Not currently authenticated. Check PHP Session");
+			http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+			$data = {
+				'method' : 'check_auth',
+			};
+			return http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data) 
+			.then(function (response) 
+			{
+				isAuthenticated = response.data.authenticated; 
+				firstName = response.data.firstname;
+				lastName = response.data.lastname;
+				username = response.data.username;
+				email = response.data.email;
+				console.log('Response: ' + response.data.authenticated);
+				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
+				console.log('email: ' + response.data.email);
+				console.log('username: ' + response.data.username);
+				return isAuthenticated;
+			});
+		}
+		else
+		{
+			return isAuthenticated;
+		}
       },
 	  firstName : function() {
         return firstName;
+      },
+	  unauthenticate : function() {
+        isAuthenticated = false;
       }
     };
     
