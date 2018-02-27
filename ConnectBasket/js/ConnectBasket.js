@@ -160,8 +160,17 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
-  app.controller('CreateMessageController', function($scope, $rootScope, $stateParams, $state, $http) {
-    $rootScope.title = "CREATE MESSAGE";
+  app.controller('AddMessageController', function($scope, $rootScope, $stateParams, $state, $http) {
+    //Put this code at the top of every controller
+	if (!LoginService.isAuthenticated())
+	{
+		$state.transitionTo('login');
+	}
+	else
+	{
+		$rootScope.title = "ADD MESSAGE";
+		$rootScope.isAuth = true;
+	}
 		
 	var success = false;	
 		
