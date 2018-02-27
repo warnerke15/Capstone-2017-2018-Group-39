@@ -160,7 +160,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
-  app.controller('AddMessageController', function($scope, $rootScope, $stateParams, $state, $http) {
+  app.controller('AddMessageController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     //Put this code at the top of every controller
 	if (!LoginService.isAuthenticated())
 	{
@@ -179,7 +179,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		.then(function (response) {success = response.data.success; console.log('Response: ' + response.data.success);});*/
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
-			'method' : 'create_user',
+			'method' : 'create_message',
 			'username' : $scope.username,
 			'body' : $scope.body
 		};
