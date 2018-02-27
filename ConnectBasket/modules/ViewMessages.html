@@ -6,8 +6,13 @@
         <h2>ALL MESSAGES</h2>
         
             <table>
+                <tr>
+                    <th>Message Body</th>
+                    <th>View Message Details</th>
+                    
+                </tr>
                 <tr ng-repeat="x in messages">
-                    <td>{{ x.Body }}</td>
+                    <td>{{ x.Message }}</td>
                     <td>
                         <button type="submit" class="button" >
                             DETAILS
