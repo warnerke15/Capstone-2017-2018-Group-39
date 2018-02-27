@@ -265,4 +265,27 @@ else if($data->method == "create_message")
 	echo json_encode($jsonData);
  
 }
+
+else if($data->method == "get_messages")
+{
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('SELECT Body FROM Messages');
+
+	$stmt->execute();
+
+	$result = $stmt->get_result();
+
+	$jsonData=array();
+	$jsonData['messages']=$result;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
 ?>

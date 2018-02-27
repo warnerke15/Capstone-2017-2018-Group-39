@@ -75,6 +75,11 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
         templateUrl : 'modules/ViewMessages.html',
         controller : 'ViewMessagesController'
       })
+	  .state('addnote', {
+        url : '/addnote',
+        templateUrl : 'modules/AddNote.html',
+        controller : 'AddNoteController'
+      })
 	  .state('editprofile', {
         url : '/editprofile',
         templateUrl : 'modules/EditProfile.html',
@@ -121,8 +126,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	var success = false;	
 		
     $scope.formSubmit = function() {
-		/*$http.post("http://web.engr.oregonstate.edu/~fowlerh/Capstone-2017-2018-Group-39/ConnectBasket/wsdl.php?method=create_user,username=" + $scope.username + ",password=" + $scope.password + ",email=" + $scope.email + ",firstname=" + $scope.first + ",lastname=" + $scope.last)
-		.then(function (response) {success = response.data.success; console.log('Response: ' + response.data.success);});*/
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'create_user',
@@ -155,10 +158,27 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "VIEW MESSAGES";
 	
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_messages'		
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.messages = response.data.messages; 
+		});
+	
   });
   
   app.controller('EditProfileController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "EDIT PROFILE";
+	
+  });
+  
+  app.controller('AddNoteController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "ADD NOTE";
+	
+	
 	
   });
   
