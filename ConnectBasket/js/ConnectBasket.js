@@ -244,8 +244,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	var success = false;	
 		
     $scope.formSubmit = function() {
-		/*$http.post("http://web.engr.oregonstate.edu/~fowlerh/Capstone-2017-2018-Group-39/ConnectBasket/wsdl.php?method=create_message,username=" + $scope.username + ",body=" + $scope.body)
-		.then(function (response) {success = response.data.success; console.log('Response: ' + response.data.success);});*/
+
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'create_message',
