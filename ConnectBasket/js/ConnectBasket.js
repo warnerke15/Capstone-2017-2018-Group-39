@@ -215,7 +215,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 				console.log('email: ' + response.data.email);
 				console.log('username: ' + response.data.username);
 				return isAuthenticated;
-			});)
+			});
 	
 	if (!LoginService.isAuthenticated())
 	{
