@@ -279,6 +279,30 @@ else if($data->method == "get_messages")
 
 	$stmt->execute();
 
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'Message' => $row['Body']);
+	}
+
+	$conn->close();
+	echo json_encode(array('messages' => $arr)); 
+}
+
+else if($data->method == "add_note")
+{
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('SELECT Body FROM Messages');
+
+	$stmt->execute();
+
 	$result = $stmt->get_result();
 
 	$jsonData=array();

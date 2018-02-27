@@ -166,6 +166,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		.then(function (response) 
 		{
 			$scope.messages = response.data.messages; 
+			
 		});
 	
   });
