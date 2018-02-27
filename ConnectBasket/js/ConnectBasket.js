@@ -165,6 +165,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
     $rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 	
 	//Put this code at the top of every controller
+	LoginService.checkAuthentication();
 	if (!LoginService.isAuthenticated())
 	{
 		console.log("Not Authenticated");
@@ -216,8 +217,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
         return isAuthenticated;
       },
       isAuthenticated : function() {
-		var done = false;
-		if (!isAuthenticated)
+        return isAuthenticated;
+      },
+	  firstName : function() {
+        return firstName;
+      },
+	  checkAuthentication : function() {
+        if (!isAuthenticated)
 		{
 			console.log("Not currently authenticated. Check PHP Session");
 			http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
@@ -236,17 +242,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
 				console.log('email: ' + response.data.email);
 				console.log('username: ' + response.data.username);
-				done = true;
 			});
 		}
-		while (!done)
-		{
-			continue;
-		}
-        return isAuthenticated;
-      },
-	  firstName : function() {
-        return firstName;
+		return isAuthenticated;
       },
 	  unauthenticate : function() {
         isAuthenticated = false;
