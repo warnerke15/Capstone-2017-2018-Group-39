@@ -79,10 +79,10 @@ else if($data->method == "check_auth")
 	else
 	{
 		$jsonData['authenticated']=false;
-		$jsonData['firstname']=$_SESSION['firstname'];
-		$jsonData['lastname']=$_SESSION['lastname'];
-		$jsonData['username']=$_SESSION['username'];
-		$jsonData['email']=$_SESSION['email'];
+		$jsonData['firstname']="";
+		$jsonData['lastname']="";
+		$jsonData['username']="";
+		$jsonData['email']="";
 	}	
 	
  	echo json_encode($jsonData);

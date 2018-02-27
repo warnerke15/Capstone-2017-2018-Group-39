@@ -213,7 +213,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	}
 	else
 	{
-		console.log("Auth Success");
+		console.log("Auth Success" + LoginService.isAuthenticated());
 		$rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 		$rootScope.isAuth = true;
 	}
