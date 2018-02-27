@@ -205,21 +205,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
 	
-	//Put this code at the top of every controller
-	var isAuthenticated = false;
-	var auth = LoginService.isAuthenticated();
-	auth.then(function (response) 
-			{
-				console.log('Response: ' + response.data.authenticated);
-				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
-				console.log('email: ' + response.data.email);
-				console.log('username: ' + response.data.username);
-				return isAuthenticated;
-			});
-	
+	//Put this code at the top of every controller	
 	if (!LoginService.isAuthenticated())
 	{
-		console.log("Not Auth");
 		$state.transitionTo('login');
 	}
 	else
@@ -269,7 +257,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			return isAuthenticated;
 		});  
       },
-      isAuthenticated : function() {
+      /*isAuthenticated : function() {
         if (!isAuthenticated)
 		{
 			console.log("Not currently authenticated. Check PHP Session");
@@ -292,6 +280,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		{
 			return isAuthenticated;
 		}
+      },*/
+	  isAuthenticated : function() {
+        return isAuthenticated;
       },
 	  firstName : function() {
         return firstName;
