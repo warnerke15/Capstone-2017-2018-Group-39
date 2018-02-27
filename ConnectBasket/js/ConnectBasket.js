@@ -216,6 +216,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
         return isAuthenticated;
       },
       isAuthenticated : function() {
+		var done = false;
 		if (!isAuthenticated)
 		{
 			console.log("Not currently authenticated. Check PHP Session");
@@ -235,15 +236,17 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
 				console.log('email: ' + response.data.email);
 				console.log('username: ' + response.data.username);
-				getAuthenticated();
+				done = true;
 			});
 		}
+		while (!done)
+		{
+			continue;
+		}
+        return isAuthenticated;
       },
 	  firstName : function() {
         return firstName;
-      },
-	  getAuthenticated : function() {
-        return isAuthenticated;
       },
 	  unauthenticate : function() {
         isAuthenticated = false;
