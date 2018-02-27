@@ -238,9 +238,13 @@ else if($data->method == "create_message")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	header("Location: https://www.google.com");
 	$stmt = $conn->prepare('Insert Into Messages(Recipient, Body) Values(?,?)');
 	$stmt->bind_param('ss', $username,$body); 
+	
+	$stmt->execute();
+	
+	$stmt = $conn->prepare('SELECT Count(MessagesTableID) FROM Messages WHERE Body=?');
+	$stmt->bind_param('s', $body); 
 
 	$stmt->execute();
 
