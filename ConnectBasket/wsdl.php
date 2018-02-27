@@ -98,4 +98,37 @@ else if($data->method == "create_user")
 	echo json_encode($jsonData);
  
 }
+
+else if($data->method == "create_message")
+{
+	$username = $data->username;
+	$body = $data->body;
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('Insert Into Messages(Username, Body) Values(?,?)');
+	$stmt->bind_param('ss', $username,$body); 
+
+	$stmt->execute();
+
+	$result = $stmt->get_result();
+	if ($result->num_rows > 0)
+	{
+		$success = true;
+	}
+	else
+	{
+		$success = false;
+	}
+
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
 ?>
