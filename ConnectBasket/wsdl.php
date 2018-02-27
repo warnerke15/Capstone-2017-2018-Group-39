@@ -238,6 +238,7 @@ else if($data->method == "create_message")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
+	header("Location: https://www.google.com");
 	$stmt = $conn->prepare('Insert Into Messages(Recipient, Body) Values(?,?)');
 	$stmt->bind_param('ss', $username,$body); 
 
