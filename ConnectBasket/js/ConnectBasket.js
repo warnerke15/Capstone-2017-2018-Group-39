@@ -206,15 +206,24 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
 	
 	//Put this code at the top of every controller
+	var isAuthenticated = false;
 	var auth = LoginService.isAuthenticated();
-	if (auth)
+	auth.then(function (response) 
+			{
+				console.log('Response: ' + response.data.authenticated);
+				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
+				console.log('email: ' + response.data.email);
+				console.log('username: ' + response.data.username);
+				return isAuthenticated;
+			});)
+	
+	if (!LoginService.isAuthenticated())
 	{
 		console.log("Not Auth");
 		$state.transitionTo('login');
 	}
 	else
 	{
-		console.log("Auth Success");
 		$rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 		$rootScope.isAuth = true;
 	}
@@ -276,10 +285,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 				lastName = response.data.lastname;
 				username = response.data.username;
 				email = response.data.email;
-				console.log('Response: ' + response.data.authenticated);
-				console.log('Name: ' + response.data.firstname + ' ' + response.data.lastname);
-				console.log('email: ' + response.data.email);
-				console.log('username: ' + response.data.username);
 				return isAuthenticated;
 			});
 		}
