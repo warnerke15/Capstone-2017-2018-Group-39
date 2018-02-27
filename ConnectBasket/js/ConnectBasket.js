@@ -122,10 +122,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	}
 	else
 	{
+		$rootScope.title = "CREATE USER";
 		$rootScope.isAuth = true;
 	}
-	
-	$rootScope.title = "CREATE USER";
 		
 	var success = false;	
 		
@@ -161,8 +160,17 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
-  app.controller('CreateMessageController', function($scope, $rootScope, $stateParams, $state, $http) {
-    $rootScope.title = "CREATE MESSAGE";
+  app.controller('AddMessageController', function($scope, $rootScope, $stateParams, $state, $http) {
+    //Put this code at the top of every controller
+	if (!LoginService.isAuthenticated())
+	{
+		$state.transitionTo('login');
+	}
+	else
+	{
+		$rootScope.title = "ADD MESSAGE";
+		$rootScope.isAuth = true;
+	}
 		
 	var success = false;	
 		
@@ -196,18 +204,21 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
-    $rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 	
 	//Put this code at the top of every controller
-	if (!LoginService.isAuthenticated())
+	var auth = LoginService.isAuthenticated();
+	if (auth)
 	{
-		console.log("Not Authenticated");
+		console.log("Not Auth");
 		$state.transitionTo('login');
 	}
 	else
 	{
+		console.log("Auth Success");
+		$rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 		$rootScope.isAuth = true;
 	}
+	
     
   });
   
@@ -229,7 +240,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			'username' : username,
 			'password' : password,
 		};
-		http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		return http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
 			isAuthenticated = response.data.success; 
@@ -246,8 +257,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			{
 				console.log('Failure ' + isAuthenticated);
 			}
-		});
-        return isAuthenticated;
+			return isAuthenticated;
+		});  
       },
       isAuthenticated : function() {
         if (!isAuthenticated)
