@@ -208,10 +208,12 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	//Put this code at the top of every controller
 	if (!LoginService.isAuthenticated())
 	{
+		Console.log("Not Auth");
 		$state.transitionTo('login');
 	}
 	else
 	{
+		Console.log("Auth Success");
 		$rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 		$rootScope.isAuth = true;
 	}
