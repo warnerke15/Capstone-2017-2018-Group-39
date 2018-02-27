@@ -141,7 +141,7 @@ else if($data->method == "create_message")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Messages(Username, Body) Values(?,?)');
+	$stmt = $conn->prepare('Insert Into Messages(Recipient, Body) Values(?,?)');
 	$stmt->bind_param('ss', $username,$body); 
 
 	$stmt->execute();
