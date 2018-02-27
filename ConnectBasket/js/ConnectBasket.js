@@ -115,16 +115,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   
   app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     
-	//Put this code at the top of every controller
-	if (!LoginService.isAuthenticated())
-	{
-		$state.transitionTo('login');
-	}
-	else
-	{
-		$rootScope.title = "CREATE USER";
-		$rootScope.isAuth = true;
-	}
+	$rootScope.title = "CREATE USER";
+	
 		
 	var success = false;	
 		
@@ -160,17 +152,29 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
+  app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "VIEW MESSAGES";
+	
+  });
+  
+  app.controller('EditProfileController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "EDIT PROFILE";
+	
+  });
+  
+  app.controller('CreateOwnerController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "CREATE OWNER";
+	
+  });
+  
+  app.controller('CreatePetController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "CREATE PET";
+	
+  });
+  
   app.controller('AddMessageController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    //Put this code at the top of every controller
-	if (!LoginService.isAuthenticated())
-	{
-		$state.transitionTo('login');
-	}
-	else
-	{
-		$rootScope.title = "ADD MESSAGE";
-		$rootScope.isAuth = true;
-	}
+    $rootScope.title = "ADD MESSAGE";
+	
 		
 	var success = false;	
 		
