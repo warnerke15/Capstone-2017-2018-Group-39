@@ -145,22 +145,25 @@ else if($data->method == "create_owner")
 {
 	$firstname = $data->firstname;
 	$lastname = $data->lastname;
-	$username = $data->phonenumber;
-	$password = $data->email;
+	$address = $data->address;
+	$city = $data->city;
+	$state = $data->state;
+	$zipcode = $data->zipcode;
+	$phone = $data->phone;
 	$email = $data->email;
-	$hashpass = password_hash($password, PASSWORD_DEFAULT);
+	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, EmailAddress) Values(?,?,?,?,?)');
-	$stmt->bind_param('sssss', $username,$lastname,$firstname,$hashpass,$email); 
+	$stmt = $conn->prepare('Insert Into Owners(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, EmailAddress) Values(?,?,?,?,?,?,?,?)');
+	$stmt->bind_param('ssssssss', $firstname,$lastname,$address,$city,$state,$zipcode,$phone,$email); 
 
 	$stmt->execute();
 	
-	$stmt = $conn->prepare('SELECT Count(UsersTableID) FROM Users WHERE Username=? and Password=?');
-	$stmt->bind_param('ss', $username,$hashpass); 
+	$stmt = $conn->prepare('SELECT Count(OwnersTableID) FROM Owners WHERE FirstName=? and LastName=?');
+	$stmt->bind_param('ss', $firstname,$lastname); 
 
 
 	$stmt->execute();
@@ -185,24 +188,24 @@ else if($data->method == "create_owner")
 
 else if($data->method == "create_pet")
 {
-	$firstname = $data->firstname;
-	$lastname = $data->lastname;
-	$username = $data->username;
-	$password = $data->password;
-	$email = $data->email;
-	$hashpass = password_hash($password, PASSWORD_DEFAULT);
+	$name = $data->name;
+	$age = $data->age;
+	$species = $data->species;
+	$breed = $data->breed;
+	$color = $data->color;
+	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, EmailAddress) Values(?,?,?,?,?)');
-	$stmt->bind_param('sssss', $username,$lastname,$firstname,$hashpass,$email); 
+	$stmt = $conn->prepare('Insert Into Pets(Name, Age, Species, Breed, Color) Values(?,?,?,?,?)');
+	$stmt->bind_param('sssss', $name,$age,$species,$breed,$color); 
 
 	$stmt->execute();
 	
-	$stmt = $conn->prepare('SELECT Count(UsersTableID) FROM Users WHERE Username=? and Password=?');
-	$stmt->bind_param('ss', $username,$hashpass); 
+	$stmt = $conn->prepare('SELECT Count(PetsTableID) FROM Pets WHERE Name=? and Age=?');
+	$stmt->bind_param('ss', $name,$age); 
 
 
 	$stmt->execute();

@@ -2,90 +2,68 @@
 </div>
 
 <div class="col-xs-6 orangeBox">
-    <form name="CreateUserForm" ng-submit="formSubmit()" novalidate>
+    <form name="CreatePetForm" ng-submit="formSubmit()" novalidate>
         <p>
             <span style="color:red">* All fields are required</span>
         </p>
         <div class="form-group row">
             <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateUserForm.first.$dirty && CreateUserForm.first.$invalid">
-                    <span ng-show="CreateUserForm.first.$error.required">Pet name is required.</span>
+                <span style="color:red" ng-show="CreatePetForm.name.$dirty && CreatePetForm.name.$invalid">
+                    <span ng-show="CreatePetForm.name.$error.required">Pet name is required.</span>
                 </span>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-xs-3">
-                <label for="first">Pet Name:</label>
+                <label for="name">Pet Name:</label>
             </div>
             <div class="col-xs-9">
-                <input type="text" class="form-control" name="first" ng-model="first" required placeholder="Enter the pet's name">
+                <input type="text" class="form-control" name="name" ng-model="name" required placeholder="Enter the pet's name">
             </div>
         </div>
         <div class="form-group row">
             <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateUserForm.last.$dirty && CreateUserForm.last.$invalid">
-                    <span ng-show="CreateUserForm.last.$error.required">Pet species is required.</span>
+                <span style="color:red" ng-show="CreatePetForm.species.$dirty && CreatePetForm.species.$invalid">
+                    <span ng-show="CreatePetForm.species.$error.required">Pet species is required.</span>
                 </span>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-xs-3">
-                <label for="last">Pet Species:</label>
+                <label for="species">Pet Species:</label>
             </div>
             <div class="col-xs-9">
-                <input type="text" class="form-control" name="last" ng-model="last" required placeholder="Enter pet species">
+                <input type="text" class="form-control" name="species" ng-model="species" required placeholder="Enter pet species">
             </div>
         </div>
-        <div class="form-group row">
+		<div class="form-group row">
             <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateUserForm.email.$dirty && CreateUserForm.email.$invalid">
-                    <span ng-show="CreateUserForm.email.$error.required">Email is required.</span>
-                    <span ng-show="CreateUserForm.email.$error.email">Invalid email address.</span>
-                </span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="email">Pet breed:</label>
+                <label for="breed">Pet breed:</label>
             </div>
             <div class="col-xs-9">
-                <input type="email" class="form-control" name="email" ng-model="email" required placeholder="Enter pet breed">
+                <input type="text" class="form-control" name="breed" ng-model="breed" placeholder="Enter pet breed">
             </div>
         </div>
-        <div class="form-group row">
+		<div class="form-group row">
             <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateUserForm.username.$dirty && CreateUserForm.username.$invalid">
-                    <span ng-show="CreateUserForm.username.$error.required">Pet age is required.</span>
-                </span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="username">Pet age:</label>
+                <label for="age">Pet age:</label>
             </div>
             <div class="col-xs-9">
-                <input type="text" class="form-control" name="username" ng-model="username" placeholder="Enter pet age" required />
+                <input type="text" class="form-control" name="age" ng-model="age" placeholder="Enter pet age">
             </div>
         </div>
-        <div class="form-group row">
+		<div class="form-group row">
             <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateUserForm.password.$dirty && CreateUserForm.password.$invalid">
-                    <span ng-show="CreateUserForm.password.$error.required">Password is required.</span>
-                    <span ng-show="CreateUserForm.password.$error.length && !CreateUserForm.password.$error.required">Password must be at least 8 characters long.</span>
-                </span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="password">Password:</label>
+                <label for="color">Pet color:</label>
             </div>
             <div class="col-xs-9">
-                <input type="password" class="form-control" name="password" ng-model="password" placeholder="Enter your password" required password-directive />
+                <input type="text" class="form-control" name="color" ng-model="color" placeholder="Enter pet color">
             </div>
         </div>
+        
 
         <div class="form-group">
-            <button type="submit" class="button" ng-disabled="CreateUserForm.username.$invalid || CreateUserForm.password.$invalid || CreateUserForm.email.$invalid || CreateUserForm.first.$invalid || CreateUserForm.last.$invalid">
+            <button type="submit" class="button" >
                 CREATE
             </button>
             <span class="text-danger">{{ error }}</span>

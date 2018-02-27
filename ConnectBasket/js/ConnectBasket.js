@@ -165,10 +165,75 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   app.controller('CreateOwnerController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "CREATE OWNER";
 	
+	var success = false;	
+		
+    $scope.formSubmit = function() {
+
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'create_owner',
+			'firstname' : $scope.first,
+			'lastname' : $scope.last,
+			'address' : $scope.address,
+			'city' : $scope.city,
+			'state' : $scope.state,
+			'zipcode' : $scope.zipcode,
+			'phone' : $scope.phone,
+			'email' : $scope.email
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+		
+		
+    };
+	
   });
   
   app.controller('CreatePetController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "CREATE PET";
+	
+	var success = false;	
+		
+    $scope.formSubmit = function() {
+
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'create_pet',
+			'name' : $scope.name,
+			'age' : $scope.age,
+			'species' : $scope.species,
+			'breed' : $scope.breed,
+			'color' : $scope.color
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+		
+		
+    };
 	
   });
   
