@@ -3,8 +3,19 @@
     </div>
   
     <div class="col-xs-10 col-md-8 orangeBox">
-        <h2>NEW MESSAGES</h2>
-        Table of new messages will go here. 
+        <h2>ALL MESSAGES</h2>
+        
+            <table>
+                <tr ng-repeat="x in messages">
+                    <td>{{ x.Body }}</td>
+                    <td>
+                        <button type="submit" class="button" >
+                            DETAILS
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
     </div>
 
     <div class="col-xs-1 col-md-2">
@@ -13,7 +24,7 @@
 
 <br />
 
-<div class="row">
+<!--<div class="row">
     <div class="col-xs-1 col-md-2">
     </div>
 
@@ -24,4 +35,4 @@
 
     <div class="col-xs-1 col-md-2">
     </div>
-</div>
+</div>-->
