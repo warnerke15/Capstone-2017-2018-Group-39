@@ -1,0 +1,15 @@
+# Left to do:
+# Set up the changing DBCreateDate check
+# Uncomment and fix the mailx command
+# Add the query to grab a user's email
+
+mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `Recipient`,`Body` FROM `Messages` WHERE `DBCreateDate` >= "2018-02-26 22:20:39"' --skip-column-names -B > newmessages
+if (( $(wc -c newfile | cut -f1 -d" ") == 0 )) 
+	then 
+		while IFS='' read -r line || [[ -n "$line" ]]; do
+			token=( $line )
+			echo "$(date)  ---  Sending message to ${token[0]}. Message body: ${token[@]:1}" >> emaillog.file
+			# Query to get user's email. Something like mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `Email` FROM `Users` WHERE `User` == "${token[0]}"' --skip-column-names -B
+			# mailx -s “New ConnectBasket Messages” [user email] < message.txt
+		done < newmessages
+fi
