@@ -1,0 +1,5 @@
+You have new ConnectBasket messages awaiting your review!
+
+To view these messages, please go to http://vm-cs462-g39.eecs.oregonstate.edu
+
+To change settings or disable message alerts, go to http://vm-cs462-g39.eecs.oregonstate.edu/#/editprofile
