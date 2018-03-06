@@ -174,6 +174,54 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   app.controller('EditProfileController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "EDIT PROFILE";
 	
+	var success = false;
+	
+	$scope.showFirst = false;
+	$scope.showLast = false;
+	$scope.showEmail = false;
+	
+	$scope.first = LoginService.firstName();
+	$scope.last = LoginService.lastName();
+	$scope.email = LoginService.email();
+
+	$scope.firstButton = function() {
+		$scope.showFirst = true;
+	}
+	
+	$scope.lastButton = function() {
+		$scope.showLast = true;
+	}
+	
+	$scope.emailButton = function() {
+		$scope.showEmail = true;
+	}
+		
+    $scope.formSubmit = function() {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'edit_profile',
+			'firstname' : $scope.first,
+			'lastname' : $scope.last,
+			'email' : $scope.email
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+		
+		
+    };
+	
   });
   
   app.controller('AddNoteController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
@@ -292,7 +340,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
-  app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
+  app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService, $http) {
 	
 	//Put this code at the top of every controller	
 	if (!LoginService.isAuthenticated())
@@ -375,6 +423,15 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
       },
 	  firstName : function() {
         return firstName;
+      },
+	  lastName : function() {
+        return lastName;
+      },
+	  email : function() {
+        return email;
+      },
+	  username : function() {
+        return username;
       },
 	  unauthenticate : function() {
         isAuthenticated = false;
