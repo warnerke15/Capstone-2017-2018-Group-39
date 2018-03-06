@@ -141,7 +141,7 @@ else if($data->method == "create_user")
  
 }
 
-else if($data->method == "create_user")
+else if($data->method == "edit_profile")
 {
 	$firstname = $data->firstname;
 	$lastname = $data->lastname;
