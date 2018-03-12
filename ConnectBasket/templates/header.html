@@ -18,8 +18,8 @@
                 </li>
 				<li><a ui-sref="logout" ng-if="isAuth"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
                 </li>
-				<!--<li class="dropdown" ng-if="isAuth">-->
-				<li class="dropdown">
+				<li class="dropdown" ng-if="isAuth">
+				<!--<li class="dropdown">-->
                     <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-comment"></span> MESSAGES <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a ui-sref="addmessage">Add New Message</a>
@@ -28,10 +28,10 @@
 						</li>
                     </ul>
                 </li>
-				<!--<li ng-if="isAuth">-->
-				<li><a ui-sref="editprofile"> <span class="glyphicon glyphicon-pencil"></span> EDIT PROFILE</a></li>
-				<!--<li class="dropdown" ng-if="isAuth">-->
-                <li class="dropdown">
+				<li ng-if="isAuth">
+				<!--<li>--><a ui-sref="editprofile"> <span class="glyphicon glyphicon-pencil"></span> EDIT PROFILE</a></li>
+				<li class="dropdown" ng-if="isAuth">
+                <!--<li class="dropdown">-->
                     <a class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> ADMIN <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a ui-sref="createuser">Create User</a>

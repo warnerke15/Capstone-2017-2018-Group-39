@@ -363,11 +363,11 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   
   app.controller('CheckSessionController', function($scope, $rootScope, $stateParams, $state, LoginService, $http) {
 	
-		http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'check_auth',
 		};
-		http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data) 
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data) 
 		.then(function (response) 
 		{
 			isAuthenticated = response.data.authenticated; 
@@ -376,10 +376,20 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			username = response.data.username;
 			email = response.data.email;
 			
+			console.log(isAuthenticated);
+			console.log(firstName);
+			console.log(lastName);
+			console.log(username);
+			console.log(email);
+			
 			if (isAuthenticated)
 			{
 				LoginService.set(isAuthenticated, firstName, lastName, username, email);
 				$state.transitionTo('home');
+			}
+			else
+			{
+				$state.transitionTo('login');
 			}
 		});
 
@@ -413,6 +423,12 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			username = response.data.username;
 			email = response.data.email;
 			
+			console.log(isAuthenticated);
+			console.log(firstName);
+			console.log(lastName);
+			console.log(username);
+			console.log(email);
+			
 			if (isAuthenticated)
 			{
 				state.transitionTo('home');
@@ -427,7 +443,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	  isAuthenticated : function() {
 		if (!isAuthenticated)
 		{
-			console.log($state.current.name());
+			console.log('Current state: ' + $state.current.name);
 			$state.transitionTo('check_session');
 		}
 	
