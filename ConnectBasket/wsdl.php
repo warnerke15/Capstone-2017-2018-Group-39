@@ -47,10 +47,10 @@ if($data->method == "check_login")
 	
 	if ($success)
 	{
-		$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
-		$stmt->bind_param('ss', $User + 'logged in', $User); 
+		//$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
+		//$stmt->bind_param('ss', 'logged in', $User); 
 
-		$stmt->execute();
+		//$stmt->execute();
 	}
 
 	$jsonData=array();
