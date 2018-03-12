@@ -1,36 +1,38 @@
-<div class="col-xs-3">
+<div class="row">
+    <div class="col-xs-1 col-md-2">
+    </div>
+
+    <div class="col-xs-10 col-md-8 orangeBox">
+        <form name="LoginForm" ng-submit="formSubmit()" novalidate>
+
+            <div class="form-group">
+                <span style="color:red" ng-show="LoginForm.username.$dirty && LoginForm.username.$invalid">
+                    <span ng-show="LoginForm.username.$error.required">Username is required.</span>
+                </span>
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" ng-model="username" placeholder="Enter your username" required />
+
+            </div>
+
+            <div class="form-group">
+                <span style="color:red" ng-show="LoginForm.password.$dirty && LoginForm.password.$invalid">
+                    <span ng-show="LoginForm.password.$error.required">Password is required.</span>
+                    <!--<span ng-show="LoginForm.password.$error.length && !LoginForm.password.$error.required">Password must be at least 8 characters long.</span> -->
+                </span>
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" ng-model="password" placeholder="Enter your password" required />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="button">Login</button>
+                <span class="text-danger">{{ error }}</span>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-xs-1 col-md-2">
+    </div>
+
+
 </div>
-
-<div class="col-xs-6 orangeBox">
-	<form name="LoginForm" ng-submit="formSubmit()" novalidate>
-
-		<div class="form-group">
-			<span style="color:red" ng-show="LoginForm.username.$dirty && LoginForm.username.$invalid">
-				<span ng-show="LoginForm.username.$error.required">Username is required.</span>
-			</span>
-			<label for="username">Username:</label>
-			<input type="text" class="form-control" name="username" ng-model="username" placeholder="Enter your username" required />
-
-		</div> 
-
-		<div class="form-group">
-			<span style="color:red" ng-show="LoginForm.password.$dirty && LoginForm.password.$invalid">
-				<span ng-show="LoginForm.password.$error.required">Password is required.</span>
-				<!--<span ng-show="LoginForm.password.$error.length && !LoginForm.password.$error.required">Password must be at least 8 characters long.</span> -->
-			</span>
-			<label for="password">Password:</label>
-			<input type="password" class="form-control" name="password" ng-model="password" placeholder="Enter your password" required/>
-		</div>
-
-		<div class="form-group">
-			<button type="submit" class="button">Login</button>
-			<span class="text-danger">{{ error }}</span>
-		</div>
-
-	</form>
-</div>
-
-<div class="col-xs-3">
-</div>
-
-

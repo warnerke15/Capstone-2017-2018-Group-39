@@ -1,107 +1,109 @@
-<div class="col-xs-3">
-</div>
+<div class="row">
+    <div class="col-xs-1 col-md-2">
+    </div>
 
-<div class="col-xs-6 orangeBox">
-    <form name="CreateOwnerForm" ng-submit="formSubmit()" novalidate>
-        <p>
-            <span style="color:red">* All fields are required</span>
-        </p>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateOwnerForm.first.$dirty && CreateOwnerForm.first.$invalid">
-                    <span ng-show="CreateOwnerForm.first.$error.required">Owner first name is required.</span>
-                </span>
+    <div class="col-xs-10 col-md-8 orangeBox">
+        <form name="CreateOwnerForm" ng-submit="formSubmit()" novalidate>
+            <p>
+                <span style="color:red">* All fields are required</span>
+            </p>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <span style="color:red" ng-show="CreateOwnerForm.first.$dirty && CreateOwnerForm.first.$invalid">
+                        <span ng-show="CreateOwnerForm.first.$error.required">Owner first name is required.</span>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="first">Owner first name:</label>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="first">Owner first name:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="first" ng-model="first" required placeholder="Enter owner first name">
+                </div>
             </div>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="first" ng-model="first" required placeholder="Enter owner first name">
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <span style="color:red" ng-show="CreateOwnerForm.last.$dirty && CreateOwnerForm.last.$invalid">
+                        <span ng-show="CreateOwnerForm.last.$error.required">Owner last name is required.</span>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateOwnerForm.last.$dirty && CreateOwnerForm.last.$invalid">
-                    <span ng-show="CreateOwnerForm.last.$error.required">Owner last name is required.</span>
-                </span>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="last">Owner last Name:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="last" ng-model="last" required placeholder="Enter owner last name">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="last">Owner last Name:</label>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="address">Owner address:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="address" ng-model="address" placeholder="Enter owner address">
+                </div>
             </div>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="last" ng-model="last" required placeholder="Enter owner last name">
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="city">Owner city:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="city" ng-model="city" placeholder="Enter owner city">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="address">Owner address:</label>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="state">Owner state:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="state" ng-model="state" placeholder="Enter owner state">
+                </div>
             </div>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="address" ng-model="address" placeholder="Enter owner address">
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="zipcode">Owner zipcode:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="zipcode" ng-model="zipcode" placeholder="Enter owner zipcode">
+                </div>
             </div>
-        </div>
-		<div class="form-group row">
-            <div class="col-xs-3">
-                <label for="city">Owner city:</label>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="phone">Owner phone number:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="tel" class="form-control" name="phone" ng-model="phone" placeholder="Enter owner phone number">
+                </div>
             </div>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="city" ng-model="city" placeholder="Enter owner city">
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <span style="color:red" ng-show="CreateOwnerForm.email.$dirty && CreateOwnerForm.email.$invalid">
+                        <span ng-show="CreateOwnerForm.email.$error.required">Email is required.</span>
+                        <span ng-show="CreateOwnerForm.email.$error.email">Invalid email address.</span>
+                    </span>
+                </div>
             </div>
-        </div>
-		<div class="form-group row">
-            <div class="col-xs-3">
-                <label for="state">Owner state:</label>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="email">Owner email:</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="email" class="form-control" name="email" ng-model="email" required placeholder="Enter owner email address">
+                </div>
             </div>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="state" ng-model="state" placeholder="Enter owner state">
-            </div>
-        </div>
-		<div class="form-group row">
-            <div class="col-xs-3">
-                <label for="zipcode">Owner zipcode:</label>
-            </div>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" name="zipcode" ng-model="zipcode" placeholder="Enter owner zipcode">
-            </div>
-        </div>
-		<div class="form-group row">
-            <div class="col-xs-3">
-                <label for="phone">Owner phone number:</label>
-            </div>
-            <div class="col-xs-9">
-                <input type="tel" class="form-control" name="phone" ng-model="phone" placeholder="Enter owner phone number">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <span style="color:red" ng-show="CreateOwnerForm.email.$dirty && CreateOwnerForm.email.$invalid">
-                    <span ng-show="CreateOwnerForm.email.$error.required">Email is required.</span>
-                    <span ng-show="CreateOwnerForm.email.$error.email">Invalid email address.</span>
-                </span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="email">Owner email:</label>
-            </div>
-            <div class="col-xs-9">
-                <input type="email" class="form-control" name="email" ng-model="email" required placeholder="Enter owner email address">
-            </div>
-        </div>
-        
 
-        <div class="form-group">
-            <button type="submit" class="button" >
-                CREATE
-            </button>
-            <span class="text-danger">{{ error }}</span>
-        </div>
-    </form>
-</div>
 
-<div class="col-xs-3">
+            <div class="form-group">
+                <button type="submit" class="button">
+                    CREATE
+                </button>
+                <span class="text-danger">{{ error }}</span>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-xs-1 col-md-2">
+    </div>
 </div>
