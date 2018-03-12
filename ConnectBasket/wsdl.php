@@ -52,7 +52,7 @@ if($data->method == "check_login")
 		$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
 		$stmt->bind_param('ss', $Message, $User); 
 
-		$Message = $User + 'logged in';
+		$Message = $User . 'logged in';
 		$stmt->execute();
 		
 		$stmt->close();
@@ -145,7 +145,7 @@ else if($data->method == "create_user")
 		$stmt->bind_param('ss', $Message, $User); 
 		
 		$User = $_SESSION['username'];
-		$Message = $username + 'was created';
+		$Message = $username . 'was created';
 		$stmt->execute();
 	}
 	else
