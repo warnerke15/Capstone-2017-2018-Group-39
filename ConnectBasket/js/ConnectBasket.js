@@ -80,6 +80,11 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
         templateUrl : 'modules/AddNote.html',
         controller : 'AddNoteController'
       })
+	  .state('check_session', {
+        url : '/validate',
+        templateUrl : 'modules/CheckSession.html',
+        controller : 'CheckSessionController'
+      })
 	  .state('editprofile', {
         url : '/editprofile',
         templateUrl : 'modules/EditProfile.html',
@@ -345,7 +350,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	//Put this code at the top of every controller	
 	if (!LoginService.isAuthenticated())
 	{
-		$state.transitionTo('login');
+		
 	}
 	else
 	{
@@ -353,6 +358,31 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$rootScope.isAuth = true;
 	}
 	
+    
+  });
+  
+  app.controller('CheckSessionController', function($scope, $rootScope, $stateParams, $state, LoginService, $http) {
+	
+		http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'check_auth',
+		};
+		http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data) 
+		.then(function (response) 
+		{
+			isAuthenticated = response.data.authenticated; 
+			firstName = response.data.firstname;
+			lastName = response.data.lastname;
+			username = response.data.username;
+			email = response.data.email;
+			
+			if (isAuthenticated)
+			{
+				LoginService.set(isAuthenticated, firstName, lastName, username, email);
+				$state.transitionTo('home');
+			}
+		});
+
     
   });
   
@@ -394,32 +424,21 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			return isAuthenticated;
 		});  
       },
-      /*isAuthenticated : function() {
-        if (!isAuthenticated)
-		{
-			console.log("Not currently authenticated. Check PHP Session");
-			http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-			$data = {
-				'method' : 'check_auth',
-			};
-			return http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data) 
-			.then(function (response) 
-			{
-				isAuthenticated = response.data.authenticated; 
-				firstName = response.data.firstname;
-				lastName = response.data.lastname;
-				username = response.data.username;
-				email = response.data.email;
-				return isAuthenticated;
-			});
-		}
-		else
-		{
-			return isAuthenticated;
-		}
-      },*/
 	  isAuthenticated : function() {
+		if (!isAuthenticated)
+		{
+			console.log($state.current.name());
+			$state.transitionTo('check_session');
+		}
+	
         return isAuthenticated;
+      },
+	  set : function(i, f, l, u, e) {
+        isAuthenticated = i;
+		firstName = f;
+		lastName = l;
+		username = u;
+		email = e;
       },
 	  firstName : function() {
         return firstName;
