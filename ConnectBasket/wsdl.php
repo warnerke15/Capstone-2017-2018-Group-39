@@ -36,11 +36,6 @@ if($data->method == "check_login")
 				$LastName = $row['LastName'];
 				$Email = $row['EmailAddress'];
 				$success = true;
-				
-				$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
-				$stmt->bind_param('ss', $User + 'logged in', $User); 
-	
-				$stmt->execute();
 								
 			}
 		}
@@ -50,6 +45,13 @@ if($data->method == "check_login")
 		$success = false;
 	}
 	
+	if ($success)
+	{
+		$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
+		$stmt->bind_param('ss', $User + 'logged in', $User); 
+
+		$stmt->execute();
+	}
 
 	$jsonData=array();
 	$jsonData['success']=$success;
