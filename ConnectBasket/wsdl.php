@@ -36,6 +36,12 @@ if($data->method == "check_login")
 				$LastName = $row['LastName'];
 				$Email = $row['EmailAddress'];
 				$success = true;
+				
+				$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
+				$stmt->bind_param('ss', $User + 'logged in', $User); 
+	
+				$stmt->execute();
+								
 			}
 		}
 	}
@@ -127,6 +133,11 @@ else if($data->method == "create_user")
 	if ($result->num_rows > 0)
 	{
 		$success = true;
+		
+		$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
+		$stmt->bind_param('ss', $username + 'was created', $_SESSION['username']); 
+
+		$stmt->execute();
 	}
 	else
 	{

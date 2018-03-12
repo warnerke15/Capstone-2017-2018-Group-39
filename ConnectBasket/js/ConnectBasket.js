@@ -376,16 +376,10 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			username = response.data.username;
 			email = response.data.email;
 			
-			console.log(isAuthenticated);
-			console.log(firstName);
-			console.log(lastName);
-			console.log(username);
-			console.log(email);
-			
 			if (isAuthenticated)
 			{
 				LoginService.set(isAuthenticated, firstName, lastName, username, email);
-				$state.transitionTo('home');
+				$state.transitionTo(LoginService.prevState());
 			}
 			else
 			{
@@ -403,6 +397,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	var lastName = '';
 	var username = '';
 	var email = '';
+	var prevState = 'home';
 	var http = $http;
 	var state = $state;
     
@@ -423,12 +418,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			username = response.data.username;
 			email = response.data.email;
 			
-			console.log(isAuthenticated);
-			console.log(firstName);
-			console.log(lastName);
-			console.log(username);
-			console.log(email);
-			
 			if (isAuthenticated)
 			{
 				state.transitionTo('home');
@@ -443,7 +432,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	  isAuthenticated : function() {
 		if (!isAuthenticated)
 		{
-			console.log('Current state: ' + $state.current.name);
+			prevState = $state.current.name;
 			$state.transitionTo('check_session');
 		}
 	
@@ -467,6 +456,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
       },
 	  username : function() {
         return username;
+      },
+	  prevState : function() {
+        return prevState;
       },
 	  unauthenticate : function() {
         isAuthenticated = false;
