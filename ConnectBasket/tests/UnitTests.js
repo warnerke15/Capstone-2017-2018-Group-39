@@ -4,7 +4,7 @@ describe('Controllers', function(){ //describe your object type
     describe('LoginController',function(){ //describe your app name<br />
         
 		
-		it('Should return success and user info', inject(function($http) {
+		it('Should return success is true', inject(function($http) {
     
 		var $scope = {};
 
@@ -16,11 +16,8 @@ describe('Controllers', function(){ //describe your object type
 		})
 		.then(function (response) 
 		{
-			$scope.isAuthenticated = response.data.success; 
-			$scope.firstName = response.data.first;
-			$scope.lastName = response.data.last;
-			$scope.username = response.data.username;
-			$scope.email = response.data.email;
+			$scope.isAuthenticated = response; 
+			
 		});
 		/* End Code */
 
@@ -31,18 +28,12 @@ describe('Controllers', function(){ //describe your object type
 			'username' : 'Test',
 			'password' : '12345678'
 		  })
-		  .respond({data : [{ 
-			success : 'true',
-			first : 'Test',
-			last : 'User',
-			username : 'Test',
-			email : 'Test@t.com'
-		  }]});
+		  .respond({success : true});
 
 
 		$httpBackend.flush();
 
-		expect($scope.isAuthenticated).toEqual('true');
+		expect($scope.isAuthenticated).toEqual({success : true});
 
 	  }));
 	  
