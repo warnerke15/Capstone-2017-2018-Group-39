@@ -371,7 +371,7 @@ else if($data->method == "get_logs")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT LogMessage, Username FROM LogMessages');
+	$stmt = $conn->prepare('SELECT LogMessage, Username, DBCreateDate FROM LogMessages');
 
 	$stmt->execute();
 
@@ -380,7 +380,7 @@ else if($data->method == "get_logs")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'LogMessage' => $row['LogMessage'], 'User' => $row['Username']);
+		$arr[] = array( 'LogMessage' => $row['LogMessage'], 'User' => $row['Username'], 'CreateDate' => $row['DBCreateDate']);
 	}
 
 	$conn->close();
