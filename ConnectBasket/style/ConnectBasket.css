@@ -119,10 +119,14 @@ th {
 }
 
 footer {
-    padding:50px;
+    padding: 50px;
     margin-top: 50px;
     background-color: #dc4405;
     color: white;
+    /*position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;*/
 }
 
 .footerbig {
