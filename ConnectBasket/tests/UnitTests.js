@@ -8,6 +8,8 @@ describe('Controllers', function(){ //describe your object type
     
 		var $scope = {};
 
+		console.log("HELLO WORLD!!!!!!!");
+		
 		/* Code Under Test */
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", {
 			method : 'check_login',
@@ -16,11 +18,12 @@ describe('Controllers', function(){ //describe your object type
 		})
 		.then(function (response) 
 		{
+			console.log("HELLO WORLD22222!!!!!!!");
 			$scope.isAuthenticated = response.data; 
-			
+			console.log("HELLO WORLD333333!!!!!!!");
 		});
 		/* End Code */
-
+		
 
 		$httpBackend
 		  .when('POST', 'http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', { 
@@ -30,6 +33,8 @@ describe('Controllers', function(){ //describe your object type
 		  })
 		  .respond({success : true});
 
+		  
+		console.log("HELLO AGAIN WORLD!!!!!!!");
 
 		$httpBackend.flush();
 		

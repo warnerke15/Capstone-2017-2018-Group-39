@@ -171,10 +171,24 @@ else if($data->method == "change_status")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('UPDATE Messages SET Status="?" WHERE MessagesTableID="?"');
+	$stmt = $conn->prepare('UPDATE Messages SET Status="?" WHERE MessagesTableID=?');
 	$stmt->bind_param('ss', $status,$id); 
 
 	$stmt->execute();
+	
+	// $stmt = $conn->prepare('Select Count(MessagesTableID) WHERE Status="?" and MessagesTableID=?');
+	// $stmt->bind_param('ss', $status,$id); 
+
+	// $stmt->execute();
+	// $result = $stmt->get_result();
+	// if ($result->num_rows > 0)
+	// {
+		$success = true;
+	// }
+	// else
+	// {
+		// $success = false;
+	// }
 
 	$jsonData=array();
 	$jsonData['success']=$success;
