@@ -201,7 +201,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'change_status',
-			'status' : $scope.state,
+			'status' : $scope.changedstate,
 			'id' : 1
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
