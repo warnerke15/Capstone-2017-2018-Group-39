@@ -15,7 +15,7 @@ describe('Controllers', function(){ //describe your object type
 		var $scope = {};
 
 		/* Code Under Test */
-		http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", {
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", {
 			'method' : 'check_login',
 			'username' : 'Test',
 			'password' : '12345678'
