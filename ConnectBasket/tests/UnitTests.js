@@ -1,11 +1,16 @@
 describe('Controllers', function(){ //describe your object type
 
+	console.log("HELLOOOOOOOOOOOOOOOO!!!!!!!");
+
     beforeEach(module('ConnectBasketWebApp')); //load module<br />
     describe('LoginController',function(){ //describe your app name<br />
         
+		console.log("HELLO!!!!!!!");
 		
 		it('Should return success is true', inject(function($http) {
     
+		console.log("HELLO WORLD000000!!!!!!!");
+	
 		var $scope = {};
 
 		console.log("HELLO WORLD!!!!!!!");
