@@ -7,9 +7,10 @@ describe('Controllers', function(){
 	var $controller;
 	var $httpBackend;
 	
-	beforeEach(inject(function($injector){
-    $controller = $injector.get('$controller');
-	$httpBackend = $injector.get('$httpBackend');
+	beforeEach(inject(function(_$controller_){
+		$controller = _$controller_;
+    //$controller = $injector.get('$controller');
+	//$httpBackend = $injector.get('$httpBackend');
 	}));
         
 		console.log("HELLO!!!!!!!");
