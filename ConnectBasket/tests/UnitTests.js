@@ -31,13 +31,13 @@ describe('Controllers', function(){ //describe your object type
 			'username' : 'Test',
 			'password' : '12345678'
 		  })
-		  .respond(data : { 
+		  .respond({data : { 
 			success : true,
 			first : 'Test',
 			last : 'User',
 			username : 'Test',
 			email : 'Test@t.com'
-		  });
+		  }});
 
 
 		$httpBackend.flush();
