@@ -14,28 +14,21 @@ describe('LoginController', function(){
 		console.log("HELLO!!!!!!!");
 		
 		
-		it('Should return success is true', function($http) {
+		it('Should return success is true', function() {
     
 		console.log("HELLO WORLD000000!!!!!!!");
 	
 		var $scope = {};
-		var controller = $controller('LoginController', { $scope: $scope });
 
 		console.log("HELLO WORLD!!!!!!!");
 		
-		$scope.username = 'Test';
-		$scope.password = '12345678';
-		$scope.formSubmit();
-		
+		$httpBackend.expectPOST('http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', {'method' : 'logout'},
+		{	headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8;'
+                }
+		});
 
-		$httpBackend
-		  .when('POST', 'http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', { 
-			'method' : 'check_login',
-			'username' : 'Test',
-			'password' : '12345678',
-		  })
-		  .respond({success : true});
-
+		var controller = $controller('LogoutController', { $scope: $scope });
 		  
 		console.log("HELLO AGAIN WORLD!!!!!!!");
 
