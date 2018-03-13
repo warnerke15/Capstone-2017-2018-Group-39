@@ -247,14 +247,32 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   app.controller('HistoryOfMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "HISTORY OF MESSAGES";
 	
-	
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_messages'		
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.messages = response.data.messages; 
+			
+		});
 	
   });
   
   app.controller('AuditLogController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "AUDIT LOG";
 	
-	
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_logs'		
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.logs = response.data.logs; 
+			
+		});
 	
   });
   

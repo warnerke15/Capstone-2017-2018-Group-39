@@ -4,21 +4,17 @@
 
     <div class="col-xs-10 col-md-8 orangeBox">
         <div>
-            <div class="subheader">ALL MESSAGES</div>
+            <div class="subheader">User Activity</div>
 
             <table>
                 <tr>
-                    <th>Message Body</th>
-                    <th>View Message Details</th>
+                    <th>Log Message</th>
+                    <th>User</th>
 
                 </tr>
                 <tr ng-repeat="x in messages">
-                    <td>{{ x.Message }}</td>
-                    <td>
-                        <button type="submit" class="button">
-                            DETAILS
-                        </button>
-                    </td>
+                    <td>{{ x.LogMessage }}</td>
+                    <td>{{ x.User }}</td>
                 </tr>
             </table>
         </div>
