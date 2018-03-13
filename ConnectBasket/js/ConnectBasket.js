@@ -183,6 +183,32 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.messages = response.data.messages; 
 			
 		});
+		
+	$scope.formSubmit = function() {
+
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'change_state',
+			'status' : $scope.state,
+			'body' : $scope.body
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+		
+		
+    };
 	
   });
   
