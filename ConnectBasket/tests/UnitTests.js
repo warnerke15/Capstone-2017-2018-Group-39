@@ -31,7 +31,7 @@ describe('Controllers', function(){ //describe your object type
 			'username' : 'Test',
 			'password' : '12345678'
 		  })
-		  .respond({ 
+		  .respond(data : { 
 			success : true,
 			first : 'Test',
 			last : 'User',
