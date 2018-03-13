@@ -5,10 +5,12 @@ describe('LoginController', function(){
     beforeEach(module('ConnectBasketWebApp')); 
 	
 	var $controller;
+	var $httpBackend;
 	
-	beforeEach(inject(function(_$controller_){
+	beforeEach(inject(function($injector){
     // The injector unwraps the underscores (_) from around the parameter names when matching
-    $controller = _$controller_;
+    $controller = $injector.get('$controller');
+	$httpBackend = $injector.get('$httpBackend');
 	}));
         
 		console.log("HELLO!!!!!!!");
