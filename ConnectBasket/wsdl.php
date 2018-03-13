@@ -183,7 +183,7 @@ else if($data->method == "change_status")
 	// $result = $stmt->get_result();
 	// if ($result->num_rows > 0)
 	// {
-		$success = true;
+		$success = $conn->error;
 	// }
 	// else
 	// {
