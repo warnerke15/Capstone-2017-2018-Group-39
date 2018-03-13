@@ -1,4 +1,4 @@
-describe('LoginController', function(){ 
+describe('Controllers', function(){ 
 
 	console.log("HELLOOOOOOOOOOOOOOOO!!!!!!!");
 
@@ -14,8 +14,21 @@ describe('LoginController', function(){
         
 		console.log("HELLO!!!!!!!");
 		
+		describe('LogoutController', function(){ 
 		
-		it('Should return success is true', function() {
+		it('isAuth should be false', function() {
+    
+		
+		var $rootScope = {};
+		var controller = $controller('LogoutController', { $rootScope: $rootScope });
+		  
+		expect($rootScope.isAuth).toEqual(false);
+
+	  });
+	  
+	});
+		
+		/*it('Should return success is true', function() {
     
 		console.log("HELLO WORLD000000!!!!!!!");
 	
@@ -39,7 +52,7 @@ describe('LoginController', function(){
 		
 		expect($scope.isAuthenticated).toEqual({success : true});
 
-	  });
+	  });*/
 	  
 	  
-    });
+});
