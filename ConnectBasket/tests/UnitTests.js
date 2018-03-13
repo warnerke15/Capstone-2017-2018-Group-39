@@ -10,13 +10,13 @@ describe('Controllers', function(){ //describe your object type
 
 		/* Code Under Test */
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", {
-			'method' : 'check_login',
-			'username' : 'Test',
-			'password' : '12345678'
+			method : 'check_login',
+			username : 'Test',
+			password : '12345678'
 		})
 		.then(function (response) 
 		{
-			$scope.isAuthenticated = response; 
+			$scope.isAuthenticated = response.data; 
 			
 		});
 		/* End Code */
@@ -24,15 +24,15 @@ describe('Controllers', function(){ //describe your object type
 
 		$httpBackend
 		  .when('POST', 'http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', { 
-			'method' : 'check_login',
-			'username' : 'Test',
-			'password' : '12345678'
+			method : 'check_login',
+			username : 'Test',
+			password : '12345678'
 		  })
 		  .respond({success : true});
 
 
 		$httpBackend.flush();
-
+		
 		expect($scope.isAuthenticated).toEqual({success : true});
 
 	  }));
