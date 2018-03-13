@@ -1,73 +1,135 @@
 <!-- <div class="row"> -->
-    <!-- <div class="col-xs-1 col-md-2"> -->
-    <!-- </div> -->
-  
-    <!-- <div class="col-xs-10 col-md-8 orangeBox"> -->
-        <!-- <h2>NEW MESSAGES</h2> -->
-        <!-- Table of new messages will go here.  -->
-    <!-- </div> -->
-
-    <!-- <div class="col-xs-1 col-md-2"> -->
-    <!-- </div> -->
+<!-- <div class="col-xs-1 col-md-2"> -->
 <!-- </div> -->
-
+<!-- <div class="col-xs-10 col-md-8 orangeBox"> -->
+<!-- <h2>NEW MESSAGES</h2> -->
+<!-- Table of new messages will go here.  -->
+<!-- </div> -->
+<!-- <div class="col-xs-1 col-md-2"> -->
+<!-- </div> -->
+<!-- </div> -->
 <!-- <br /> -->
-
 <!-- <div class="row"> -->
-    <!-- <div class="col-xs-1 col-md-2"> -->
-    <!-- </div> -->
-
-    <!-- <div class="col-xs-10 col-md-8 orangeBox"> -->
-        <!-- <h2>OLD MESSAGES</h2> -->
-        <!-- Table of old messages will go here. -->
-    <!-- </div> -->
-
-    <!-- <div class="col-xs-1 col-md-2"> -->
-    <!-- </div> -->
+<!-- <div class="col-xs-1 col-md-2"> -->
 <!-- </div> -->
+<!-- <div class="col-xs-10 col-md-8 orangeBox"> -->
+<!-- <h2>OLD MESSAGES</h2> -->
+<!-- Table of old messages will go here. -->
+<!-- </div> -->
+<!-- <div class="col-xs-1 col-md-2"> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- Table with message/notes: Most recent note will be at the top
+    Table headers:
+    Who Created Message, What Department They Are In, What Time the Note was added, Actual Message/Note, Status, Urgency Level
+    Note 3
+    Note 2
+    Note 1
+    Original Message
 
+
+    Small form to add a note: should have a box for the note and a dropdown to change urgency level and dropdown to
+    change status (only between in progress and completed. New should be only for the original message. Once Marked as completed, message will move out of your main messages view).
+
+    Below Add note form, there will be an input box for routing the message. If marked as completed, not routed to anyone else.
+
+    There will be a button that says ADD NOTE AND ROUTE and then it will be sent to the next group with your new note.
+
+    Below the Messages/Notes section, there will be other relevant information about the message.
+    This includes:
+    Message Create Date
+    Message Created By Username
+    Message Created By Department
+
+    Patient Name (And any other relevant information such as age, species, etc.)
+    Owner Name
+    Owner Contact Method
+
+    Type of Call
+    Additional Questions corresponding to Type of Call
+
+   Below this information, there will be another table with routing history.
+    Table headers:
+    Time Message was routed, Who Routed Message(username/department) (From: * Should be one person),
+    Who message was routed to (To: May be individual person or group, may be multiple)
+
+    -->
 
 <div class="row">
     <div class="col-xs-1 col-md-2">
     </div>
 
+    <div class="col-xs-10 col-md-8 orangeBox">
 
-    <!-- Table with message/notes: Most recent note will be at the top
-        Table headers:
-        Who Created Message, What Department They Are In, What Time the Note was added, Actual Message/Note, Status, Urgency Level
-        Note 3
-        Note 2
-        Note 1
-        Original Message
+        <div class="subheader">MESSAGE & NOTES</div>
+
+        <table>
+            <tr>
+                <th>Create Date</th>
+                <th>Created By</th>
+                <th>Department Created In</th>
+                <th>Message/Note</th>
+                <th>Status</th>
+                <th>Urgency Level</th>
+
+            </tr>
+            <tr ng-repeat="x in messages">
+                <td>Date</td>
+                <td>Username</td>
+                <td>Department</td>
+                <td>{{ x.Message }}</td>
+                <td>In Progress</td>
+                <td>Low </td>
+            </tr>
+        </table>
+
+        <br />
+
+        <div class="subheader">OTHER MESSAGE DETAILS</div>
 
 
-        Small form to add a note: should have a box for the note and a dropdown to change urgency level and dropdown to 
-        change status (only between in progress and completed. New should be only for the original message. Once Marked as completed, message will move out of your main messages view). 
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <label for="username"><b>Original Message Create Date:</b> Date </label><br />
+                <label for="username"><b>Original Message Created By (username, department):</b> Date </label><br />
+                <label for="username"><b>Type of Call:</b> Medical </label><br />
+                <label for="username"><b>Additional Questions:</b> ABC </label><br />
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <label for="username"><b>Patient Name:</b> Snoopy</label><br />
+                <label for="username"><b>Patient Breed: </b> Beagle </label><br />
+                <label for="username"><b>Owner Name: </b> Charlie Brown </label><br />
+                <label for="username"><b>Owner Contact Info:</b> 555-123-4656 </label><br />
+            </div>
+        </div>
+        <br />
 
-        Below Add note form, there will be an input box for routing the message. If marked as completed, not routed to anyone else.
+        <div class="subheader">ROUTING HISTORY</div>
+        <table>
+            <tr>
+                <th>Create Date</th>
+                <th>From:</th>
+                <th>To:</th>
+            </tr>
+            <tr ng-repeat="x in messages">
+                <td>Date</td>
+                <td>Username</td>
+                <td>{{ x.Message }}</td>
+            </tr>
+        </table>
 
-        There will be a button that says ADD NOTE AND ROUTE and then it will be sent to the next group with your new note. 
+    </div>
 
-        Below the Messages/Notes section, there will be other relevant information about the message. 
-        This includes: 
-        Message Create Date
-        Message Created By Username
-        Message Created By Department
+    <div class="col-xs-1 col-md-2">
+    </div>
 
-        Patient Name (And any other relevant information such as age, species, etc.)
-        Owner Name
-        Owner Contact Method
+</div>
 
-        Type of Call
-        Additional Questions corresponding to Type of Call
+<br />
 
-       Below this information, there will be another table with routing history. 
-        Table headers:
-        Time Message was routed, Who Routed Message(username/department) (From: * Should be one person), 
-        Who message was routed to (To: May be individual person or group, may be multiple)
-
-        -->
-
+<div class="row">
+    <div class="col-xs-1 col-md-2">
+    </div>
 
     <div class="col-xs-10 col-md-8 orangeBox">
         <form name="ChangeStatus" ng-submit="formSubmit()" novalidate>
@@ -86,7 +148,7 @@
                 </div>
                 <div class="col-xs-5">
                     <select name="changedstate" ng-model="changedstate">
-						<option disabled selected value> -- select new status -- </option>
+                        <option disabled selected value> -- select new status -- </option>
                         <option value="new">New</option>
                         <option value="inprogress">In Progress</option>
                         <option value="closed">Closed</option>
