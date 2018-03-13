@@ -1,5 +1,3 @@
-console.log("HELLO WORLD!!!!!!!");
-
 describe('Controllers', function(){ //describe your object type
 
     beforeEach(module('ConnectBasketWebApp')); //load module<br />
@@ -22,7 +20,8 @@ describe('Controllers', function(){ //describe your object type
 			
 		});
 		/* End Code */
-
+		
+		console.log("HELLO WORLD!!!!!!!");
 
 		$httpBackend
 		  .when('POST', 'http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', { 
@@ -32,6 +31,8 @@ describe('Controllers', function(){ //describe your object type
 		  })
 		  .respond({success : true});
 
+		  
+		console.log("HELLO AGAIN WORLD!!!!!!!");
 
 		$httpBackend.flush();
 		
