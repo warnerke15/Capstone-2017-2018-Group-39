@@ -209,14 +209,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		{
 			success = response.data.success; 
 			console.log('Response: ' + response.data.success);
-			if (success)
-			{
-				$state.transitionTo('home');
-			}
-			else 
-			{
-				console.log('Failure ' + success);
-			}
 		});
 		
 		
