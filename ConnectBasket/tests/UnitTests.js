@@ -8,7 +8,6 @@ describe('LoginController', function(){
 	var $httpBackend;
 	
 	beforeEach(inject(function($injector){
-    // The injector unwraps the underscores (_) from around the parameter names when matching
     $controller = $injector.get('$controller');
 	$httpBackend = $injector.get('$httpBackend');
 	}));
@@ -24,7 +23,7 @@ describe('LoginController', function(){
 
 		console.log("HELLO WORLD!!!!!!!");
 		
-		$httpBackend.expectPOST('http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', {'method' : 'logout'},
+		$httpBackend.expect('POST','http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', {'method' : 'logout'},
 		{	headers : {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8;'
                 }
