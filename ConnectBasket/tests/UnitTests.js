@@ -17,8 +17,8 @@ describe('Controllers', function(){
 		var controller;
 		var rootScope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
-            rootScope = $rootScope;
-			controller = $controller('LogoutController');
+            rootScope = $rootScope.$new();
+			controller = $controller('LogoutController', {rootScope : rootScope});
         }));
 		it('isAuth should be false', function() {
     
