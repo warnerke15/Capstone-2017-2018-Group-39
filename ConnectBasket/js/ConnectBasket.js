@@ -191,21 +191,21 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
 	var success = false;
 	
-	$scope.showFirst = false;
-	$scope.showLast = false;
 	$scope.showEmail = false;
 	
-	$scope.first = LoginService.firstName();
-	$scope.last = LoginService.lastName();
+	
 	$scope.email = LoginService.email();
 
-	$scope.firstButton = function() {
-		$scope.showFirst = true;
-	}
-	
-	$scope.lastButton = function() {
-		$scope.showLast = true;
-	}
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_groups'		
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.groups = response.data.groups; 
+			
+		});
 	
 	$scope.emailButton = function() {
 		$scope.showEmail = true;
@@ -215,8 +215,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'edit_profile',
-			'firstname' : $scope.first,
-			'lastname' : $scope.last,
 			'email' : $scope.email
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
