@@ -74,6 +74,11 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
         url : '/viewmessages',
         templateUrl : 'modules/ViewMessages.html',
         controller : 'ViewMessagesController'
+      })	  
+	  .state('viewmessagedetails', {
+        url : '/viewmessagedetails',
+        templateUrl : 'modules/ViewMessageDetails.html',
+        controller : 'ViewMessageDetailsController'
       })
 	  .state('addnote', {
         url : '/addnote',
@@ -184,6 +189,41 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			
 		});	
   });
+  
+  
+  app.controller('ViewMessageDetailsController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "VIEW MESSAGE DETAILS";
+
+	var success = false;	
+		
+    $scope.formSubmit = function() {
+
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'change_status',
+			'status' : $scope.state,
+			'id' : 1
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			console.log('Response: ' + response.data.success);
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+		
+		
+    };
+  });
+  
+  
   
   app.controller('EditProfileController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "EDIT PROFILE";

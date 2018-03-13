@@ -1,27 +1,73 @@
-<div class="row">
-    <div class="col-xs-1 col-md-2">
-    </div>
+<!-- <div class="row"> -->
+    <!-- <div class="col-xs-1 col-md-2"> -->
+    <!-- </div> -->
   
-    <div class="col-xs-10 col-md-8 orangeBox">
-        <h2>NEW MESSAGES</h2>
-        Table of new messages will go here. 
-    </div>
+    <!-- <div class="col-xs-10 col-md-8 orangeBox"> -->
+        <!-- <h2>NEW MESSAGES</h2> -->
+        <!-- Table of new messages will go here.  -->
+    <!-- </div> -->
 
-    <div class="col-xs-1 col-md-2">
-    </div>
-</div>
+    <!-- <div class="col-xs-1 col-md-2"> -->
+    <!-- </div> -->
+<!-- </div> -->
 
-<br />
+<!-- <br /> -->
+
+<!-- <div class="row"> -->
+    <!-- <div class="col-xs-1 col-md-2"> -->
+    <!-- </div> -->
+
+    <!-- <div class="col-xs-10 col-md-8 orangeBox"> -->
+        <!-- <h2>OLD MESSAGES</h2> -->
+        <!-- Table of old messages will go here. -->
+    <!-- </div> -->
+
+    <!-- <div class="col-xs-1 col-md-2"> -->
+    <!-- </div> -->
+<!-- </div> -->
+
 
 <div class="row">
     <div class="col-xs-1 col-md-2">
     </div>
 
     <div class="col-xs-10 col-md-8 orangeBox">
-        <h2>OLD MESSAGES</h2>
-        Table of old messages will go here.
+        <form name="ChangeStatus" ng-submit="formSubmit()" novalidate>
+
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for=""><b>Message Body:</b> </label>
+                </div>
+                <div class="col-xs-5">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for=""><b>Message Status: </b></label>
+                </div>
+                <div class="col-xs-5">
+                    <select name="state">
+						<option disabled selected value> -- select new status -- </option>
+                        <option value="new">New</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="button">
+                    Submit Changes
+                </button>
+                <span class="text-danger">{{ error }}</span>
+            </div>
+        </form>
     </div>
 
     <div class="col-xs-1 col-md-2">
     </div>
+
 </div>
+
+

@@ -161,6 +161,32 @@ else if($data->method == "create_user")
  
 }
 
+else if($data->method == "change_status")
+{
+	$status = $data->status;
+	$id = $data->id;
+
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('UPDATE Messages SET Status="?" WHERE MessagesTableID="?"');
+	$stmt->bind_param('ss', $status,$id); 
+
+	$stmt->execute();
+
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
+
+
+
+
 else if($data->method == "edit_profile")
 {
 	$firstname = $data->firstname;
