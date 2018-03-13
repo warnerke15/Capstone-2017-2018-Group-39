@@ -15,7 +15,7 @@ describe('Controllers', function(){
         
 		console.log("HELLO!!!!!!!");
 		
-		describe('LogoutController', function(){ 
+		//describe('LogoutController', function(){ 
 		
 		it('isAuth should be false', function() {
     
@@ -29,7 +29,7 @@ describe('Controllers', function(){
 
 	  });
 	  
-	});
+	//});
 		
 		/*it('Should return success is true', function() {
     
