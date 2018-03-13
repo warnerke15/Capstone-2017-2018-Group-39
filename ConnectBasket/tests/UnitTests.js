@@ -7,7 +7,7 @@ describe('Controllers', function(){ //describe your object type
         
 		console.log("HELLO!!!!!!!");
 		
-		it('Should return success is true', inject(function($http) {
+		it('Should return success is true', function($http) {
     
 		console.log("HELLO WORLD000000!!!!!!!");
 	
@@ -47,7 +47,7 @@ describe('Controllers', function(){ //describe your object type
 		
 		expect($scope.isAuthenticated).toEqual({success : true});
 
-	  }));
+	  });
 	  
 	  
     });
