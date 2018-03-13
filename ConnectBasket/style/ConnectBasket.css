@@ -4,7 +4,8 @@ Paddletail Black: #000000
 Bucktooth White: #FFFFFF
 */
 body {
-	font-family: 'Concert One', cursive;
+    font-family: 'Cabin', sans-serif;
+    /*font-family: 'Concert One', cursive;*/
 }
 
 .main-navigation
@@ -77,4 +78,23 @@ body {
 	border-radius: 8px;
 	border:none !important;
 	box-shadow:none !important;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #DC4405;
+    color: white;
 }
