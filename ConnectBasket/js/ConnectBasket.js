@@ -195,6 +195,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
+			console.log('data inputted: '+ $data)
 			success = response.data.success; 
 			console.log('Response: ' + response.data.success);
 			if (success)
