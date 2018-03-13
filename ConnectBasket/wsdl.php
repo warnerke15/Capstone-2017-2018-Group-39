@@ -172,7 +172,7 @@ else if($data->method == "change_status")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	$stmt = $conn->prepare('UPDATE Messages SET Status="?" WHERE MessagesTableID=?');
-	$stmt->bind_param('ss', $status,$id); 
+	$stmt->bind_param('si', $status,$id); 
 
 	$stmt->execute();
 	
