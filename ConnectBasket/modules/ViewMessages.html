@@ -3,23 +3,75 @@
     </div>
   
     <div class="col-xs-10 col-md-8 orangeBox">
-        <h2>ALL MESSAGES</h2>
-        
+        <div>
+            <div class="subheader">UNCLAIMED MESSAGES</div>
+            <h4>
+                Highest priority messages will appear at the top. Click the DETAILS button to view the specifics of a message.
+                All unread messages sent to any group you are a part of will appear in this messages box.
+            </h4>
+
             <table>
                 <tr>
                     <th>Message Body</th>
                     <th>View Message Details</th>
-                    
+
                 </tr>
                 <tr ng-repeat="x in messages">
                     <td>{{ x.Message }}</td>
                     <td>
-                        <button type="submit" class="button" >
+                        <button type="submit" class="button">
                             DETAILS
                         </button>
                     </td>
                 </tr>
             </table>
+        </div>
+        <br />
+        <div>
+            <div class="subheader">YOUR CLAIMED MESSAGES</div>
+            <h4>
+                The following messages have already been viewed by you at least once. 
+            </h4>
+
+            <table>
+                <tr>
+                    <th>Message Body</th>
+                    <th>View Message Details</th>
+
+                </tr>
+                <tr ng-repeat="x in messages">
+                    <td>{{ x.Message }}</td>
+                    <td>
+                        <button type="submit" class="button">
+                            DETAILS
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <div class="subheader">OTHER CLAIMED MESSAGES</div>
+            <h4>
+                The following messages have already been viewed by you at least once.
+            </h4>
+
+            <table>
+                <tr>
+                    <th>Message Body</th>
+                    <th>View Message Details</th>
+
+                </tr>
+                <tr ng-repeat="x in messages">
+                    <td>{{ x.Message }}</td>
+                    <td>
+                        <button type="submit" class="button">
+                            DETAILS
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
 
     </div>
 

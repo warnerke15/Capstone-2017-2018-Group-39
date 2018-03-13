@@ -42,6 +42,7 @@ body {
 	margin: auto;
 }
 
+/*Centers text*/
 .center
 {
 	text-align: center;
@@ -52,7 +53,7 @@ body {
 	margin: 20px;
 }
 
-
+/*Orange border box around content on pages*/
 .orangeBox
 {
 	border: solid #DC4405 1px;
@@ -64,10 +65,12 @@ body {
 	color: red;
 }
 
+/*Border around circles on homepage*/
 .homecircle {
 	border: 7px solid #dcdcdc;
 }
 
+/*Submit/Create/Login button CSS*/
 .button {
 	background-color: #dc4405;
 	color: white;
@@ -80,6 +83,8 @@ body {
 	box-shadow:none !important;
 }
 
+
+/*Table CSS*/
 table {
     border-collapse: collapse;
     width: 100%;
@@ -97,4 +102,11 @@ tr:nth-child(even) {
 th {
     background-color: #DC4405;
     color: white;
+}
+
+
+/*Subheader CSS*/
+.subheader {
+    font-size: 24pt;
+    font-weight: bold;
 }
