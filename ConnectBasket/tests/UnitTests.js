@@ -4,32 +4,36 @@ describe('Controllers', function(){
 
     beforeEach(module('ConnectBasketWebApp')); 
 	
-	var $controller;
-	var $httpBackend;
+	//var $controller;
+	//var $httpBackend;
 	
-	beforeEach(inject(function(_$controller_){
+	/*beforeEach(inject(function(_$controller_){
 		$controller = _$controller_;
-    //$controller = $injector.get('$controller');
-	//$httpBackend = $injector.get('$httpBackend');
-	}));
+	}));*/
         
 		console.log("HELLO!!!!!!!");
 		
-		//describe('LogoutController', function(){ 
-		
+		describe('LogoutController', function(){ 
+		var controller;
+		var rootScope;
+		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
+            rootScope = $rootScope;
+			controller = $controller('LogoutController');
+        }));
 		it('isAuth should be false', function() {
     
 		
-		var $rootScope = {};
 		//var controller = $controller('LogoutController', { $rootScope: $rootScope });
-		var controller = $controller('LogoutController', {  });
+		//var controller = $controller('LogoutController', {  });
+		
+		expect(rootScope.isAuth).toEqual(false);
 		
 		//expect($rootScope.isAuth).toEqual(false);
 		expect(1).toEqual(1);
 
 	  });
 	  
-	//});
+	});
 		
 		/*it('Should return success is true', function() {
     
