@@ -202,7 +202,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$data = {
 			'method' : 'change_status',
 			'status' : $scope.changedstate,
-			'id' : 1
+			'id' : $scope.messageid
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
