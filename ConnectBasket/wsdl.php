@@ -412,7 +412,7 @@ else if($data->method == "add_note")
 
 else if($data->method == "change_state")
 {
-	$status = $data->state;
+	$status = $data->status;
 	$body = $data->body;
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
