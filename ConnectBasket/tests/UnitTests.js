@@ -3,14 +3,8 @@ describe('Controllers', function(){ //describe your object type
     beforeEach(module('ConnectBasketWebApp')); //load module<br />
     describe('LoginController',function(){ //describe your app name<br />
         
-        it('Should', function(){  //write tests
-			scope.username = 'Test';
-			scope.password = '12345678';
-			scope.formSubmit();
-            expect(scope.error).toBe(''); //pass
-        });
 		
-		it('should post data (object)', inject(function($http) {
+		it('Should return success and user info', inject(function($http) {
     
 		var $scope = {};
 
@@ -32,7 +26,7 @@ describe('Controllers', function(){ //describe your object type
 
 
 		$httpBackend
-		  .when('POST', 'http://localhost/auth', { 
+		  .when('POST', 'http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php', { 
 			'method' : 'check_login',
 			'username' : 'Test',
 			'password' : '12345678'
