@@ -1,3 +1,5 @@
+console.log("HELLO WORLD!!!!!!!");
+
 describe('Controllers', function(){ //describe your object type
 
     beforeEach(module('ConnectBasketWebApp')); //load module<br />
