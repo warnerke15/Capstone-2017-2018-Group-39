@@ -164,15 +164,16 @@ else if($data->method == "create_user")
 else if($data->method == "change_status")
 {
 	$status = $data->status;
-	$id = $data->id;
+	// $id = $data->id;
 
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('UPDATE Messages SET Status=? WHERE MessagesTableID=?');
-	$stmt->bind_param('ss', $status,$id); 
+	$stmt = $conn->prepare('UPDATE Messages SET Status=? WHERE MessagesTableID=1');
+	$stmt->bind_param('s', $status); 
+	// $stmt->bind_param('ss', $status,$id); 
 
 	$stmt->execute();
 	
