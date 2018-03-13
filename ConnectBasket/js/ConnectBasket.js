@@ -132,6 +132,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	};
 	$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data);
 	
+	$scope.isAuth = false;
+	
 	$rootScope.isAuth = false;
 	
 	LoginService.unauthenticate();

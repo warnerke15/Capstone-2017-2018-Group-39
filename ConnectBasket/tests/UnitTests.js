@@ -15,10 +15,10 @@ describe('Controllers', function(){
 		
 		describe('LogoutController', function(){ 
 		var controller;
-		var rootScope;
-		beforeEach(inject(function($controller, _$rootScope_){ //instantiate controller using $controller service
-            rootScope = _$rootScope_;
-			controller = $controller('LogoutController', {rootScope : $rootScope});
+		var $scope;
+		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
+            $scope = $rootScope.$new();
+			controller = $controller('LogoutController', {$scope : $scope});
         }));
 		it('isAuth should be false', function() {
     
@@ -26,7 +26,7 @@ describe('Controllers', function(){
 		//var controller = $controller('LogoutController', { $rootScope: $rootScope });
 		//var controller = $controller('LogoutController', {  });
 		
-		expect(rootScope.isAuth).toEqual(false);
+		expect($scope.isAuth).toEqual(false);
 		
 		//expect($rootScope.isAuth).toEqual(false);
 		expect(1).toEqual(1);
