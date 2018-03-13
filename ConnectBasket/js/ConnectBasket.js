@@ -85,6 +85,16 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
         templateUrl : 'modules/CheckSession.html',
         controller : 'CheckSessionController'
       })
+	  .state('historyofmessages', {
+        url : '/historyofmessages',
+        templateUrl : 'modules/HistoryOfMessages.html',
+        controller : 'HistoryOfMessagesController'
+      })
+	  .state('auditlog', {
+        url : '/auditlog',
+        templateUrl : 'modules/AuditLog.html',
+        controller : 'AuditLogController'
+      })
 	  .state('editprofile', {
         url : '/editprofile',
         templateUrl : 'modules/EditProfile.html',
