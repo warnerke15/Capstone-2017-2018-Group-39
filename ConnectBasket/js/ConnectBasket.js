@@ -246,6 +246,20 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
   });
   
+  app.controller('HistoryOfMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "HISTORY OF MESSAGES";
+	
+	
+	
+  });
+  
+  app.controller('AuditLogController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+    $rootScope.title = "AUDIT LOG";
+	
+	
+	
+  });
+  
   app.controller('CreateOwnerController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     $rootScope.title = "CREATE OWNER";
 	
