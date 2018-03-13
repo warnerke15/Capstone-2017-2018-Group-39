@@ -32,37 +32,22 @@
             <h4>
                 The following messages have already been viewed by you at least once. 
             </h4>
-			<form name="ChangeMessageState" ng-submit="formSubmit()" novalidate>
+
             <table>
                 <tr>
                     <th>Message Body</th>
                     <th>View Message Details</th>
-                    <th>Message State</th>
 
                 </tr>
                 <tr ng-repeat="x in messages">
-                    <td>{{ x.Message }}
-					<input type="hidden" name="body" value={{x.message}}>
-					</td>
+                    <td>{{ x.Message }}</td>
                     <td>
-					<!-- Changing this button to a div for now so it doesn't interfere with the form -->
-                        <div class="button">
+                        <button type="submit" class="button">
                             DETAILS
-                        </div>
+                        </button>
                     </td>
-					<td>
-						<select name="state">
-							<option value='new'>New</option>
-							<option value='inprogress'>In Progress</option>
-							<option value='closed'>Closed</option>
-						</select>
-					</td>
                 </tr>
             </table>
-			<button type="submit" class="button">
-                    Submit State Changes
-            </button>
-			</form>
         </div>
         <div>
             <div class="subheader">OTHER CLAIMED MESSAGES</div>
