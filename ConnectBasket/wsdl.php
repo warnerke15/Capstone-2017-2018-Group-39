@@ -409,4 +409,27 @@ else if($data->method == "add_note")
 	echo json_encode($jsonData);
  
 }
+
+else if($data->method == "change_state")
+{
+	$state = $data->state;
+	$body = $data->body;
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('Update Messages Set Status="?" Where Body="?"');
+	$stmt->bind_param('ss', $state,$body); 
+	
+	$stmt->execute();
+
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
 ?>
