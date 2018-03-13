@@ -1,3 +1,5 @@
+console.log("HELLO WORLD!!!!!!!");
+
 describe('Controllers', function(){ //describe your object type
 
     beforeEach(module('ConnectBasketWebApp')); //load module<br />
@@ -32,6 +34,8 @@ describe('Controllers', function(){ //describe your object type
 
 
 		$httpBackend.flush();
+		
+		console.log($scope.isAuthenticated);
 		
 		expect($scope.isAuthenticated).toEqual({success : true});
 
