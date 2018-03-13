@@ -176,19 +176,19 @@ else if($data->method == "change_status")
 
 	$stmt->execute();
 	
-	$stmt = $conn->prepare('Select Count(MessagesTableID) WHERE Status="?" and MessagesTableID=?');
-	$stmt->bind_param('ss', $status,$id); 
+	// $stmt = $conn->prepare('Select Count(MessagesTableID) WHERE Status="?" and MessagesTableID=?');
+	// $stmt->bind_param('ss', $status,$id); 
 
-	$stmt->execute();
-	$result = $stmt->get_result();
-	if ($result->num_rows > 0)
-	{
+	// $stmt->execute();
+	// $result = $stmt->get_result();
+	// if ($result->num_rows > 0)
+	// {
 		$success = true;
-	}
-	else
-	{
-		$success = false;
-	}
+	// }
+	// else
+	// {
+		// $success = false;
+	// }
 
 	$jsonData=array();
 	$jsonData['success']=$success;
