@@ -117,3 +117,14 @@ th {
     font-weight: bold;
     color: #DC4405;
 }
+
+footer {
+    padding:50px;
+    margin-top: 50px;
+    background-color: #dc4405;
+    color: white;
+}
+
+.footerbig {
+    font-size: 2em;
+}
