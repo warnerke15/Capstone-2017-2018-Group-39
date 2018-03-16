@@ -16,7 +16,7 @@ if($data->method == "check_login")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT Username, FirstName, LastName, EmailAddress, Password FROM Users WHERE Username=?');
+	$stmt = $conn->prepare('SELECT Username, FirstName, LastName, EmailAddress, ReceiveEmails, Password FROM Users WHERE Username=?');
 	$stmt->bind_param('s', $username); 
 	
 	$username = $data->username;
@@ -35,6 +35,7 @@ if($data->method == "check_login")
 				$FirstName = $row["FirstName"];
 				$LastName = $row['LastName'];
 				$Email = $row['EmailAddress'];
+				$Notifications = $row['ReceiveEmails'];
 				$success = true;
 								
 			}
@@ -64,12 +65,14 @@ if($data->method == "check_login")
 	$jsonData['last']=$LastName;
 	$jsonData['username']=$User;
 	$jsonData['email']=$Email;
+	$jsonData['notifications']=$Notifications;
 	
 	$_SESSION['authenticated'] = $success;
 	$_SESSION['firstname'] = $FirstName;
 	$_SESSION['lastname'] = $LastName;
 	$_SESSION['email'] = $Email;
 	$_SESSION['username'] = $User;
+	$_SESSION['notifications'] = $Notifications;
 	
  
 	$conn->close();
@@ -204,10 +207,10 @@ else if($data->method == "change_status")
 
 else if($data->method == "edit_profile")
 {
-	$firstname = $data->firstname;
-	$lastname = $data->lastname;
 	$username = $_SESSION['username'];
 	$email = $data->email;
+	$receive = $data->receive;
+	$groups = $data->groups;
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{

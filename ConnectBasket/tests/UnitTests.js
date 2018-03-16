@@ -23,13 +23,9 @@ describe('Controllers', function(){
 		it('isAuth should be false', function() {
     
 		
-		//var controller = $controller('LogoutController', { $rootScope: $rootScope });
-		//var controller = $controller('LogoutController', {  });
-		
 		expect($scope.isAuth).toEqual(false);
 		
-		//expect($rootScope.isAuth).toEqual(false);
-		//expect(1).toEqual(1);
+
 
 	  });
 	  

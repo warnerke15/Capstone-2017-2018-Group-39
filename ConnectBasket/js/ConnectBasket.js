@@ -473,6 +473,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	var prevState = 'home';
 	var http = $http;
 	var state = $state;
+	var notifications = 0;
     
     return {
       login : function(username, password) {
@@ -480,7 +481,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$data = {
 			'method' : 'check_login',
 			'username' : username,
-			'password' : password,
+			'password' : password
 		};
 		return http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
@@ -490,6 +491,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			lastName = response.data.last;
 			username = response.data.username;
 			email = response.data.email;
+			notifications = response.data.notifications;
 			
 			if (isAuthenticated)
 			{
