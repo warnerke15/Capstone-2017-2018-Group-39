@@ -231,7 +231,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
-			'method' : 'get_groups',	
+			'method' : 'get_groups'	
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
@@ -421,11 +421,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService, $http) {
 	
 	//Put this code at the top of every controller	
-	if (!LoginService.isAuthenticated())
-	{
-		
-	}
-	else
+	if (LoginService.isAuthenticated())
 	{
 		$rootScope.title = "WELCOME TO CONNECTBASKET, " + LoginService.firstName();
 		$rootScope.isAuth = true;
