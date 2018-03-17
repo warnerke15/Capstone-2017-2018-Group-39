@@ -36,10 +36,7 @@
                     <label>Email Notifications: </label>
                 </div>
                 <div class="col-xs-6 col-md-5">
-                    <select>
-                        <option value="1">On</option>
-                        <option value="0">Off</option>
-                    </select>
+                    <select name="receiveNotifications" ng-model="scope.receive.selection" ng-options="obj.value as obj.label for obj in receive.receiveArr"></select>
                 </div>
             </div>
 

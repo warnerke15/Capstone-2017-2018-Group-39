@@ -1,33 +1,3 @@
-/**
- * Main AngularJS Web Application
- */
-/*var app = angular.module('ConnectBasketWebApp', [
-  'ngRoute'
-]);*/
-
-/**
- * Configure the Routes
- */
- 
- /**
-* Configure the Routes
-*/
-/*app.config(function ($routeProvider) {
-$routeProvider
-// Home
-.when("/Home", {templateUrl: "modules/Home.html", controller: "HomeController"})
-// Pages
-.when("/Login", {templateUrl: "modules/Login.html", controller: "LoginController"})
-
-.when("/CreateUser", {templateUrl: "modules/CreateUser.html"})
-
-.when("/CreatePet", {templateUrl: "modules/CreatePet.html"})
-
-.when("/CreateOwner", {templateUrl: "modules/CreateOwner.html"})
-// else 404
-.otherwise("/Home", {templateUrl: "modules/Home.html"});
-});*/
-
 var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
   
@@ -241,8 +211,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.title = "EDIT PROFILE";
           $rootScope.isAuth = true;
       }
-
-      
 	
 	var success = false;
 	
@@ -250,6 +218,17 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
 	
 	$scope.email = LoginService.email();
+	var notifications = LoginService.notifications();
+	
+	$scope.receive = {};
+	$scope.receive.receiveArr = [
+
+		{ value: "0", label: "Off" }
+		,
+		{ value: "1", label: "On" }
+	];
+
+	$scope.receive.selection = notifications; 
 
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
@@ -259,7 +238,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		.then(function (response) 
 		{
 			$scope.groups = response.data.groups; 
-			
 		});
 	
 	$scope.emailButton = function() {
@@ -586,6 +564,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
       },
 	  prevState : function() {
         return prevState;
+      },
+	  notifications : function() {
+        return notifications;
       },
 	  unauthenticate : function() {
         isAuthenticated = false;
