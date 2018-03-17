@@ -91,6 +91,7 @@ else if($data->method == "check_auth")
 		$jsonData['lastname']=$_SESSION['lastname'];
 		$jsonData['username']=$_SESSION['username'];
 		$jsonData['email']=$_SESSION['email'];
+		$jsonData['notifications']=$_SESSION['notifications'];
 	}
 	else
 	{
@@ -99,6 +100,7 @@ else if($data->method == "check_auth")
 		$jsonData['lastname']="";
 		$jsonData['username']="";
 		$jsonData['email']="";
+		$jsonData['notifications']=$_SESSION['notifications'];
 	}	
 	
  	echo json_encode($jsonData);
@@ -384,14 +386,17 @@ else if($data->method == "get_messages")
 else if($data->method == "get_groups")
 {
 	
+	$username = $_SESSION['username'];
+	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT GroupName FROM Groups');
-
+	$stmt = $conn->prepare('CALL getUserGroups(?)');
+	$stmt->bind_param('s', $username); 
+	
 	$stmt->execute();
 
 	
@@ -399,7 +404,7 @@ else if($data->method == "get_groups")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'Group' => $row['GroupName']);
+		$arr[] = array( 'Group' => $row['GroupName'], 'Member' => $row['Member']);
 	}
 
 	$conn->close();

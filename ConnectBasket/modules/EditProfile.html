@@ -51,7 +51,7 @@
                 <div class="col-xs-6 col-md-9">
                     
                     <div ng-repeat="x in groups">
-                        <input type="checkbox" id="x" name="x" value="x">
+                        <input type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}" checked="{{x.Member}}">
                         <label>{{x.Group}}</label>
                     </div>
                     <!--<div>

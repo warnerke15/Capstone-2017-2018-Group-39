@@ -231,7 +231,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
-			'method' : 'get_groups'		
+			'method' : 'get_groups',	
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
@@ -448,10 +448,11 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			lastName = response.data.lastname;
 			username = response.data.username;
 			email = response.data.email;
+			notifications = response.data.notifications;
 			
 			if (isAuthenticated)
 			{
-				LoginService.set(isAuthenticated, firstName, lastName, username, email);
+				LoginService.set(isAuthenticated, firstName, lastName, username, email, notifications);
 				$state.transitionTo(LoginService.prevState());
 			}
 			else
@@ -513,12 +514,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
         return isAuthenticated;
       },
-	  set : function(i, f, l, u, e) {
+	  set : function(i, f, l, u, e, n) {
         isAuthenticated = i;
 		firstName = f;
 		lastName = l;
 		username = u;
 		email = e;
+		notifications = n;
       },
 	  firstName : function() {
         return firstName;
