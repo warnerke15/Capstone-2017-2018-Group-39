@@ -219,7 +219,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
 	$scope.email = LoginService.email();
 	var notifications = LoginService.notifications();
-	console.log(notifications);
 	
 	$scope.receive = {};
 	$scope.receive.receiveArr = [
@@ -230,7 +229,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	];
 
 	$scope.receive.selection = $scope.receive.receiveArr[notifications].value; 
-
+	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_groups'	
