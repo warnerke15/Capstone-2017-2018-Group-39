@@ -228,7 +228,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		{ value: "1", label: "On" }
 	];
 
-	$scope.receive.selection = notifications; 
+	$scope.receive.selection = $scope.receive.receiveArr[notifications].value; 
 
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
