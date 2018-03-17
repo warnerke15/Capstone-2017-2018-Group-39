@@ -51,8 +51,10 @@
                 <div class="col-xs-6 col-md-9">
                     
                     <div ng-repeat="x in groups">
-                        <input ng-if="{{x.Member}} == 1" type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}" checked>
-						<input ng-if="{{x.Member}} == 0" type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}">
+						<div ng-switch on="x.Member">
+							<input ng-switch-when="1" type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}" checked>
+							<input ng-switch-default type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}">
+						</div>
                         <label>{{x.Group}}</label>
 						
 						<p> Member: {{x.Member}}</p>
