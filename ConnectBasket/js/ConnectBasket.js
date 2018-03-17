@@ -219,6 +219,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
 	$scope.email = LoginService.email();
 	var notifications = LoginService.notifications();
+	console.log(notifications);
 	
 	$scope.receive = {};
 	$scope.receive.receiveArr = [
