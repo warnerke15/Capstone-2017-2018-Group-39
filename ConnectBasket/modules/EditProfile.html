@@ -51,7 +51,8 @@
                 <div class="col-xs-6 col-md-9">
                     
                     <div ng-repeat="x in groups">
-                        <input type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}" checked="{{x.Member}}">
+                        <input ng-if="{{x.Member}}" type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}" checked>
+						<input ng-if="!{{x.Member}}" type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}">
                         <label>{{x.Group}}</label>
 						
 						<p> Member: {{x.Member}}</p>
