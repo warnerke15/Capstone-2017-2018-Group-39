@@ -142,8 +142,12 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   
   app.controller('CreateUserController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
     
-	$rootScope.title = "CREATE USER";
-	
+      //Put this code at the top of every controller	
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "CREATE USER";
+          $rootScope.isAuth = true;
+      }
+
 		
 	var success = false;	
 		
@@ -178,7 +182,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "VIEW MESSAGES";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "VIEW MESSAGES";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
@@ -194,7 +204,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   
   
   app.controller('ViewMessageDetailsController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "VIEW MESSAGE DETAILS";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "VIEW MESSAGE DETAILS";
+          $rootScope.isAuth = true;
+      }
+
+      
 
 	var success = false;	
 		
@@ -220,7 +236,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   
   
   app.controller('EditProfileController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "EDIT PROFILE";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "EDIT PROFILE";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 	var success = false;
 	
@@ -271,14 +293,22 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('AddNoteController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "ADD NOTE";
-	
-	
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "ADD NOTE";
+          $rootScope.isAuth = true;
+      }
 	
   });
   
   app.controller('HistoryOfMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "HISTORY OF MESSAGES";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "HISTORY OF MESSAGES";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
@@ -294,7 +324,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('AuditLogController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "AUDIT LOG";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "AUDIT LOG";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
@@ -310,7 +346,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('CreateOwnerController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "CREATE OWNER";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "CREATE OWNER";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 	var success = false;	
 		
@@ -349,7 +391,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('CreatePetController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "CREATE PET";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "CREATE PET";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 	var success = false;	
 		
@@ -385,7 +433,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
   });
   
   app.controller('AddMessageController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
-    $rootScope.title = "ADD MESSAGE";
+
+      if (LoginService.isAuthenticated()) {
+          $rootScope.title = "ADD MESSAGE";
+          $rootScope.isAuth = true;
+      }
+
+      
 	
 		
 	var success = false;	
