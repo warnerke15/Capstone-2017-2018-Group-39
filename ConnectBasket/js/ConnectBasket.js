@@ -247,10 +247,10 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
     $scope.formSubmit = function() {
 		var groups = '';
 		var elem;
-		console.log('hello world');
+		console.log(typeof($scope.groups));
         for(x in $scope.groups)
         {
-            console.log(x.Group);
+            console.log($scope.groups[x]);
 			elem = document.getElementById(x.Group);
 			if (elem.checked)
 			{
