@@ -48,7 +48,7 @@ if($data->method == "check_login")
 	
 	$stmt->close();
 	
-	if ($success)
+	/*if ($success)
 	{
 		$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
 		$stmt->bind_param('ss', $Message, $User); 
@@ -57,7 +57,7 @@ if($data->method == "check_login")
 		$stmt->execute();
 		
 		$stmt->close();
-	}
+	}*/
 
 	$jsonData=array();
 	$jsonData['success']=$success;
@@ -146,7 +146,7 @@ else if($data->method == "create_user")
 	{
 		$success = true;
 		
-		$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+		$stmt = $conn->prepare('Call addLogMessage(?, ?, 2)');
 		$stmt->bind_param('ss', $Message, $User); 
 
 		$User = $_SESSION['username'];
@@ -224,7 +224,7 @@ else if($data->method == "edit_profile")
 
 	$stmt->execute();	
 	
-	$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+	$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
 	$stmt->bind_param('ss', $Message, $username); 
 
 	$Message = 'Updated profile. EmailAddress now: ' . $email . ', ReceiveEmails now: ' . $notifications;
@@ -242,7 +242,7 @@ else if($data->method == "edit_profile")
 
 		$stmt->execute();
 		
-		$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+		$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
 		$stmt->bind_param('ss', $Message, $username); 
 
 		$Message = 'User was added to group: ' . $g;
@@ -386,6 +386,7 @@ else if($data->method == "create_message")
 
 else if($data->method == "get_messages")
 {
+	$username = $_SESSION['username'];
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
@@ -393,8 +394,9 @@ else if($data->method == "get_messages")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT Body FROM Messages');
-
+	$stmt = $conn->prepare('Call getMessagesForUser(?)');
+	$stmt->bind_param('s', $username);
+	
 	$stmt->execute();
 
 	
@@ -402,7 +404,7 @@ else if($data->method == "get_messages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'Message' => $row['Body']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject']);
 	}
 
 	$conn->close();
@@ -446,7 +448,7 @@ else if($data->method == "get_logs")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT LogMessage, Username, DBCreateDate FROM LogMessages');
+	$stmt = $conn->prepare('SELECT LogMessage, Username, DBCreateDate FROM LogMessages Order By DBCreateDate desc');
 
 	$stmt->execute();
 
