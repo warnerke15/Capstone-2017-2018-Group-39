@@ -247,11 +247,10 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
     $scope.formSubmit = function() {
 		var groups = '';
 		var elem;
-		console.log(typeof($scope.groups));
         for(x in $scope.groups)
         {
-            console.log($scope.groups[x]);
-			elem = document.getElementById(x.Group);
+            console.log($scope.groups[x].Group);
+			/*elem = document.getElementById(x.Group);
 			if (elem.checked)
 			{
 				console.log('Checked');
@@ -263,7 +262,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 				{
 					groups += '|' + elem.value;
 				}
-			}
+			}*/
         } 
 		
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
