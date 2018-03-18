@@ -276,6 +276,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			success = response.data.success; 
 			if (success)
 			{
+				LoginService.setemail($scope.email);
+				LoginService.setnotifications($scope.receive.selection);
 				$state.transitionTo('home');
 			}
 			else 
@@ -575,6 +577,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	  lastName : function() {
         return lastName;
       },
+	  setemail : function(e) {
+        email = e;
+      },
 	  email : function() {
         return email;
       },
@@ -583,6 +588,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
       },
 	  prevState : function() {
         return prevState;
+      },
+	  setnotifications : function(n) {
+        notifications = n;
       },
 	  notifications : function() {
         return notifications;
