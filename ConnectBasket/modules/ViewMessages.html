@@ -14,7 +14,6 @@
                 <tr>
                     <th>Create Date</th>
                     <th>Created By</th>
-                    <th>Department Created In</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>View Message Details</th>
 
@@ -22,7 +21,6 @@
                 <tr ng-repeat="x in messages">
                     <td>Date</td>
                     <td>Username</td>
-                    <td>Department</td>
                     <td>{{ x.Message }}</td>
                     <td>
                         <button type="submit" class="button">
@@ -43,7 +41,6 @@
                 <tr>
                     <th>Create Date</th>
                     <th>Created By</th>
-                    <th>Department Created In</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>View Message Details</th>
 
@@ -51,7 +48,6 @@
                 <tr ng-repeat="x in messages">
                     <td>Date</td>
                     <td>Username</td>
-                    <td>Department</td>
                     <td>{{ x.Message }}</td>
                     <td>
                         <a ui-sref="viewmessagedetails" class="button">DETAILS</a>
