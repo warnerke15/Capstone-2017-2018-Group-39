@@ -211,7 +211,7 @@ else if($data->method == "edit_profile")
 {
 	$username = $_SESSION['username'];
 	$email = $data->email;
-	$receive = $data->receive;
+	$notifications = $data->notifications;
 	$groups = $data->groups;
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)

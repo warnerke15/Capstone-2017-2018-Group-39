@@ -245,10 +245,32 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	}
 		
     $scope.formSubmit = function() {
+		var groups = '';
+		var elem;
+        for(var i = 0; i < $scope.groups.length; i++)
+        {
+            console.log($scope.groups[i].Group);
+			elem = document.getElementById($scope.groups[i].Group);
+			if (elem.checked)
+			{
+				console.log('Checked');
+				if (groups == '')
+				{
+					groups = elem.value;
+				}
+				else
+				{
+					groups += '|' + elem.value;
+				}
+			}
+        } 
+		
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'edit_profile',
-			'email' : $scope.email
+			'email' : $scope.email,
+			'notifications' : $scope.receive.selection,
+			'groups' : groups
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
