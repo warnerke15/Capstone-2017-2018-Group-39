@@ -249,11 +249,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		var elem;
         for(x in $scope.groups)
         {
-            console.log($scope.groups[x].Group);
 			elem = document.getElementById($scope.groups[x].Group);
 			if (elem.checked)
 			{
-				console.log('Checked');
 				if (groups == '')
 				{
 					groups = elem.value;
@@ -276,7 +274,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		.then(function (response) 
 		{
 			success = response.data.success; 
-			console.log('Response: ' + response.data.success);
 			if (success)
 			{
 				$state.transitionTo('home');

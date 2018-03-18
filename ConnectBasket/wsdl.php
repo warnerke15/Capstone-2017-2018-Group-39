@@ -219,7 +219,7 @@ else if($data->method == "edit_profile")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	$stmt = $conn->prepare('Call updateUserInfo(?,?,?)');
-	$stmt->bind_param('sss', $username, $email, $notifications); 
+	$stmt->bind_param('sss', $email, $notifications, $username); 
 
 	$stmt->execute();	
 	
