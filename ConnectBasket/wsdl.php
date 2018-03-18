@@ -50,7 +50,7 @@ if($data->method == "check_login")
 	
 	if ($success)
 	{
-		$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
+		$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
 		$stmt->bind_param('ss', $Message, $User); 
 
 		$Message = $User . ' logged in';
@@ -146,12 +146,13 @@ else if($data->method == "create_user")
 	{
 		$success = true;
 		
-		$stmt = $conn->prepare('Insert Into LogMessages(LogMessage, Username, LogMessageTypesTableID) Values(?, ?, 1)');
+		$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
 		$stmt->bind_param('ss', $Message, $User); 
-		
+
 		$User = $_SESSION['username'];
 		$Message = $username . ' was created';
 		$stmt->execute();
+		
 	}
 	else
 	{
@@ -223,6 +224,12 @@ else if($data->method == "edit_profile")
 
 	$stmt->execute();	
 	
+	$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'Updated profile. EmailAddress now: ' . $email . ', ReceiveEmails now: ' . $notifications;
+	$stmt->execute();
+	
 	$stmt = $conn->prepare('Call removeUserGroups(?)');
 	$stmt->bind_param('s', $username); 
 
@@ -233,6 +240,12 @@ else if($data->method == "edit_profile")
 		$stmt = $conn->prepare('Call addUserToGroup(?,?)');
 		$stmt->bind_param('ss', $g, $username); 
 
+		$stmt->execute();
+		
+		$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+		$stmt->bind_param('ss', $Message, $username); 
+
+		$Message = 'User was added to group: ' . $g;
 		$stmt->execute();
 	}	
 	
