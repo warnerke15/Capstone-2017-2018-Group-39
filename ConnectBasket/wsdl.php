@@ -212,16 +212,29 @@ else if($data->method == "edit_profile")
 	$username = $_SESSION['username'];
 	$email = $data->email;
 	$notifications = $data->notifications;
-	$groups = $data->groups;
+	$groups = explode("|",$data->groups);
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Update Users Set LastName=?,FirstName=?,EmailAddress=? Where Username=?');
-	$stmt->bind_param('ssss', $lastname,$firstname,$email,$username); 
+	$stmt = $conn->prepare('Call updateUserInfo(?,?,?)');
+	$stmt->bind_param('sss', $username, $email, $notifications); 
 
 	$stmt->execute();	
+	
+	$stmt = $conn->prepare('Call removeUserGroups(?)');
+	$stmt->bind_param('s', $username); 
+
+	$stmt->execute();	
+	
+	foreach ($groups as $g)
+	{
+		$stmt = $conn->prepare('Call addUserToGroup(?,?)');
+		$stmt->bind_param('ss', $g, $username); 
+
+		$stmt->execute();
+	}	
 	
 	$success = true;
 	
