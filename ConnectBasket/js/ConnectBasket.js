@@ -466,14 +466,19 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'create_message',
-			'username' : $scope.username,
+			'caseNumber' : $scope.casenumber,
+			'patientName' : $scope.patientname,
+			'ownerName' : $scope.ownername,
+			'category' : $scope.category,
+			'recipient' : $scope.recipient,
+			'contactMethod' : $scope.contactmethod,
+			'urgency' : $scope.urgency,
 			'body' : $scope.body
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
 			success = response.data.success; 
-			console.log('Response: ' + response.data.success);
 			if (success)
 			{
 				$state.transitionTo('home');

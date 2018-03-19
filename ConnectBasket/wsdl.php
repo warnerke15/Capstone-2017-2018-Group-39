@@ -348,34 +348,35 @@ else if($data->method == "create_pet")
 
 else if($data->method == "create_message")
 {
-	$username = $data->username;
+	$username = $_SESSION['username'];
+	$caseNumber = $data->caseNumber;
+	$patientName = $data->patientName;
+	$ownerName = $data->ownerName;
+	$category = $data->category;
 	$body = $data->body;
+	$recipient = $data->recipient;
+	$contactMethod = $data->contactMethod;
+	$urgency = $data->urgency;
+	
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Messages(Recipient, Body) Values(?,?)');
-	$stmt->bind_param('ss', $username,$body); 
+	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?');
+	$stmt->bind_param('ssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency); 
 	
 	$stmt->execute();
 	
-	$stmt = $conn->prepare('SELECT Count(MessagesTableID) FROM Messages WHERE Body=?');
-	$stmt->bind_param('s', $body); 
+	$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+	$stmt->bind_param('ss', $Message, $username); 
 
+	$Message = 'New message created. Sent to: ' . $recipient ;
 	$stmt->execute();
-
-	$result = $stmt->get_result();
-	if ($result->num_rows > 0)
-	{
-		$success = true;
-	}
-	else
-	{
-		$success = false;
-	}
-
+		
+	$success = true;
+	
 	$jsonData=array();
 	$jsonData['success']=$success;
  
