@@ -13,7 +13,7 @@
                 <tr>
                     <th>Create Date</th>
                     <th>Created By</th>
-					<th>Last Claimed By</th>
+					<th>Routed To</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>View Message Details</th>
 
@@ -21,7 +21,7 @@
                 <tr ng-repeat="x in claimedmessages">
                     <td>{{ x.CreateDate }}</td>
                     <td>{{ x.CreatedBy }}</td>
-					<td>{{ x.LastClaimedBy }}</td>
+					<td>{{ x.Recipient }}</td>
                     <td>{{ x.Subject }}</td>
                     <td>
                         <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
@@ -43,7 +43,7 @@
                 <tr>
                     <th>Create Date</th>
                     <th>Created By</th>
-					<th>Last Claimed By</th>
+					<th>Routed To</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>View Message Details</th>
 
@@ -51,7 +51,7 @@
                 <tr ng-repeat="x in messages">
                     <td>{{ x.CreateDate }}</td>
                     <td>{{ x.CreatedBy }}</td>
-					<td>{{ x.LastClaimedBy }}</td>
+					<td>{{ x.Recipient }}</td>
                     <td>{{ x.Subject }}</td>
                     <td>
                         <button type="button" class="button" ng-click="viewDetails(x.MessageID)">

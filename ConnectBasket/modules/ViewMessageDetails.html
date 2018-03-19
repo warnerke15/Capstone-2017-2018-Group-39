@@ -182,7 +182,41 @@
 
 <br />
 
+<div class="row">
+    <div class="col-xs-1 col-md-2">
+    </div>
+  
+    <div class="col-xs-10 col-md-8 orangeBox">
+        <div>
+            <div class="subheader">YOUR CLAIMED MESSAGES (ACTION NEEDED)</div>
+            <h4>
+                The following messages have already been viewed by you at least once. 
+            </h4>
 
+            <table>
+                <tr>
+                    <th>Create Date</th>
+                    <th>Created By</th>
+					<th>Routed To</th>
+                    <th>Note</th>
+                    <th>View Message Details</th>
+
+                </tr>
+                <tr ng-repeat="x in notes">
+                    <td>{{ x.CreateDate }}</td>
+                    <td>{{ x.CreatedBy }}</td>
+					<td>{{ x.Recipient }}</td>
+                    <td>{{ x.Note }}</td>
+                    <td>{{ x.UrgencyLevel}} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-xs-1 col-md-2">
+    </div>
+</div>
+<br />
 
 <div class="row">
     <div class="col-xs-1 col-md-2">

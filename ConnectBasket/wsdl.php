@@ -514,11 +514,39 @@ else if($data->method == "get_messages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'LastClaimedBy' => $row['LastClaimedBy'], 'MessageID' => $row['MessageID']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID']);
 	}
 
 	$conn->close();
 	echo json_encode(array('messages' => $arr)); 
+}
+
+else if($data->method == "get_notes")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('Call getNotesForMessage(?)');
+	$stmt->bind_param('i', $MessageID);
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Recipient' => $row['Recipient'], 'Note' => $row['Note'], 'UrgencyLevel' => $row['UrgencyLevel']);
+	}
+
+	$conn->close();
+	echo json_encode(array('notes' => $arr)); 
 }
 
 else if($data->method == "get_claimedMessages")
@@ -541,7 +569,7 @@ else if($data->method == "get_claimedMessages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'LastClaimedBy' => $row['LastClaimedBy'], 'MessageID' => $row['MessageID']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID']);
 	}
 
 	$conn->close();
