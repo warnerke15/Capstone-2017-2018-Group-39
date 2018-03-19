@@ -365,7 +365,7 @@ else if($data->method == "create_message")
 	}
 	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?,?)');
 	
-	$stmt->bind_param('ssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency,$username); 
+	$stmt->bind_param('sssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency,$username); 
 	
 
 	$stmt->execute();
