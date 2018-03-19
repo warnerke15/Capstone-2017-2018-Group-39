@@ -132,3 +132,10 @@ footer {
 .footerbig {
     font-size: 2em;
 }
+
+
+.checkbox-grid li {
+    display: block;
+    float: left;
+    width: 50%;
+}
