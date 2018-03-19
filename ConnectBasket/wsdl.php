@@ -435,9 +435,9 @@ else if($data->method == "add_noteRoute")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('call addNoteWithRoute(?,?,?,?)');
+	$stmt = $conn->prepare('call addNoteWithRoute(?,?,?,?,?)');
 	
-	$stmt->bind_param('isss', $MessageID,$Note,$UrgencyLevel,$Recipient); 
+	$stmt->bind_param('issss', $MessageID,$Note,$UrgencyLevel,$Recipient, $username); 
 	
 
 	$stmt->execute();
@@ -470,9 +470,9 @@ else if($data->method == "add_noteComplete")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('call addNoteComplete(?,?)');
+	$stmt = $conn->prepare('call addNoteComplete(?,?,?)');
 	
-	$stmt->bind_param('is', $MessageID,$Note); 
+	$stmt->bind_param('iss', $MessageID,$Note,$username); 
 	
 
 	$stmt->execute();
