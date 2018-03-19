@@ -84,7 +84,7 @@
                         <label> Note: </label>
                     </div>
                     <div class="col-xs-5">
-                        <textarea rows="3" class="form-control" name="body" ng-model="addnote" required></textarea>
+                        <textarea rows="3" class="form-control" name="addnote" ng-model="addnote" required></textarea>
                     </div>
                     <div class="col-xs-2">
                         <label> Level of Urgency: </label>
@@ -124,7 +124,7 @@
                 <div class="row">
                     <div class="col-xs-8"></div>
                     <div class="col-xs-4">
-                        <button class="button" ng-click="addNoteAndRoute()">
+                        <button type="button" class="button" ng-click="addNoteAndRoute()">
                             ADD NOTE & ROUTE
                         </button>
                     </div>
@@ -150,7 +150,7 @@
                 <div class="row">
                     <div class="col-xs-8"></div>
                     <div class="col-xs-4">
-                        <button class="button" ng-click="addNoteAndComplete()">
+                        <button type="button" class="button" ng-click="addNoteAndComplete()">
                             MARK AS COMPLETED
                         </button>
                     </div>
