@@ -465,13 +465,11 @@ else if($data->method == "get_messageDetails")
 	
 
 	
-	$stmt = $conn->prepare('Call addLogMessage(?, ?, 4)');
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 4)');
 	$stmt->bind_param('ss', $Message, $username); 
 
-	header("Location: https://www.google.com/" . $MessageID);
-
 	$Message = 'Message with case number: ' . $jsonData['CaseNumber'] . ' was viewed';
-	$stmt->execute();
+	$stmt->execute();*/
 
 	$conn->close();
 	echo json_encode($jsonData); 
