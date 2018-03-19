@@ -439,6 +439,33 @@ else if($data->method == "get_groups")
 	echo json_encode(array('groups' => $arr)); 
 }
 
+else if($data->method == "get_categories")
+{
+	
+	$username = $_SESSION['username'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('CALL getCategories()');
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'Category' => $row['CategoryName']);
+	}
+
+	$conn->close();
+	echo json_encode(array('categories' => $arr)); 
+}
+
 else if($data->method == "get_logs")
 {
 	

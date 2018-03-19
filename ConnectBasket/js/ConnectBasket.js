@@ -437,10 +437,28 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.title = "ADD MESSAGE";
           $rootScope.isAuth = true;
       }
-
-      
 	
-		
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_categories'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.categories = response.data.categories; 
+		});
+	
+	
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_groups'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.groups = response.data.groups; 
+		});
+	
 	var success = false;	
 		
     $scope.formSubmit = function() {
