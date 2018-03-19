@@ -289,6 +289,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	}
 	
 	$scope.addNoteAndRoute = function() {
+		console.log($scope.urgencyTop);
+		console.log($scope.routeto);
+		console.log($scope.addnote);
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'add_noteRoute',
