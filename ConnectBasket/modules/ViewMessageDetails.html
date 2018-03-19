@@ -84,13 +84,13 @@
                         <label> Note: </label>
                     </div>
                     <div class="col-xs-5">
-                        <textarea rows="3" class="form-control" name="addnote" ng-model="$parent.addnote" required></textarea>
+                        <textarea rows="3" class="form-control" name="addnote" ng-model="addnote" required></textarea>
                     </div>
                     <div class="col-xs-2">
                         <label> Level of Urgency: </label>
                     </div>
                     <div class="col-xs-2">
-                        <select ng-model="$parent.urgencyTop">
+                        <select ng-model="urgencyTop">
                             <option value="Low">Low</option>
                             <option value="Medium">Medium</option>
                             <option value="High">High</option>
@@ -99,12 +99,21 @@
 
                 </div>
                 <br />
+                <!--<div class="row">
+                    <div class="col-xs-3">
+                        <label for="username"><b>Route Message To: </b> </label>
+                    </div>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" name="username" ng-model="routeto" required placeholder="Route Message To">
+                    </div>
+                </div>-->
+
                 <div class="row">
                     <div class="col-xs-3">
                         <label for="username"><b>Route Message To: </b> </label>
                     </div>
                     <div class="col-xs-9">
-                        <select ng-model="$parent.routeto">
+                        <select ng-model="routeto">
                             <option value="0">Select a group...</option>
                             <option ng-repeat="x in groups" value="{{x.Group}}"> {{x.Group}} </option>
                         </select>
@@ -134,7 +143,7 @@
                         <label> Note: </label>
                     </div>
                     <div class="col-xs-9">
-                        <textarea rows="3" class="form-control" name="body" ng-model="$parent.notecomplete" required></textarea>
+                        <textarea rows="3" class="form-control" name="body" ng-model="notecomplete" required></textarea>
                     </div>
                 </div>
                 <br />
@@ -179,11 +188,8 @@
   
     <div class="col-xs-10 col-md-8 orangeBox">
         <div>
-            <div class="subheader">YOUR CLAIMED MESSAGES (ACTION NEEDED)</div>
-            <h4>
-                The following messages have already been viewed by you at least once. 
-            </h4>
-
+            <div class="subheader">PREVIOUS NOTES</div>
+  
             <table>
                 <tr>
                     <th>Create Date</th>
