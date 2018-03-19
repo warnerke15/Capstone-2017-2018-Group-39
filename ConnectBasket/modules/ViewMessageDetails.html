@@ -99,14 +99,27 @@
 
                 </div>
                 <br />
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-xs-3">
                         <label for="username"><b>Route Message To: </b> </label>
                     </div>
                     <div class="col-xs-9">
                         <input type="text" class="form-control" name="username" ng-model="routeto" required placeholder="Route Message To">
                     </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label for="username"><b>Route Message To: </b> </label>
+                    </div>
+                    <div class="col-xs-9">
+                        <select ng-model="routeto">
+                            <option value="0">Select a group...</option>
+                            <option ng-repeat="x in groups" value="{{x.Group}}"> {{x.Group}} </option>
+                        </select>
+                    </div>
                 </div>
+
                 <br />
                 <div class="row">
                     <div class="col-xs-8"></div>
