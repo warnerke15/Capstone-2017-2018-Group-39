@@ -445,15 +445,31 @@ else if($data->method == "get_messageDetails")
 	$stmt->execute();
 
 	
-    $arr = array();
+    $jsonData=array();
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'Group' => $row['GroupName'], 'Member' => $row['Member']);
+		$jsonData['Body']=$row['Body'];
+		$jsonData['CaseNumber']=$row['CaseNumber'];
+		$jsonData['Category']=$row['Category'];
+		$jsonData['CreatedBy']=$row['CreatedBy'];
+		$jsonData['CreateDate']=$row['CreateDate'];
+		$jsonData['LastClaimedBy']=$row['LastClaimedBy'];
+		$jsonData['OwnerContactMethod']=$row['OwnerContactMethod'];
+		$jsonData['OwnerName']=$row['OwnerName'];
+		$jsonData['PatientName']=$row['PatientName'];
+		$jsonData['Recipient']=$row['Recipient'];
+		$jsonData['UrgencyLevel']=$row['UrgencyLevel'];
 	}
+	
+	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'Message with case number: ' . $jsonData['CaseNumber'] . ' was viewed';
+	$stmt->execute();
 
 	$conn->close();
-	echo json_encode(array('groups' => $arr)); 
+	echo json_encode($jsonData); 
 	
 }
 
