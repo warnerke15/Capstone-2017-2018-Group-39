@@ -358,6 +358,7 @@ else if($data->method == "create_message")
 	$contactMethod = $data->contactMethod;
 	$urgency = $data->urgency;
 	
+	header('Location: https://www.google.com');
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
@@ -369,7 +370,9 @@ else if($data->method == "create_message")
 	
 	$stmt->execute();
 	
-	$stmt = $conn->prepare('Call addLogMessage(?, ?, 1)');
+	
+	
+	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
 	$stmt->bind_param('ss', $Message, $username); 
 
 	$Message = 'New message created. Sent to: ' . $recipient ;
