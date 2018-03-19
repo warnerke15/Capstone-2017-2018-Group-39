@@ -433,6 +433,7 @@ else if($data->method == "get_messageDetails")
 	$username = $_SESSION['username'];
 	$MessageID = $_SESSION['MessageID'];
 	
+	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
@@ -441,6 +442,8 @@ else if($data->method == "get_messageDetails")
 	
 	$stmt = $conn->prepare('CALL getMessageDetails(?)');
 	$stmt->bind_param('i', $MessageID); 
+	
+	header("Location: https://www.google.com/" . $MessageID);
 	
 	$stmt->execute();
 
