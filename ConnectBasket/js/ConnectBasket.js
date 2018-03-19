@@ -179,9 +179,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		});	
 	};
 
-    
-	var update;
-	update = $interval(function() {
+    var updateFunc = function() {
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_messages'		
@@ -192,7 +190,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.messages = response.data.messages; 
 			
 		});	
-	}, 30000);
+	}
+	var update;
+	update = $interval(updateFunc, 30000);
 	
 	
 	$scope.$on('$destroy', function() {
@@ -201,7 +201,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		  update = undefined;
         });
 	
-	
+	updateFunc();
 	
   });
   
