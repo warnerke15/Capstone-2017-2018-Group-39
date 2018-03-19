@@ -521,6 +521,33 @@ else if($data->method == "get_messages")
 	echo json_encode(array('messages' => $arr)); 
 }
 
+else if($data->method == "get_claimedMessages")
+{
+	$username = $_SESSION['username'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('Call getClaimedMessagesForUser(?)');
+	$stmt->bind_param('s', $username);
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'LastClaimedBy' => $row['LastClaimedBy'], 'MessageID' => $row['MessageID']);
+	}
+
+	$conn->close();
+	echo json_encode(array('messages' => $arr)); 
+}
+
 else if($data->method == "set_messageID")
 {
 	$username = $_SESSION['username'];
