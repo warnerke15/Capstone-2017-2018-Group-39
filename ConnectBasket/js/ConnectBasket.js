@@ -135,7 +135,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		.then(function (response) 
 		{
 			success = response.data.success; 
-			console.log('Response: ' + response.data.success);
 			if (success)
 			{
 				$state.transitionTo('home');
@@ -151,15 +150,36 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
-  app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+  app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService, $interval) {
 
       if (LoginService.isAuthenticated()) {
           $rootScope.title = "VIEW MESSAGES";
           $rootScope.isAuth = true;
       }
+	  
+	  
+	$scope.viewDetails = function(MessageID) {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'set_messageID',	
+			'message' : MessageID
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessagedetails');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}			
+		});	
+	};
 
-      
-	
+    var updateFunc = function() {
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_messages'		
@@ -170,6 +190,29 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.messages = response.data.messages; 
 			
 		});	
+		
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_claimedMessages'		
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.claimedmessages = response.data.messages; 			
+		});	
+	}
+	var update;
+	update = $interval(updateFunc, 30000);
+	
+	
+	$scope.$on('$destroy', function() {
+          // Make sure that the interval is destroyed too
+          $interval.cancel(update);
+		  update = undefined;
+        });
+	
+	updateFunc();
+	
   });
   
   
@@ -179,10 +222,132 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.title = "VIEW MESSAGE DETAILS";
           $rootScope.isAuth = true;
       }
-
+	
+	var success = false;
+	
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_groups'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.groups = response.data.groups; 
+		});
+		
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_notes'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.notes = response.data.notes; 
+		});
       
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_messageDetails'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.patientname = response.data.PatientName; 
+			$scope.casenumber = response.data.CaseNumber;
+			$scope.ownername = response.data.OwnerName;
+			$scope.contactmethod = response.data.ContactMethod;
+			$scope.category = response.data.Category;
+			$scope.urgency = response.data.UrgencyLevel;
+			$scope.urgencyTop = response.data.UrgencyLevel;
+			$scope.body = response.data.Body;
+			$scope.recipient = response.data.Recipient;
+			
+			if (response.data.LastClaimedBy == null)
+			{
+				$scope.TopContent = '0';
+			}
+			else if (response.data.LastClaimedBy == LoginService.username())
+			{
+				$scope.TopContent = '1';
+			}
+			else
+			{
+				$scope.TopContent = '2';
+			}
+		});
+	
+	$scope.claimMessage = function() {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'claim_message'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{			
+			success = response.data.success; 
+			if (success)
+			{
+				$scope.TopContent = '1';
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+			
+		});
+		
+	}
+	
+	$scope.addNoteAndRoute = function() {
+		console.log($scope.urgencyTop);
+		console.log($scope.routeto);
+		console.log($scope.addnote);
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'add_noteRoute',
+			'note' : $scope.addnote,
+			'urgency' : $scope.urgencyTop,
+			'recipient' : $scope.routeto
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{			
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessages');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+			
+		});		
+	}
+	
+	$scope.addNoteComplete = function() {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'add_noteComplete',
+			'note' : $scope.notecomplete
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{			
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessages');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+			
+		});		
+	}
 
-	var success = false;	
+		
 		
     $scope.formSubmit = function() {
 
@@ -437,25 +602,49 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.title = "ADD MESSAGE";
           $rootScope.isAuth = true;
       }
-
-      
 	
-		
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_categories'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.categories = response.data.categories; 
+		});
+	
+	
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_groups'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.groups = response.data.groups; 
+		});
+	
 	var success = false;	
 		
     $scope.formSubmit = function() {
 
+	
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'create_message',
-			'username' : $scope.username,
+			'caseNumber' : $scope.casenumber,
+			'patientName' : $scope.patientname,
+			'ownerName' : $scope.ownername,
+			'category' : $scope.category,
+			'recipient' : $scope.recipient,
+			'contactMethod' : $scope.contactmethod,
+			'urgency' : $scope.urgency,
 			'body' : $scope.body
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
 			success = response.data.success; 
-			console.log('Response: ' + response.data.success);
 			if (success)
 			{
 				$state.transitionTo('home');

@@ -348,34 +348,144 @@ else if($data->method == "create_pet")
 
 else if($data->method == "create_message")
 {
-	$username = $data->username;
+	$username = $_SESSION['username'];
+	$caseNumber = $data->caseNumber;
+	$patientName = $data->patientName;
+	$ownerName = $data->ownerName;
+	$category = $data->category;
 	$body = $data->body;
-	
+	$recipient = $data->recipient;
+	$contactMethod = $data->contactMethod;
+	$urgency = $data->urgency;
+		
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Messages(Recipient, Body) Values(?,?)');
-	$stmt->bind_param('ss', $username,$body); 
+	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?,?)');
 	
+	$stmt->bind_param('sssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency,$username); 
+	
+
 	$stmt->execute();
 	
-	$stmt = $conn->prepare('SELECT Count(MessagesTableID) FROM Messages WHERE Body=?');
-	$stmt->bind_param('s', $body); 
+	
+	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();
+		
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
+
+
+else if($data->method == "claim_message")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+		
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('call claimMessage(?, ?)');
+	
+	$stmt->bind_param('is', $MessageID,$username); 
+	
 
 	$stmt->execute();
+	
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
 
-	$result = $stmt->get_result();
-	if ($result->num_rows > 0)
-	{
-		$success = true;
-	}
-	else
-	{
-		$success = false;
-	}
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();*/
+		
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
 
+else if($data->method == "add_noteRoute")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	$Note = $data->note;
+	$UrgencyLevel = $data->urgency;
+	$Recipient = $data->recipient;
+		
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('call addNoteWithRoute(?,?,?,?,?)');
+	
+	$stmt->bind_param('issss', $MessageID,$Note,$UrgencyLevel,$Recipient, $username); 
+	
+
+	$stmt->execute();
+	
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();*/
+		
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
+
+else if($data->method == "add_noteComplete")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	$Note = $data->note;
+		
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('call addNoteComplete(?,?,?)');
+	
+	$stmt->bind_param('iss', $MessageID,$Note,$username); 
+	
+
+	$stmt->execute();
+	
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();*/
+		
+	$success = true;
+	
 	$jsonData=array();
 	$jsonData['success']=$success;
  
@@ -404,11 +514,128 @@ else if($data->method == "get_messages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID']);
 	}
 
 	$conn->close();
 	echo json_encode(array('messages' => $arr)); 
+}
+
+else if($data->method == "get_notes")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('Call getNotesForMessage(?)');
+	$stmt->bind_param('i', $MessageID);
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Recipient' => $row['Recipient'], 'Note' => $row['Note'], 'UrgencyLevel' => $row['UrgencyLevel']);
+	}
+
+	$conn->close();
+	echo json_encode(array('notes' => $arr)); 
+}
+
+else if($data->method == "get_claimedMessages")
+{
+	$username = $_SESSION['username'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('Call getClaimedMessagesForUser(?)');
+	$stmt->bind_param('s', $username);
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID']);
+	}
+
+	$conn->close();
+	echo json_encode(array('messages' => $arr)); 
+}
+
+else if($data->method == "set_messageID")
+{
+	$username = $_SESSION['username'];
+	$_SESSION['MessageID'] = $data->message;
+	
+	
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	echo json_encode($jsonData);
+}
+
+else if($data->method == "get_messageDetails")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('CALL getMessageDetails(?)');
+	$stmt->bind_param('i', $MessageID); 
+		
+	$stmt->execute();
+
+	
+    $jsonData=array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$jsonData['Body']=$row['Body'];
+		$jsonData['CaseNumber']=$row['CaseNumber'];
+		$jsonData['Category']=$row['Category'];
+		$jsonData['CreatedBy']=$row['CreatedBy'];
+		$jsonData['CreateDate']=$row['CreateDate'];
+		$jsonData['LastClaimedBy']=$row['LastClaimedBy'];
+		$jsonData['OwnerContactMethod']=$row['OwnerContactMethod'];
+		$jsonData['OwnerName']=$row['OwnerName'];
+		$jsonData['PatientName']=$row['PatientName'];
+		$jsonData['Recipient']=$row['Recipient'];
+		$jsonData['UrgencyLevel']=$row['UrgencyLevel'];
+	}
+	
+
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 4)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'Message with case number: ' . $jsonData['CaseNumber'] . ' was viewed';
+	$stmt->execute();*/
+
+	$conn->close();
+	echo json_encode($jsonData); 
+	
 }
 
 else if($data->method == "get_groups")
@@ -437,6 +664,33 @@ else if($data->method == "get_groups")
 
 	$conn->close();
 	echo json_encode(array('groups' => $arr)); 
+}
+
+else if($data->method == "get_categories")
+{
+	
+	$username = $_SESSION['username'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('CALL getCategories()');
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'Category' => $row['CategoryName']);
+	}
+
+	$conn->close();
+	echo json_encode(array('categories' => $arr)); 
 }
 
 else if($data->method == "get_logs")

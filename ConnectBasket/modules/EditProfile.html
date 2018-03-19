@@ -42,22 +42,22 @@
 
             <!--Allow users to change which groups they are a part of-->
             <div class="form-group row">
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-2 col-md-3">
                     <label>Groups: </label>
                 </div>
-                <div class="col-xs-6 col-md-9">
+                <div class="col-xs-10 col-md-9">
                     
                     <div ng-repeat="x in groups">
-						<div ng-switch on="x.Member">
-							<div ng-switch-when="1">
+						<ul ng-switch on="x.Member" class="checkbox-grid">
+							<li ng-switch-when="1">
 								<input type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}" checked>
 								<label>{{x.Group}}</label>
-							</div>
-							<div ng-switch-default>
+							</li>
+							<li ng-switch-default>
 								<input type="checkbox" id="{{x.Group}}" name="{{x.Group}}" value="{{x.Group}}">
 								<label>{{x.Group}}</label>
-							</div>
-						</div>
+							</li>
+						</ul>
                         	
                     </div>
                     <!--<div>

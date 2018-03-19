@@ -4,6 +4,35 @@
   
     <div class="col-xs-10 col-md-8 orangeBox">
         <div>
+            <div class="subheader">YOUR CLAIMED MESSAGES (ACTION NEEDED)</div>
+            <h4>
+                The following messages have already been viewed by you at least once. 
+            </h4>
+
+            <table>
+                <tr>
+                    <th>Create Date</th>
+                    <th>Created By</th>
+					<th>Routed To</th>
+                    <th>Message Subject: (Patient Name, Type of Call)</th>
+                    <th>View Message Details</th>
+
+                </tr>
+                <tr ng-repeat="x in claimedmessages">
+                    <td>{{ x.CreateDate }}</td>
+                    <td>{{ x.CreatedBy }}</td>
+					<td>{{ x.Recipient }}</td>
+                    <td>{{ x.Subject }}</td>
+                    <td>
+                        <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
+                            DETAILS
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+		<br />
+		<div>
             <div class="subheader">UNCLAIMED MESSAGES</div>
             <h4>
                 Highest priority messages will appear at the top. Click the DETAILS button to view the specifics of a message.
@@ -14,6 +43,7 @@
                 <tr>
                     <th>Create Date</th>
                     <th>Created By</th>
+					<th>Routed To</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>View Message Details</th>
 
@@ -21,41 +51,18 @@
                 <tr ng-repeat="x in messages">
                     <td>{{ x.CreateDate }}</td>
                     <td>{{ x.CreatedBy }}</td>
+					<td>{{ x.Recipient }}</td>
                     <td>{{ x.Subject }}</td>
                     <td>
-                        <button type="submit" class="button">
+                        <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
                             DETAILS
                         </button>
                     </td>
                 </tr>
             </table>
         </div>
-        <br />
-        <div>
-            <div class="subheader">YOUR CLAIMED MESSAGES</div>
-            <h4>
-                The following messages have already been viewed by you at least once. 
-            </h4>
-
-            <table>
-                <tr>
-                    <th>Create Date</th>
-                    <th>Created By</th>
-                    <th>Message Subject: (Patient Name, Type of Call)</th>
-                    <th>View Message Details</th>
-
-                </tr>
-                <tr ng-repeat="x in messages">
-                    <td>Date</td>
-                    <td>Username</td>
-                    <td>{{ x.Message }}</td>
-                    <td>
-                        <a ui-sref="viewmessagedetails" class="button">DETAILS</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
+        
+        
 
     </div>
 

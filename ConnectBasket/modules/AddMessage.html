@@ -5,43 +5,43 @@
 
     <div class="col-xs-10 col-md-8 orangeBox">
         <form name="CreateMessageForm" ng-submit="formSubmit()" novalidate>
-            <p>
-                <span style="color:red">* All fields are required</span>
-            </p>
             <div class="form-group row">
                 <div class="col-xs-2">
                     <label for="username"><b>Patient Name:</b></label>
                 </div>
                 <div class="col-xs-4">
-                    <input type="text" class="form-control" name="patientname" ng-model="patientname" required placeholder="Patient Name">
+                    <input type="text" class="form-control" name="patientname" ng-model="patientname" required placeholder="Enter patient's name">
                 </div>
+                <div class="col-xs-2">
+                    <label for="casenumber"><b>Case Number:</b></label>
+                </div>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" name="casenumber" ng-model="casenumber" required placeholder="Enter case number for patient">
+                </div>
+            </div>
+
+            <div class="form-group row">         
                 <div class="col-xs-2">
                     <label for="username"><b>Owner Name:</b></label>
                 </div>
                 <div class="col-xs-4">
-                    <input type="text" class="form-control" name="ownername" ng-model="ownername" required placeholder="Owner Name">
+                    <input type="text" class="form-control" name="ownername" ng-model="ownername" required placeholder="Enter owner's name">
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-xs-3">
-                    <label for="username"><b>Owner Method of Contact:  <br /> (Enter email or phone number)</b> </label>
+                <div class="col-xs-2">
+                    <label for="username"><b>Owner Method of Contact: </b> </label>
                 </div>
-                <div class="col-xs-9">
-                    <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" required placeholder="Owner Contact Method">
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" required placeholder="Enter email address or phone number">
                 </div>
-            </div>
+            </div>           
             <div class="form-group row">
                 <div class="col-xs-3">
                     <label for=""><b>Type of Call:</b> </label>
                 </div>
                 <div class="col-xs-5">
-                    <select>
-                        <option value="medical">Medical</option>
-                        <option value="consult">Consult Request</option>
-                        <option value="estimate">Estimate</option>
-                        <option value="refill">Refill Request</option>
-                        <option value="clinical">Clinical Trial</option>
-                        <option value="misc">Misc</option>
+                    <select ng-model="category">
+                        <option value="0">Select a category...</option>
+                        <option ng-repeat="x in categories" value="{{x.Category}}"> {{x.Category}} </option>
                     </select>
                 </div>
             </div>
@@ -50,10 +50,10 @@
                     <label for=""><b>Level of Urgency: </b></label>
                 </div>
                 <div class="col-xs-5">
-                    <select>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
+                    <select ng-model="urgency">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
                     </select>
                 </div>
             </div>
@@ -72,7 +72,12 @@
                     <label for="username"><b>Route Message To: </b> </label>
                 </div>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" name="username" ng-model="username" required placeholder="Route Message To">
+                    <select ng-model="recipient">
+                        <option value="0">Select a group...</option>
+                        <option ng-repeat="x in groups" value="{{x.Group}}"> {{x.Group}} </option>
+                    </select>
+
+                    <!--<input type="text" class="form-control" name="username" ng-model="username" required placeholder="Route Message To">-->
                 </div>
             </div>
 
