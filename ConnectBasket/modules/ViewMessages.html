@@ -14,6 +14,7 @@
                 <tr>
                     <th>Create Date</th>
                     <th>Created By</th>
+					<th>Last Claimed By</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>View Message Details</th>
 
@@ -21,9 +22,10 @@
                 <tr ng-repeat="x in messages">
                     <td>{{ x.CreateDate }}</td>
                     <td>{{ x.CreatedBy }}</td>
+					<td>{{ x.LastClaimedBy }}</td>
                     <td>{{ x.Subject }}</td>
                     <td>
-                        <button type="submit" class="button">
+                        <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
                             DETAILS
                         </button>
                     </td>

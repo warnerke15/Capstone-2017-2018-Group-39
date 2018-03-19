@@ -371,7 +371,6 @@ else if($data->method == "create_message")
 	$stmt->execute();
 	
 	
-	
 	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
 	$stmt->bind_param('ss', $Message, $username); 
 
@@ -408,11 +407,54 @@ else if($data->method == "get_messages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'LastClaimedBy' => $row['LastClaimedBy'], 'MessageID' => $row['MessageID']);
 	}
 
 	$conn->close();
 	echo json_encode(array('messages' => $arr)); 
+}
+
+else if($data->method == "set_messageID")
+{
+	$username = $_SESSION['username'];
+	$_SESSION['MessageID'] = $data->message;
+	
+	
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	echo json_encode($jsonData);
+}
+
+else if($data->method == "get_messageDetails")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('CALL getMessageDetails(?)');
+	$stmt->bind_param('s', $MessageID); 
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'Group' => $row['GroupName'], 'Member' => $row['Member']);
+	}
+
+	$conn->close();
+	echo json_encode(array('groups' => $arr)); 
+	
 }
 
 else if($data->method == "get_groups")

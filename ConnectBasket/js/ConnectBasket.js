@@ -135,7 +135,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		.then(function (response) 
 		{
 			success = response.data.success; 
-			console.log('Response: ' + response.data.success);
 			if (success)
 			{
 				$state.transitionTo('home');
@@ -151,15 +150,38 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	    
   });
   
-  app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+  app.controller('ViewMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService, $interval) {
 
       if (LoginService.isAuthenticated()) {
           $rootScope.title = "VIEW MESSAGES";
           $rootScope.isAuth = true;
       }
+	  
+	  
+	$scope.viewDetails = function(MessageID) {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'set_messageID',	
+			'message' : MessageID
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessagedetails');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}			
+		});	
+	};
 
-      
-	
+    
+	var update;
+	update = $interval(function() {
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_messages'		
@@ -170,6 +192,17 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.messages = response.data.messages; 
 			
 		});	
+	}, 30000);
+	
+	
+	$scope.$on('$destroy', function() {
+          // Make sure that the interval is destroyed too
+          $interval.cancel(update);
+		  update = undefined;
+        });
+	
+	
+	
   });
   
   
