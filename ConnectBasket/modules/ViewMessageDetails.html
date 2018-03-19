@@ -80,7 +80,7 @@
 							<label> Level of Urgency: </label>
 						</div>
 						<div class="col-xs-2">
-							<select>
+							<select name="noteUrgency">
 								<option value="low">Low</option>
 								<option value="medium">Medium</option>
 								<option value="high">High</option>
@@ -113,26 +113,28 @@
 
         <div class="subsubheader">MARK AS COMPLETED</div>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <label> Note: </label>
-                    </div>
-                    <div class="col-xs-9">
-                        <textarea rows="3" class="form-control" name="body" ng-model="body" required></textarea>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-xs-8"></div>
-                    <div class="col-xs-4">
-                        <button class="button">
-                            MARK AS COMPLETED
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <div class="row" ng-controller="markComplete">
+			<form name="detailsMarkComplete" ng-submit="formSubmit()" novalidate>
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<label> Note: </label>
+						</div>
+						<div class="col-xs-9">
+							<textarea rows="3" class="form-control" name="closingBody" ng-model="body" required></textarea>
+						</div>
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-xs-8"></div>
+						<div class="col-xs-4">
+							<button name="submit" class="button">
+								MARK AS COMPLETED
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
         </div>
         
 
