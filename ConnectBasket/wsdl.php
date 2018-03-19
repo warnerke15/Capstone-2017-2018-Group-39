@@ -463,13 +463,13 @@ else if($data->method == "get_messageDetails")
 		$jsonData['UrgencyLevel']=$row['UrgencyLevel'];
 	}
 	
-		header("Location: https://www.google.com/" . $MessageID);
 
 	
 	$stmt = $conn->prepare('Call addLogMessage(?, ?, 4)');
 	$stmt->bind_param('ss', $Message, $username); 
 
-	
+	header("Location: https://www.google.com/" . $MessageID);
+
 	$Message = 'Message with case number: ' . $jsonData['CaseNumber'] . ' was viewed';
 	$stmt->execute();
 
