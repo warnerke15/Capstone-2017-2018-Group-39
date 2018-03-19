@@ -31,7 +31,7 @@
                     <label for="username"><b>Owner Method of Contact: </b> </label>
                 </div>
                 <div class="col-xs-4">
-                    <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" required placeholder="Enter owner's email address or phone number">
+                    <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" required placeholder="Enter email address or phone number">
                 </div>
             </div>           
             <div class="form-group row">
@@ -39,7 +39,7 @@
                     <label for=""><b>Type of Call:</b> </label>
                 </div>
                 <div class="col-xs-5">
-                    <select>
+                    <select ng-model="category">
                         <option value="0">Select a category...</option>
                         <option ng-repeat="x in categories" value="{{x.Category}}"> {{x.Category}} </option>
                     </select>
@@ -50,7 +50,7 @@
                     <label for=""><b>Level of Urgency: </b></label>
                 </div>
                 <div class="col-xs-5">
-                    <select>
+                    <select ng-model="urgency">
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
@@ -72,7 +72,7 @@
                     <label for="username"><b>Route Message To: </b> </label>
                 </div>
                 <div class="col-xs-9">
-                    <select>
+                    <select ng-model="recipient">
                         <option value="0">Select a group...</option>
                         <option ng-repeat="x in groups" value="{{x.Group}}"> {{x.Group}} </option>
                     </select>
