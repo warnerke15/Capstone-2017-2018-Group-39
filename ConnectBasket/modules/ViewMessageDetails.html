@@ -85,7 +85,7 @@
                             <option value="high">High</option>
                         </select>
                     </div>
-                    
+
                 </div>
                 <br />
                 <div class="row">
@@ -100,9 +100,9 @@
                 <div class="row">
                     <div class="col-xs-8"></div>
                     <div class="col-xs-4">
-                            <button class="button" ng-click="addNoteAndRoute()">
-                                ADD NOTE & ROUTE
-                            </button>
+                        <button class="button" ng-click="addNoteAndRoute()">
+                            ADD NOTE & ROUTE
+                        </button>
                     </div>
                 </div>
             </div>
@@ -132,79 +132,92 @@
                 </div>
             </div>
         </div>
-        
-	</div>
-	<br />
-	<div class="col-xs-10 col-md-8 orangeBox">
 
-        
+    </div>
+
+    <div class="col-xs-1 col-md-2">
+    </div>
+
+</div>
+
+<br />
+
+
+
+<div class="row">
+    <div class="col-xs-1 col-md-2">
+    </div>
+
+    <div class="col-xs-10 col-md-8 orangeBox">
+
+
 
         <div class="subheader">MESSAGE DETAILS</div>
 
-		
-		<div class="row">
-                <div class="col-xs-2">
-                    <label for="username"><b>Patient Name:</b></label>
-                </div>
-                <div class="col-xs-4">
-                    <input type="text" class="form-control" name="patientname" ng-model="patientname" required disabled>
-                </div>
-                <div class="col-xs-2">
-                    <label for="casenumber"><b>Case Number:</b></label>
-                </div>
-                <div class="col-xs-4">
-                    <input type="text" class="form-control" name="casenumber" ng-model="casenumber" required disabled>
-                </div>
-            </div>
 
-            <div class="row">         
-                <div class="col-xs-2">
-                    <label for="username"><b>Owner Name:</b></label>
-                </div>
-                <div class="col-xs-4">
-                    <input type="text" class="form-control" name="ownername" ng-model="ownername" disabled>
-                </div>
-                <div class="col-xs-2">
-                    <label for="username"><b>Owner Method of Contact: </b> </label>
-                </div>
-                <div class="col-xs-4">
-                    <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" disabled>
-                </div>
-            </div>           
-            <div class="row">
-                <div class="col-xs-3">
-                    <label for=""><b>Type of Call:</b> </label>
-                </div>
-                <div class="col-xs-5">
-					<input type="text" class="form-control" name="category" ng-model="category" disabled>
-                </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <label for="username"><b>Patient Name:</b></label>
             </div>
-            <div class="row">
-                <div class="col-xs-3">
-                    <label for=""><b>Level of Urgency: </b></label>
-                </div>
-                <div class="col-xs-5">
-					<input type="text" class="form-control" name="urgency" ng-model="urgency" disabled>                   
-                </div>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" name="patientname" ng-model="patientname" required disabled>
             </div>
+            <div class="col-xs-2">
+                <label for="casenumber"><b>Case Number:</b></label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" name="casenumber" ng-model="casenumber" required disabled>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-xs-3">
-                    <label for="body"><b>Message Body:</b></label>
-                </div>
-                <div class="col-xs-9">
-                    <textarea rows="10" cols="50" class="form-control" name="body" ng-model="body" disabled></textarea>
-                </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <label for="username"><b>Owner Name:</b></label>
             </div>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" name="ownername" ng-model="ownername" disabled>
+            </div>
+            <div class="col-xs-2">
+                <label for="username"><b>Owner Method of Contact: </b> </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <label for=""><b>Type of Call:</b> </label>
+            </div>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" name="category" ng-model="category" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <label for=""><b>Level of Urgency: </b></label>
+            </div>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" name="urgency" ng-model="urgency" disabled>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-xs-3">
-                    <label for="username"><b>Route Message To: </b> </label>
-                </div>
-                <div class="col-xs-9">
-					<input type="text" class="form-control" name="recipient" ng-model="recipient" disabled>                   
-                </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <label for="body"><b>Message Body:</b></label>
             </div>
+            <div class="col-xs-9">
+                <textarea rows="10" cols="50" class="form-control" name="body" ng-model="body" disabled></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <label for="username"><b>Route Message To: </b> </label>
+            </div>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="recipient" ng-model="recipient" disabled>
+            </div>
+        </div>
 
         <!--<div class="row">
             <div class="col-xs-12 col-md-6">
