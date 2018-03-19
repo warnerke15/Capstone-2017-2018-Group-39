@@ -387,6 +387,113 @@ else if($data->method == "create_message")
  
 }
 
+
+else if($data->method == "claim_message")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+		
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('call claimMessage(?, ?)');
+	
+	$stmt->bind_param('is', $MessageID,$username); 
+	
+
+	$stmt->execute();
+	
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();*/
+		
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
+
+else if($data->method == "add_noteRoute")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	$Note = $data->note;
+	$UrgencyLevel = $data->urgency;
+	$Recipient = $data->recipient;
+		
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('call addNoteWithRoute(?,?,?,?)');
+	
+	$stmt->bind_param('isss', $MessageID,$Note,$UrgencyLevel,$Recipient); 
+	
+
+	$stmt->execute();
+	
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();*/
+		
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
+
+else if($data->method == "add_noteComplete")
+{
+	$username = $_SESSION['username'];
+	$MessageID = $_SESSION['MessageID'];
+	$Note = $data->note;
+		
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$stmt = $conn->prepare('call addNoteComplete(?,?)');
+	
+	$stmt->bind_param('is', $MessageID,$Note); 
+	
+
+	$stmt->execute();
+	
+	
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	$stmt->bind_param('ss', $Message, $username); 
+
+	$Message = 'New message created. Sent to: ' . $recipient ;
+	$stmt->execute();*/
+		
+	$success = true;
+	
+	$jsonData=array();
+	$jsonData['success']=$success;
+ 
+	$conn->close();
+	echo json_encode($jsonData);
+ 
+}
+
 else if($data->method == "get_messages")
 {
 	$username = $_SESSION['username'];

@@ -212,7 +212,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.title = "VIEW MESSAGE DETAILS";
           $rootScope.isAuth = true;
       }
-
+	
+	var success = false;
       
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
@@ -227,12 +228,93 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.contactmethod = response.data.ContactMethod;
 			$scope.category = response.data.Category;
 			$scope.urgency = response.data.UrgencyLevel;
+			$scope.urgencyTop = response.data.UrgencyLevel;
 			$scope.body = response.data.Body;
 			$scope.recipient = response.data.Recipient;
+			
+			if (response.data.LastClaimedBy == null)
+			{
+				$scope.TopContent = '0';
+			}
+			else if (response.data.LastClaimedBy == LoginService.username())
+			{
+				$scope.TopContent = '1';
+			}
+			else
+			{
+				$scope.TopContent = '2';
+			}
 		});
 	
+	$scope.claimMessage = function() {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'claim_message'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{			
+			success = response.data.success; 
+			if (success)
+			{
+				$scope.TopContent = '1';
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+			
+		});
+		
+	}
+	
+	$scope.addNoteAndRoute = function() {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'add_noteRoute',
+			'note' : $scope.addnote,
+			'urgency' : $scope.urgencyTop,
+			'recipient' : $scope.routeto
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{			
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessages');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+			
+		});		
+	}
+	
+	$scope.addNoteComplete = function() {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'add_noteComplete',
+			'note' : $scope.notecomplete
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{			
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessages');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+			
+		});		
+	}
 
-	var success = false;	
+		
 		
     $scope.formSubmit = function() {
 
