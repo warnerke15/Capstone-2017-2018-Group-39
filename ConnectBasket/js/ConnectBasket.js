@@ -463,14 +463,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		
     $scope.formSubmit = function() {
 
-		console.log($scope.casenumber);
-		console.log($scope.patientname);
-		console.log($scope.ownername);
-		console.log($scope.category);
-		console.log($scope.recipient);
-		console.log($scope.contactmethod);
-		console.log($scope.urgency);
-		console.log($scope.body);
 	
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
