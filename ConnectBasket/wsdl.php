@@ -363,10 +363,10 @@ else if($data->method == "create_message")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?');
+	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?)');
+	
 	$stmt->bind_param('ssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency); 
 	
-		header('Location: https://www.google.com');
 
 	$stmt->execute();
 	
