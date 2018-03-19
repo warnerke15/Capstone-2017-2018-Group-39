@@ -357,9 +357,7 @@ else if($data->method == "create_message")
 	$recipient = $data->recipient;
 	$contactMethod = $data->contactMethod;
 	$urgency = $data->urgency;
-	
-	header('Location: https://www.google.com');
-	
+		
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
@@ -368,6 +366,8 @@ else if($data->method == "create_message")
 	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?');
 	$stmt->bind_param('ssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency); 
 	
+		header('Location: https://www.google.com');
+
 	$stmt->execute();
 	
 	
