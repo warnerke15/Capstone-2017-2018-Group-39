@@ -375,7 +375,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
   app.controller('ViewMessageDetailsTest', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
 	
-	console.log("stateParams: "+$stateParams)
+	console.log("stateParams: "+$stateParams.messageid)
 	
       if (LoginService.isAuthenticated()) {
           $rootScope.title = "VIEW MESSAGE DETAILS";
