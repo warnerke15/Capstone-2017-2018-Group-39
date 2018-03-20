@@ -44,23 +44,17 @@ describe('Controllers', function(){
 	  
 	});
 	
-	describe('CreateUserController', function(){ 
+	describe('ViewMessagesController', function(){ 
 		var controller;
 		var $scope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
             $scope = $rootScope.$new();
-			controller = $controller('CreateUserController', {$scope : $scope});
+			controller = $controller('ViewMessagesController', {$scope : $scope});
         }));
-		it('Username and password should be empty after success', function() {
-    		$scope.username = 'testing';
-			$scope.password = '11111111';
-			$scope.first = 'T';
-			$scope.last = 'U';
-			$scope.email = 'T@T.net';
-			
-			$scope.formSubmit();
-			
-			expect(controller.success).toEqual(true);
+		it('Messages should exist', function() {
+    		$scope.messages = {Body : 'Hello', Recipient : 'BILLING'};
+						
+			expect($scope.messages.Body).toEqual('Hello');
 		
 		});
 	  
