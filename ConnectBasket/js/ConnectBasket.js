@@ -161,7 +161,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'set_messageID',	
-			'message' : MessageID
+			'message' : MessageID,
+			'page' : 'VIEW'
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
@@ -261,7 +262,11 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.body = response.data.Body;
 			$scope.recipient = response.data.Recipient;
 			
-			if (response.data.LastClaimedBy == null)
+			if (response.data.From == 'HISTORY')
+			{
+				$scope.TopContent = '3';
+			}
+			else if (response.data.LastClaimedBy == null)
 			{
 				$scope.TopContent = '0';
 			}
@@ -470,8 +475,29 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.isAuth = true;
       }
 
-      
-	
+    $scope.viewDetails = function(MessageID) {
+		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'set_messageID',	
+			'message' : MessageID,
+			'page' : 'HISTORY'
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			success = response.data.success; 
+			if (success)
+			{
+				$state.transitionTo('viewmessagedetails');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}			
+		});	
+	};
+
+    var updateFunc = function() {
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_allMessages'		
@@ -481,7 +507,23 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		{
 			$scope.messages = response.data.messages; 
 			
-		});
+		});	
+	}
+	var update;
+	update = $interval(updateFunc, 30000);
+	
+	
+	$scope.$on('$destroy', function() {
+          // Make sure that the interval is destroyed too
+          $interval.cancel(update);
+		  update = undefined;
+        });
+	
+	updateFunc();
+	
+  }); 
+	
+	
 	
   });
   

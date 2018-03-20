@@ -13,6 +13,7 @@
 					<th>Last Routed To</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
                     <th>Status</th>
+					<th>View Message Details</th>
 
                 </tr>
                 <tr ng-repeat="x in messages">
@@ -21,6 +22,11 @@
 					<td>{{ x.Recipient }}</td>
                     <td>{{ x.Subject }}</td>
                     <td>{{ x.Status }}</td>
+					<td>
+                        <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
+                            DETAILS
+                        </button>
+                    </td>
                 </tr>
             </table>
         </div>

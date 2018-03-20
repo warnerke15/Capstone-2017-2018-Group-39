@@ -607,6 +607,7 @@ else if($data->method == "set_messageID")
 {
 	$username = $_SESSION['username'];
 	$_SESSION['MessageID'] = $data->message;
+	$_SESSION['LastPage'] = $data->page;
 	
 	
 	$success = true;
@@ -621,6 +622,7 @@ else if($data->method == "get_messageDetails")
 {
 	$username = $_SESSION['username'];
 	$MessageID = $_SESSION['MessageID'];
+	$From = $_SESSION['LastPage'];
 	
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
@@ -650,6 +652,8 @@ else if($data->method == "get_messageDetails")
 		$jsonData['PatientName']=$row['PatientName'];
 		$jsonData['Recipient']=$row['Recipient'];
 		$jsonData['UrgencyLevel']=$row['UrgencyLevel'];
+		$jsonData['Status']=$row['Status'];
+		$jsonData['FROM']=$From;
 	}
 	
 
