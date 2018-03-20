@@ -15,7 +15,11 @@ if (( $(wc -c newfile | cut -f1 -d" ") == 0 ))
 			for i in "${useringroup[@]}"
 			do
 				emailaddress=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `EmailAddress` FROM `Users` WHERE `UsersTableID` = "${i}"' --skip-column-names -B)
-				mailx -s “New ConnectBasket Messages” $emailaddress < message.txt
+				emailenabled=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `ReceiveEmails` FROM `Users` WHERE `UsersTableID` = "${i}"' --skip-column-names -B)
+				if [${emailenabled} -eq 1]
+				then
+					mailx -s “New ConnectBasket Messages” $emailaddress < message.txt
+				fi
 			done
 		done < newmessages
 fi
