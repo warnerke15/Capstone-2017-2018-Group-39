@@ -262,6 +262,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.body = response.data.Body;
 			$scope.recipient = response.data.Recipient;
 			
+			console.log(response.data.From);
 			if (response.data.From == 'HISTORY')
 			{
 				$scope.TopContent = '3';
@@ -303,9 +304,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	}
 	
 	$scope.addNoteAndRoute = function() {
-		console.log($scope.urgencyTop);
-		console.log($scope.routeto);
-		console.log($scope.addnote);
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'add_noteRoute',
