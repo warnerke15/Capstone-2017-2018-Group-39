@@ -325,7 +325,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		});		
 	}
 	
-	$scope.addNoteComplete = function() {
+	$scope.addNoteAndComplete = function() {
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'add_noteComplete',
@@ -367,6 +367,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		
     };
   });
+
 
   app.controller('EditProfileController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
 
