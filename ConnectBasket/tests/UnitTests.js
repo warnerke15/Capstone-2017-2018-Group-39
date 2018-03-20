@@ -69,6 +69,7 @@ describe('Controllers', function(){
         }));
 		it('Top content should change on claim click', function() {
     		$scope.TopContent = 0;
+			controller.success = true;
 			
 			$scope.claimMessage();
 						
