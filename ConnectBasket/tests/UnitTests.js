@@ -1,7 +1,5 @@
 describe('Controllers', function(){ 
 
-	console.log("HELLOOOOOOOOOOOOOOOO!!!!!!!");
-
     beforeEach(module('ConnectBasketWebApp')); 
 	
 	//var $controller;
@@ -10,10 +8,8 @@ describe('Controllers', function(){
 	/*beforeEach(inject(function(_$controller_){
 		$controller = _$controller_;
 	}));*/
-        
-		console.log("HELLO!!!!!!!");
-		
-		describe('LogoutController', function(){ 
+        		
+	describe('LogoutController', function(){ 
 		var controller;
 		var $scope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
@@ -21,13 +17,29 @@ describe('Controllers', function(){
 			controller = $controller('LogoutController', {$scope : $scope});
         }));
 		it('isAuth should be false', function() {
-    
+    		
+			expect($scope.isAuth).toEqual(false);
 		
-		expect($scope.isAuth).toEqual(false);
+		});
+	  
+	});
+	
+	describe('LoginController', function(){ 
+		var controller;
+		var $scope;
+		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
+            $scope = $rootScope.$new();
+			controller = $controller('LoginController', {$scope : $scope});
+        }));
+		it('isAuth should be false', function() {
+    		$scope.username = 'test';
+			$scope.password = '12345678';
+			
+			$scope.formSubmit();
+			
+			expect($scope.username).toEqual('');
 		
-
-
-	  });
+		});
 	  
 	});
 		
