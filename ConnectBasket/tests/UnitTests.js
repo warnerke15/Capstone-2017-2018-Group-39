@@ -68,12 +68,11 @@ describe('Controllers', function(){
 			controller = $controller('ViewMessageDetailsController', {$scope : $scope});
         }));
 		it('Top content should change on claim click', function() {
-    		$scope.TopContent = 0;
-			controller.success = true;
+    		$scope.TopContent = '0';
 			
 			$scope.claimMessage();
 						
-			expect($scope.TopContent).toEqual(1);
+			expect($scope.TopContent).toEqual('1');
 		
 		});
 	  
