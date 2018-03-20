@@ -733,7 +733,7 @@ else if($data->method == "get_logs")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('SELECT LogMessage, Username, DBCreateDate FROM LogMessages Order By DBCreateDate desc');
+	$stmt = $conn->prepare('SELECT LogMessage, Username, DBCreateDate FROM LogMessages Order By DBCreateDate desc Limit 50');
 
 	$stmt->execute();
 
