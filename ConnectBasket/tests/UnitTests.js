@@ -67,31 +67,31 @@ describe('Controllers', function(){
             $scope = $rootScope.$new();
 			controller = $controller('ViewMessageDetailsController', {$scope : $scope});
         }));
-		it('Top content should change on claim click', function() {
+		it('Top content should remain the same', function() {
     		$scope.TopContent = '0';
-			controller.success = true;
 			
 			$scope.claimMessage();
 			
-			console.log($scope.TopContent);
 						
-			expect($scope.TopContent).toEqual('1');
+			expect($scope.TopContent).toEqual('0');
 		
 		});
 	  
 	});
 	
-	describe('ViewMessagesController', function(){ 
+	describe('EditProfileController', function(){ 
 		var controller;
 		var $scope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
             $scope = $rootScope.$new();
-			controller = $controller('ViewMessagesController', {$scope : $scope});
+			controller = $controller('EditProfileController', {$scope : $scope});
         }));
-		it('Messages should exist', function() {
-    		$scope.messages = {Body : 'Hello', Recipient : 'BILLING'};
-						
-			expect($scope.messages.Body).toEqual('Hello');
+		it('showEmail should be true after function call', function() {
+    		expect($scope.showEmail).toEqual(false);
+			
+			$scope.emailButton();
+			
+			expect($scope.showEmail).toEqual(true);
 		
 		});
 	  
