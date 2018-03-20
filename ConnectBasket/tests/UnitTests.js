@@ -97,12 +97,12 @@ describe('Controllers', function(){
 	  
 	});
 	
-	describe('ViewMessagesController', function(){ 
+	describe('HistoryOfMessagesController', function(){ 
 		var controller;
 		var $scope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
             $scope = $rootScope.$new();
-			controller = $controller('ViewMessagesController', {$scope : $scope});
+			controller = $controller('HistoryOfMessagesController', {$scope : $scope});
         }));
 		it('Messages should exist', function() {
     		$scope.messages = {Body : 'Hello', Recipient : 'BILLING'};
@@ -113,33 +113,37 @@ describe('Controllers', function(){
 	  
 	});
 	
-	describe('ViewMessagesController', function(){ 
+	describe('AuditLogController', function(){ 
 		var controller;
 		var $scope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
             $scope = $rootScope.$new();
-			controller = $controller('ViewMessagesController', {$scope : $scope});
+			controller = $controller('AuditLogController', {$scope : $scope});
         }));
 		it('Messages should exist', function() {
-    		$scope.messages = {Body : 'Hello', Recipient : 'BILLING'};
+    		$scope.logs = {Body : 'Hello', Recipient : 'BILLING'};
 						
-			expect($scope.messages.Body).toEqual('Hello');
+			expect($scope.logs.Body).toEqual('Hello');
 		
 		});
 	  
 	});
 	
-	describe('ViewMessagesController', function(){ 
+	describe('AddMessageController', function(){ 
 		var controller;
 		var $scope;
 		beforeEach(inject(function($controller, $rootScope){ //instantiate controller using $controller service
             $scope = $rootScope.$new();
-			controller = $controller('ViewMessagesController', {$scope : $scope});
+			controller = $controller('AddMessageController', {$scope : $scope});
         }));
 		it('Messages should exist', function() {
-    		$scope.messages = {Body : 'Hello', Recipient : 'BILLING'};
+    		$scope.categories = {Category : 'BILLING'};
+			
+			$scope.groups = {Group : 'SA IM TECH'};
 						
-			expect($scope.messages.Body).toEqual('Hello');
+			expect($scope.categories.Category).toEqual('BILLING');
+			
+			expect($scope.groups.Group).toEqual('SA IM TECH');
 		
 		});
 	  
