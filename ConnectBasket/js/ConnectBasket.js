@@ -468,7 +468,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
   });
   
-  app.controller('HistoryOfMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
+  app.controller('HistoryOfMessagesController', function($scope, $rootScope, $stateParams, $state, $http, LoginService, $interval) {
 
       if (LoginService.isAuthenticated()) {
           $rootScope.title = "HISTORY OF MESSAGES";
