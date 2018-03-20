@@ -653,7 +653,7 @@ else if($data->method == "get_messageDetails")
 		$jsonData['Recipient']=$row['Recipient'];
 		$jsonData['UrgencyLevel']=$row['UrgencyLevel'];
 		$jsonData['Status']=$row['Status'];
-		$jsonData['FROM']=$From;
+		$jsonData['From']=$From;
 	}
 	
 
