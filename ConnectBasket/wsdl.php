@@ -521,6 +521,33 @@ else if($data->method == "get_messages")
 	echo json_encode(array('messages' => $arr)); 
 }
 
+else if($data->method == "get_allMessages")
+{
+	$username = $_SESSION['username'];
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('Call getAllMessages()');
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'Status' => $row['Status'], 'MessageID' => $row['MessageID']);
+	}
+
+	$conn->close();
+	echo json_encode(array('messages' => $arr)); 
+}
+
+
 else if($data->method == "get_notes")
 {
 	$username = $_SESSION['username'];
