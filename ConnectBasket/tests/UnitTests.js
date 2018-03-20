@@ -72,6 +72,8 @@ describe('Controllers', function(){
 			controller.success = true;
 			
 			$scope.claimMessage();
+			
+			console.log($scope.TopContent);
 						
 			expect($scope.TopContent).toEqual('1');
 		
