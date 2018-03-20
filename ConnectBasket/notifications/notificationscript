@@ -6,8 +6,20 @@ if (( $(wc -c newfile | cut -f1 -d" ") == 0 ))
 	then 
 		while IFS='' read -r line || [[ -n "$line" ]]; do
 			token=( $line )
+			#token[0] is the group it was sent to
+			#token[1] is the message body
 			echo "$(date)  ---  Sending message to ${token[0]}. Message body: ${token[@]:1}" >> emaillog.file
-			emailaddress=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `EmailAddress` FROM `Users` WHERE `Username` = "${token[0]}"' --skip-column-names -B)
-			mailx -s “New ConnectBasket Messages” $emailaddress < message.txt
+			groupid=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `GroupsTableID` FROM `Groups` WHERE `GroupName` = "${token[0]}"' --skip-column-names -B)
+			usersingroup=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `UsersTableID` FROM `GroupsAndUsers` WHERE `GroupsTableID` = "${groupid}"' --skip-column-names -B)
+			
+			for i in "${useringroup[@]}"
+			do
+				emailaddress=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `EmailAddress` FROM `Users` WHERE `UsersTableID` = "${i}"' --skip-column-names -B)
+				mailx -s “New ConnectBasket Messages” $emailaddress < message.txt
+			done
 		done < newmessages
 fi
+
+
+
+mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `UsersTableID` FROM `GroupsAndUsers` WHERE `GroupsTableID` = "22"' --skip-column-names -B
