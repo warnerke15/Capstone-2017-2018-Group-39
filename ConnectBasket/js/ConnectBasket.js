@@ -118,8 +118,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.isAuth = true;
       }
 
+	var that = this;
 		
-	this.success = false;	
+	that.success = false;	
 		
     $scope.formSubmit = function() {
 		$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
@@ -134,14 +135,14 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
-			success = response.data.success; 
-			if (success)
+			that.success = response.data.success; 
+			if (that.success)
 			{
 				$state.transitionTo('home');
 			}
 			else 
 			{
-				console.log('Failure ' + success);
+				console.log('Failure ' + that.success);
 			}
 		});
 		
