@@ -523,9 +523,6 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
   }); 
 	
-	
-	
-  });
   
   app.controller('AuditLogController', function($scope, $rootScope, $stateParams, $state, $http, LoginService) {
 
