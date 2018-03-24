@@ -84,6 +84,14 @@
                     <input type="password" class="form-control" name="password" ng-model="password" placeholder="Enter your password" required password-directive />
                 </div>
             </div>
+			<div class="form-group row">
+                <div class="col-xs-6 col-md-3">
+                    <label>Email Notifications: </label>
+                </div>
+                <div class="col-xs-6 col-md-5">
+                    <select name="receiveNotifications" ng-model="receive.selection" ng-options="obj.value as obj.label for obj in receive.receiveArr"></select>
+                </div>
+            </div>
 
             <div class="form-group">
                 <button type="submit" class="button" ng-disabled="CreateUserForm.username.$invalid || CreateUserForm.password.$invalid || CreateUserForm.email.$invalid || CreateUserForm.first.$invalid || CreateUserForm.last.$invalid">

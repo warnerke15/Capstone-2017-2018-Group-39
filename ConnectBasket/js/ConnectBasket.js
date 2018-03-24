@@ -118,6 +118,16 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.isAuth = true;
       }
 		
+	$scope.receive = {};
+	$scope.receive.receiveArr = [
+
+		{ value: "0", label: "Off" }
+		,
+		{ value: "1", label: "On" }
+	];
+
+	$scope.receive.selection = "0"; 	
+		
 	success = false;	
 		
     $scope.formSubmit = function() {
