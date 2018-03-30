@@ -1,6 +1,6 @@
 #!/bin/bash
-pastdate=$(<lastdatetime)
-echo $(date +"%Y-%m-%d %T") > lastdatetime
+pastdate=$(<lasttime)
+echo $(date +"%Y-%m-%d %T") > lasttime
 mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `Recipient`,`Body` FROM `Messages` WHERE `DBCreateDate` >= "$(pastdate)"' --skip-column-names -B > newmessages
 if (( $(wc -c newfile | cut -f1 -d" ") == 0 )) 
 	then 
