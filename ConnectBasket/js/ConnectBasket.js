@@ -271,9 +271,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.urgencyTop = response.data.UrgencyLevel;
 			$scope.body = response.data.Body;
 			$scope.recipient = response.data.Recipient;
-			
-			console.log($scope.contactmethod);
-			
+						
 			if (response.data.From == 'HISTORY')
 			{
 				$scope.TopContent = '3';
