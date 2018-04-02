@@ -227,7 +227,7 @@ else if($data->method == "edit_profile")
 	$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
 	$stmt->bind_param('ss', $Message, $username); 
 
-	$Message = 'Updated profile. EmailAddress now: ' . $email . ', ReceiveEmails now: ' . $notifications;
+	$Message = $username . ' updated profile.'
 	$stmt->execute();
 	
 	$stmt = $conn->prepare('Call removeUserGroups(?)');
@@ -242,11 +242,11 @@ else if($data->method == "edit_profile")
 
 		$stmt->execute();
 		
-		$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
+		/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
 		$stmt->bind_param('ss', $Message, $username); 
 
 		$Message = 'User was added to group: ' . $g;
-		$stmt->execute();
+		$stmt->execute();*/
 	}	
 	
 	$success = true;
