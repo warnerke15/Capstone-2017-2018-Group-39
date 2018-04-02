@@ -227,7 +227,7 @@ else if($data->method == "edit_profile")
 	$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
 	$stmt->bind_param('ss', $Message, $username); 
 
-	$Message = $username . ' updated profile.'
+	$Message = $username . ' updated profile.';
 	$stmt->execute();
 	
 	$stmt = $conn->prepare('Call removeUserGroups(?)');
