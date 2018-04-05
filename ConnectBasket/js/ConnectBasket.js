@@ -659,10 +659,12 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			{
 				if (questions.hasOwnProperty(q.Category))
 				{
+					console.log('Question id: ' + q.QuestionID);
 					questions[q.Category].push({'QuestionText' : q.QuestionText, 'QuestionID' : q.QuestionID});
 				}
 				else
 				{
+					console.log('Question id: ' + q.QuestionID);
 					questions[q.Category] = new Array();
 					questions[q.Category].push({'QuestionText' : q.QuestionText, 'QuestionID' : q.QuestionID});
 				}
@@ -685,6 +687,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	$scope.category = '0';
 	
 	$scope.categoryChanged = function() {
+		console.log('Changing category');
 		$scope.QuestionsToShow = questions[$scope.category];
 	};
 	
