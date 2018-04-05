@@ -655,8 +655,10 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
+			console.log(response.data.categoryQuestions);
 			for (var q in response.data.categoryQuestions)
 			{
+				console.log(q);
 				if (questions.hasOwnProperty(q.Category))
 				{
 					console.log('Question id: ' + q.QuestionID);
