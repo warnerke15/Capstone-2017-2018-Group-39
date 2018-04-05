@@ -658,17 +658,17 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			console.log(response.data.categoryQuestions);
 			for (var q in response.data.categoryQuestions)
 			{
-				console.log(q);
-				if (questions.hasOwnProperty(q.Category))
+				console.log(response.data.categoryQuestions[q]);
+				if (questions.hasOwnProperty(response.data.categoryQuestions[q].Category))
 				{
-					console.log('Question id: ' + q.QuestionID);
-					questions[q.Category].push({'QuestionText' : q.QuestionText, 'QuestionID' : q.QuestionID});
+					console.log('Question id: ' + response.data.categoryQuestions[q].QuestionID);
+					questions[response.data.categoryQuestions[q].Category].push({'QuestionText' : response.data.categoryQuestions[q].QuestionText, 'QuestionID' : response.data.categoryQuestions[q].QuestionID});
 				}
 				else
 				{
-					console.log('Question id: ' + q.QuestionID);
-					questions[q.Category] = new Array();
-					questions[q.Category].push({'QuestionText' : q.QuestionText, 'QuestionID' : q.QuestionID});
+					console.log('Question id: ' + response.data.categoryQuestions[q].QuestionID);
+					questions[response.data.categoryQuestions[q].Category] = new Array();
+					questions[response.data.categoryQuestions[q].Category].push({'QuestionText' : response.data.categoryQuestions[q].QuestionText, 'QuestionID' : response.data.categoryQuestions[q].QuestionID});
 				}
 			}				
 		});
