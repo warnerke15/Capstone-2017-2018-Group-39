@@ -655,13 +655,10 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
-			console.log(response.data.categoryQuestions);
 			for (var q in response.data.categoryQuestions)
 			{
-				console.log(response.data.categoryQuestions[q]);
 				if (questions.hasOwnProperty(response.data.categoryQuestions[q].Category))
 				{
-					console.log('Question id: ' + response.data.categoryQuestions[q].QuestionID);
 					questions[response.data.categoryQuestions[q].Category].push({'QuestionText' : response.data.categoryQuestions[q].QuestionText, 'QuestionID' : response.data.categoryQuestions[q].QuestionID});
 				}
 				else
@@ -689,7 +686,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	$scope.category = '0';
 	
 	$scope.categoryChanged = function() {
-		console.log('Changing category');
+		console.log(questions[$scope.category]);
 		$scope.QuestionsToShow = questions[$scope.category];
 	};
 	
