@@ -684,7 +684,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
 	$scope.category = '0';
 	
-	$scope.category_changed = function() {
+	$scope.categoryChanged = function() {
 		$scope.QuestionsToShow = questions[$scope.category];
 	};
 	

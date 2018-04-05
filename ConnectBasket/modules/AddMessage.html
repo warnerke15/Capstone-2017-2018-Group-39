@@ -39,7 +39,7 @@
                     <label for=""><b>Type of Call:</b> </label>
                 </div>
                 <div class="col-xs-4">
-                    <select ng-model="category" onchange="category_changed()">
+                    <select ng-model="category" ng-change="categoryChanged()">
                         <option value="0">Select a category...</option>
                         <option ng-repeat="x in categories" value="{{x.Category}}"> {{x.Category}} </option>
                     </select>
