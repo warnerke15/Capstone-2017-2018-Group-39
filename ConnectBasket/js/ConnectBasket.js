@@ -647,6 +647,29 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.isAuth = true;
       }
 	
+	var questions = {};
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_categoryQuestions'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			for (var q in response.data.categoryQuestions)
+			{
+				if (questions.hasOwnProperty(q.Category))
+				{
+					questions[q.Category].push({'QuestionText' : q.QuestionText, 'QuestionID' : q.QuestionID});
+				}
+				else
+				{
+					questions[q.Category] = new Array();
+					questions[q.Category].push({'QuestionText' : q.QuestionText, 'QuestionID' : q.QuestionID});
+				}
+			}				
+		});
+	
+	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_categories'	
@@ -657,6 +680,13 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.categories = response.data.categories; 
 		});
 	
+	$scope.QuestionsToShow = new Array();
+	
+	$scope.category = '0';
+	
+	$scope.category_changed = function() {
+		$scope.QuestionsToShow = questions[$scope.category];
+	};
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
