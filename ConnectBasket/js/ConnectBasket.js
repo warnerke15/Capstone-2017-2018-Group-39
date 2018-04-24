@@ -647,7 +647,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
           $rootScope.isAuth = true;
       }
 	
-	/* var questions = {};
+	var questions = {};
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {
 			'method' : 'get_categoryQuestions'	
@@ -667,7 +667,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 					questions[response.data.categoryQuestions[q].Category].push({'QuestionText' : response.data.categoryQuestions[q].QuestionText, 'QuestionID' : response.data.categoryQuestions[q].QuestionID});
 				}
 			}				
-		}); */
+		});
 	
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
@@ -680,14 +680,14 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.categories = response.data.categories; 
 		});
 	
-	/* $scope.QuestionsToShow = new Array();
+	$scope.QuestionsToShow = new Array();
 	
 	$scope.category = '0';
 	
 	$scope.categoryChanged = function() {
 		console.log(questions[$scope.category]);
 		$scope.QuestionsToShow = questions[$scope.category];
-	}; */
+	};
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {

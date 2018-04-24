@@ -724,7 +724,7 @@ else if($data->method == "get_categories")
 	echo json_encode(array('categories' => $arr)); 
 }
 
-/* else if($data->method == "get_categoryQuestions")
+else if($data->method == "get_categoryQuestions")
 {
 	
 	$username = $_SESSION['username'];
@@ -749,7 +749,7 @@ else if($data->method == "get_categories")
 
 	$conn->close();
 	echo json_encode(array('categoryQuestions' => $arr)); 
-} */
+}
 
 else if($data->method == "get_logs")
 {
