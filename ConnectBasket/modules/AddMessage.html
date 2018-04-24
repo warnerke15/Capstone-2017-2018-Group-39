@@ -57,13 +57,13 @@
             </div>
 			
 			<div class="form-group row" ng-repeat="x in QuestionsToShow">
-				<ul class="checkbox-grid">
-					<li>
-						<label>{{x.QuestionText}}</label>
-						<input type="text" id="{{x.QuestionID}}">						
-					</li>					
-				</ul>
-                        	
+                <div class="col-xs-2">
+					<label><b>{{x.QuestionText}}</b></label>
+                    <label for=""></label>
+                </div>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" id="{{x.QuestionID}}">
+                </div>	
             </div>
             
 

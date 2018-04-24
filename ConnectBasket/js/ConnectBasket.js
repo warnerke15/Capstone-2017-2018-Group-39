@@ -685,9 +685,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	$scope.category = '0';
 	
 	$scope.categoryChanged = function() {
-		console.log(questions[$scope.category]);
+		//console.log(questions[$scope.category]);
 		$scope.QuestionsToShow = questions[$scope.category];
-		console.log(questions[$scope.QuestionsToShow]);
+		//console.log($scope.QuestionsToShow);
 	};
 	
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
