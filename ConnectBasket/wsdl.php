@@ -370,6 +370,11 @@ else if($data->method == "create_message")
 
 	$stmt->execute();
 	
+	$result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$MessageID = $row['MessageID']);
+	}
 	
 	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
 	$stmt->bind_param('ss', $Message, $username); 
@@ -381,6 +386,7 @@ else if($data->method == "create_message")
 	
 	$jsonData=array();
 	$jsonData['success']=$success;
+	$jsonData['MessageID']=$MessageID;
  
 	$conn->close();
 	echo json_encode($jsonData);

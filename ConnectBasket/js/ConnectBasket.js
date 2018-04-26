@@ -715,7 +715,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$scope.groups = response.data.groups; 
 		});
 	
-	var success = false;	
+	var success = false;
+	var messageID = 0;
 		
     $scope.formSubmit = function() {
 
@@ -735,18 +736,36 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 
 		{
-			success = response.data.success; 
-			if (success)
-			{
-				$state.transitionTo('home');
-			}
-			else 
-			{
-				console.log('Failure ' + success);
-			}
+			success = response.data.success;
+			messageID = response.data.MessageID;
 		});
+	
+	
+		foreach (var x in $scope.QuestionsToShow)
+		{
+			$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+			$data = {
+				'method' : 'add_categoryQuestionAnswer',
+				'questionID' : $scope.QuestionsToShow[x].QuestionID,
+				'answer' : document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).text,
+				'messageID' : messageID				
+			};
+			$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+			.then(function (response) 
+			{
+				success = response.data.success; 
+				
+			});
+		}
 		
-		
+		if (success)
+		{
+			$state.transitionTo('home');
+		}
+		else 
+		{
+			console.log('Failure ' + success);
+		}
     };
 	    
   });
