@@ -747,7 +747,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			$data = {
 				'method' : 'add_categoryQuestionAnswer',
 				'questionID' : $scope.QuestionsToShow[x].QuestionID,
-				'answer' : document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).text,
+				'answer' : document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).value,
 				'messageID' : messageID				
 			};
 			$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
