@@ -741,7 +741,7 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		});
 	
 	
-		foreach (var x in $scope.QuestionsToShow)
+		for (var x in $scope.QuestionsToShow)
 		{
 			$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 			$data = {
