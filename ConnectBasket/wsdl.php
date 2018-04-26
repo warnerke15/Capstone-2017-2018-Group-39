@@ -751,12 +751,13 @@ else if($data->method == "get_categoryQuestions")
 	echo json_encode(array('categoryQuestions' => $arr)); 
 }
 
-else if($data->method == "save_categoryQuestions")
+else if($data->method == "add_categoryQuestionAnswer")
 {
 	
 	$username = $_SESSION['username'];
 	$questionID = $data->questionID;
 	$answer = $data->answer;
+	$messageID = $data->messageID;
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
@@ -764,8 +765,8 @@ else if($data->method == "save_categoryQuestions")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('CALL saveCategoryQuestions(?,?)');
-	$stmt->bind_param('is', $questionID, $answer); 
+	$stmt = $conn->prepare('CALL addCategoryQuestionAnswer(?,?,?)');
+	$stmt->bind_param('isi', $questionID, $answer, $messageID); 
 	
 	$stmt->execute();
 
@@ -779,6 +780,35 @@ else if($data->method == "save_categoryQuestions")
 
 	$conn->close();
 	echo json_encode(array('categoryQuestions' => $arr)); 
+}
+
+else if($data->method == "get_categoryQuestionAnswers")
+{
+	
+	$username = $_SESSION['username'];
+	$messageID = $data->messageID;
+	
+	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
+	if ($conn->connect_error)
+	{
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$stmt = $conn->prepare('CALL getCategoryQuestionAnswers(?)');
+	$stmt->bind_param('i', $messageID); 
+	
+	$stmt->execute();
+
+	
+    $arr = array();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) 
+	{
+		$arr[] = array( 'QuestionText' => $row['QuestionText'],'AnswerText' => $row['AnswerText']);
+	}
+
+	$conn->close();
+	echo json_encode(array('categoryQuestionAnswers' => $arr)); 
 }
 
 else if($data->method == "get_logs")
