@@ -1,4 +1,4 @@
-var app = angular.module('ConnectBasketWebApp', ['ui.router','pdfmake']);
+var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 
   
   app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
