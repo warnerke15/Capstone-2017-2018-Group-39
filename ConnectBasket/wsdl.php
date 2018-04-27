@@ -776,6 +776,8 @@ else if($data->method == "add_categoryQuestionAnswer")
 	
 	$stmt->execute();
 
+	$success = true;
+	
 	
     $jsonData=array();
 	$jsonData['success']=$success;

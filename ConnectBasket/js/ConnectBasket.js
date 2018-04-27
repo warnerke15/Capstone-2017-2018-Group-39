@@ -743,6 +743,9 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 	
 		for (var x in $scope.QuestionsToShow)
 		{
+			console.log($scope.QuestionsToShow[x].QuestionID);
+			console.log(document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).value);
+			console.log(messageID);
 			$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 			$data = {
 				'method' : 'add_categoryQuestionAnswer',
