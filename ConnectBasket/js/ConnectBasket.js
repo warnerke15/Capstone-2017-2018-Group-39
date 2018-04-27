@@ -269,6 +269,16 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		{
 			$scope.notes = response.data.notes; 
 		});
+		
+	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+		$data = {
+			'method' : 'get_categoryQuestionAnswers'	
+		};
+		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+		.then(function (response) 
+		{
+			$scope.QuestionsToShow = response.data.categoryQuestionAnswers; 
+		});
       
 	$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$data = {

@@ -36,13 +36,19 @@
 	
 <div class="row">
 	<div class="row">
+		<div class="col-xs-1 col-md-2">
+		</div>
+		
 		<div class="col-xs-10 col-md-8 orangeBox">
 			<button type="button" ng-click="export()" class="button btn-block"> EXPORT TO PDF </button>
+		</div>
+		
+		<div class="col-xs-1 col-md-2">
 		</div>
 	</div>
 </div>
 	
-	
+<br />
 
 <div class="row">
     <div class="col-xs-1 col-md-2">
@@ -266,20 +272,30 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-2">
                 <label for=""><b>Type of Call:</b> </label>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-4">
                 <input type="text" class="form-control" name="category" ng-model="category" disabled>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-2">
                 <label for=""><b>Level of Urgency: </b></label>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-4">
                 <input type="text" class="form-control" name="urgency" ng-model="urgency" disabled>
             </div>
+        </div>
+		
+		<div class="form-group row" ng-repeat="x in QuestionsToShow">
+                <div class="col-xs-2">
+					<label><b>{{x.QuestionText}}</b></label>
+                    <label for=""></label>
+                </div>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" value="{{x.AnswerText}}">
+                </div>	
         </div>
 
         <div class="row">

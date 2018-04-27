@@ -790,7 +790,7 @@ else if($data->method == "get_categoryQuestionAnswers")
 {
 	
 	$username = $_SESSION['username'];
-	$messageID = $data->messageID;
+	$messageID = $_SESSION['MessageID'];
 	
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
