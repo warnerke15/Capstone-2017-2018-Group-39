@@ -777,15 +777,11 @@ else if($data->method == "add_categoryQuestionAnswer")
 	$stmt->execute();
 
 	
-    $arr = array();
-    $result = $stmt->get_result();
-    while ($row = $result->fetch_assoc()) 
-	{
-		$arr[] = array( 'Category' => $row['Category'],'QuestionID' => $row['QuestionID'], 'QuestionText' => $row['QuestionText']);
-	}
+    $jsonData=array();
+	$jsonData['success']=$success;
 
 	$conn->close();
-	echo json_encode(array('categoryQuestions' => $arr)); 
+	echo json_encode($jsonData); 
 }
 
 else if($data->method == "get_categoryQuestionAnswers")
