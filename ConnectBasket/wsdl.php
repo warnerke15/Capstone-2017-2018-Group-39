@@ -146,12 +146,12 @@ else if($data->method == "create_user")
 	{
 		$success = true;
 		
-		$stmt = $conn->prepare('Call addLogMessage(?, ?, 2)');
+		/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 2)');
 		$stmt->bind_param('ss', $Message, $User); 
 
 		$User = $_SESSION['username'];
 		$Message = $username . ' was created';
-		$stmt->execute();
+		$stmt->execute();*/
 		
 	}
 	else
@@ -224,11 +224,11 @@ else if($data->method == "edit_profile")
 
 	$stmt->execute();	
 	
-	$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 6)');
 	$stmt->bind_param('ss', $Message, $username); 
 
 	$Message = $username . ' updated profile.';
-	$stmt->execute();
+	$stmt->execute();*/
 	
 	$stmt = $conn->prepare('Call removeUserGroups(?)');
 	$stmt->bind_param('s', $username); 
@@ -637,8 +637,8 @@ else if($data->method == "get_messageDetails")
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$stmt = $conn->prepare('CALL getMessageDetails(?)');
-	$stmt->bind_param('i', $MessageID); 
+	$stmt = $conn->prepare('CALL getMessageDetails(?,?)');
+	$stmt->bind_param('is', $MessageID,$username); 
 		
 	$stmt->execute();
 
