@@ -738,37 +738,36 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 		{
 			success = response.data.success;
 			messageID = response.data.MessageID;
-		});
-	
-	
-		for (var x in $scope.QuestionsToShow)
-		{
-			console.log($scope.QuestionsToShow[x].QuestionID);
-			console.log(document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).value);
-			console.log(messageID);
-			$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-			$data = {
-				'method' : 'add_categoryQuestionAnswer',
-				'questionID' : $scope.QuestionsToShow[x].QuestionID,
-				'answer' : document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).value,
-				'messageID' : messageID				
-			};
-			$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
-			.then(function (response) 
+			
+			for (var x in $scope.QuestionsToShow)
 			{
-				success = response.data.success; 
-				
-			});
-		}
-		
-		if (success)
-		{
-			$state.transitionTo('home');
-		}
-		else 
-		{
-			console.log('Failure ' + success);
-		}
+				console.log($scope.QuestionsToShow[x].QuestionID);
+				console.log(document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).value);
+				console.log(messageID);
+				$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+				$data = {
+					'method' : 'add_categoryQuestionAnswer',
+					'questionID' : $scope.QuestionsToShow[x].QuestionID,
+					'answer' : document.getElementById($scope.QuestionsToShow[x].QuestionID.toString()).value,
+					'messageID' : messageID				
+				};
+				$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
+				.then(function (response) 
+				{
+					success = response.data.success; 
+					
+				});
+			}
+			if (success)
+			{
+				$state.transitionTo('home');
+			}
+			else 
+			{
+				console.log('Failure ' + success);
+			}
+		});
+
     };
 	    
   });
