@@ -373,7 +373,7 @@ else if($data->method == "create_message")
 	$result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$MessageID = $row['MessageID']);
+		$MessageID = $row['MessageID'];
 	}
 	
 	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
