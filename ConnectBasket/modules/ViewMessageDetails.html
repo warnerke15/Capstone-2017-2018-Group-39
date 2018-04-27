@@ -242,7 +242,7 @@
         <div class="subheader"> ORIGINAL MESSAGE DETAILS</div>
 
 
-        <div class="row">
+        <div class="form-group row">
             <div class="col-xs-2">
                 <label for="username"><b>Patient Name:</b></label>
             </div>
@@ -257,7 +257,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="form-group row">
             <div class="col-xs-2">
                 <label for="username"><b>Owner Name:</b></label>
             </div>
@@ -271,15 +271,14 @@
                 <input type="text" class="form-control" name="contactmethod" ng-model="contactmethod" disabled>
             </div>
         </div>
-        <div class="row">
+        <div class="form-group row">
             <div class="col-xs-2">
                 <label for=""><b>Type of Call:</b> </label>
             </div>
             <div class="col-xs-4">
                 <input type="text" class="form-control" name="category" ng-model="category" disabled>
             </div>
-        </div>
-        <div class="row">
+        
             <div class="col-xs-2">
                 <label for=""><b>Level of Urgency: </b></label>
             </div>
@@ -294,11 +293,11 @@
                     <label for=""></label>
                 </div>
                 <div class="col-xs-4">
-                    <input type="text" class="form-control" value="{{x.AnswerText}}">
+                    <input type="text" class="form-control" value="{{x.AnswerText}}" disabled>
                 </div>	
         </div>
 
-        <div class="row">
+        <div class="form-group row">
             <div class="col-xs-3">
                 <label for="body"><b>Message Body:</b></label>
             </div>
@@ -307,7 +306,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="form-group row">
             <div class="col-xs-3">
                 <label for="username"><b>Route Message To: </b> </label>
             </div>
