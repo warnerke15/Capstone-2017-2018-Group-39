@@ -376,11 +376,11 @@ else if($data->method == "create_message")
 		$MessageID = $row['MessageID'];
 	}
 	
-	$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
+	/*$stmt = $conn->prepare('Call addLogMessage(?, ?, 3)');
 	$stmt->bind_param('ss', $Message, $username); 
 
 	$Message = 'New message created. Sent to: ' . $recipient ;
-	$stmt->execute();
+	$stmt->execute();*/
 		
 	$success = true;
 	
