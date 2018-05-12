@@ -25,7 +25,7 @@ if (( $(wc -l newmessages | cut -f1 -d" ") != 0))
 				if [[ $emailenabled -eq 1 ]]
 				then
 					echo "Sending notification to $emailaddress"
-					mailx -s “New_ConnectBasket_Messages” $emailaddress < message.txt
+					mailx -s “New\ ConnectBasket\ Messages” $emailaddress < message.txt
 				fi
 			done
 		done < newmessages
