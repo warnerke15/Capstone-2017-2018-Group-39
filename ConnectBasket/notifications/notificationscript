@@ -1,29 +1,35 @@
 #!/bin/bash
 pastdate=$(<lasttime)
 echo $(date +"%Y-%m-%d %T") > lasttime
-mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `Recipient`,`Body` FROM `Messages` WHERE `DBCreateDate` >= "$(pastdate)"' --skip-column-names -B > newmessages
-if (( $(wc -c newfile | cut -f1 -d" ") == 0 )) 
+mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `Recipient` FROM `Messages` WHERE `DBCreateDate` >= "$(pastdate)"' --skip-column-names -B > newmessages
+if (( $(wc -l newmessages | cut -f1 -d" ") != 0)) 
 	then 
 		while IFS='' read -r line || [[ -n "$line" ]]; do
-			token=( $line )
-			#token[0] is the group it was sent to
-			#token[1] is the message body
-			echo "$(date)  ---  Sending message to ${token[0]}. Message body: ${token[@]:1}" >> emaillog.file
-			groupid=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `GroupsTableID` FROM `Groups` WHERE `GroupName` = "${token[0]}"' --skip-column-names -B)
-			usersingroup=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `UsersTableID` FROM `GroupsAndUsers` WHERE `GroupsTableID` = "${groupid}"' --skip-column-names -B)
-			
-			for i in "${useringroup[@]}"
+			token=$line
+			echo $token > file.file
+			token=$(<file.file)
+			echo "$(date)  ---  Sending message to $token"
+			echo "$(date)  ---  Sending message to $token" >> emaillog.file
+			# SQL hates filtering in vars from other SQL commands for some reason, so this was honestly the best thing I could come up with.
+			groupidSQL="mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT \`GroupsTableID\` FROM \`Groups\` WHERE \`GroupName\` = \"${token}\"' --skip-column-names -B"
+			groupid=$(eval $groupidSQL)
+			usersingroupSQL="mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT \`UsersTableID\` FROM \`GroupsAndUsers\` WHERE \`GroupsTableID\` = \"${groupid}\"' --skip-column-names -B"
+			usersingroup=$(eval $usersingroupSQL)
+			IFS=$' ' read -rd '' -a userarray <<< $usersingroup 
+			for i in "${userarray[@]}"
 			do
-				emailaddress=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `EmailAddress` FROM `Users` WHERE `UsersTableID` = "${i}"' --skip-column-names -B)
-				emailenabled=$(mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `ReceiveEmails` FROM `Users` WHERE `UsersTableID` = "${i}"' --skip-column-names -B)
-				if [${emailenabled} -eq 1]
+				emailaddressSQL="mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT \`EmailAddress\` FROM \`Users\` WHERE \`UsersTableID\` = \"${i}\"' --skip-column-names -B"
+				emailenabledSQL="mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT \`ReceiveEmails\` FROM \`Users\` WHERE \`UsersTableID\` = \"${i}\"' --skip-column-names -B"
+				emailaddress=$(eval $emailaddressSQL)
+				emailenabled=$(eval $emailenabledSQL)
+				if [[ $emailenabled -eq 1 ]]
 				then
-					mailx -s “New ConnectBasket Messages” $emailaddress < message.txt
+					echo "Sending notification to $emailaddress"
+					mailx -s “New_ConnectBasket_Messages” $emailaddress < message.txt
 				fi
 			done
 		done < newmessages
 fi
 
 
-
-mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `UsersTableID` FROM `GroupsAndUsers` WHERE `GroupsTableID` = "22"' --skip-column-names -B
+echo "" > newmessages
