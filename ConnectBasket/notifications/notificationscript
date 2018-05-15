@@ -1,7 +1,8 @@
 #!/bin/bash
 pastdate=$(<lasttime)
 echo $(date +"%Y-%m-%d %T") > lasttime
-mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT `Recipient` FROM `Messages` WHERE `DBCreateDate` >= "$(pastdate)"' --skip-column-names -B > newmessages
+datetimeSQL="mysql -u root -pHealthydogsandcats -e 'USE ConnectBasket; SELECT \`Recipient\` FROM \`Messages\` WHERE \`DBCreateDate\` > \"$pastdate\"' --skip-column-names -B" 
+eval $datetimeSQL> newmessages
 if (( $(wc -l newmessages | cut -f1 -d" ") != 0)) 
 	then 
 		while IFS='' read -r line || [[ -n "$line" ]]; do
@@ -25,7 +26,7 @@ if (( $(wc -l newmessages | cut -f1 -d" ") != 0))
 				if [[ $emailenabled -eq 1 ]]
 				then
 					echo "Sending notification to $emailaddress"
-					mailx -s “New_ConnectBasket_Messages” $emailaddress < message.txt
+					mailx -s “New\ ConnectBasket\ Messages” $emailaddress < message.txt
 				fi
 			done
 		done < newmessages
