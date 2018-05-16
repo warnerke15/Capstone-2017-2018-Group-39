@@ -138,7 +138,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			'password' : $scope.password,
 			'firstname' : $scope.first,
 			'lastname' : $scope.last,
-			'email' : $scope.email
+			'email' : $scope.email,
+			'receiveEmails' : $scope.receive.selection
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 

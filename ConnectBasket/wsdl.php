@@ -124,14 +124,15 @@ else if($data->method == "create_user")
 	$username = $data->username;
 	$password = $data->password;
 	$email = $data->email;
+	$receiveEmails = $data->receiveEmails;
 	$hashpass = password_hash($password, PASSWORD_DEFAULT);
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, EmailAddress) Values(?,?,?,?,?)');
-	$stmt->bind_param('sssss', $username,$lastname,$firstname,$hashpass,$email); 
+	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, EmailAddress, ReceiveEmails) Values(?,?,?,?,?)');
+	$stmt->bind_param('ssssss', $username,$lastname,$firstname,$hashpass,$email,$receiveEmails); 
 
 	$stmt->execute();
 	
