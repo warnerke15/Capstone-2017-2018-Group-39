@@ -131,7 +131,7 @@ else if($data->method == "create_user")
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, EmailAddress, ReceiveEmails) Values(?,?,?,?,?)');
+	$stmt = $conn->prepare('Insert Into Users(Username, LastName, FirstName, Password, EmailAddress, ReceiveEmails) Values(?,?,?,?,?,?)');
 	$stmt->bind_param('ssssss', $username,$lastname,$firstname,$hashpass,$email,$receiveEmails); 
 
 	$stmt->execute();
