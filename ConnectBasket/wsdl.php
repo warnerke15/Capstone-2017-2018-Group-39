@@ -124,7 +124,7 @@ else if($data->method == "create_user")
 	$username = $data->username;
 	$password = $data->password;
 	$email = $data->email;
-	$receiveEmails = $data->receiveEmails;
+	$receiveEmails = intval($data->receiveEmails);
 	$hashpass = password_hash($password, PASSWORD_DEFAULT);
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
