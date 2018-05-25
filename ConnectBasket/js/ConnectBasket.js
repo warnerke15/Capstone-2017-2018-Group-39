@@ -752,7 +752,8 @@ var app = angular.module('ConnectBasketWebApp', ['ui.router']);
 			'recipient' : $scope.recipient,
 			'contactMethod' : $scope.contactmethod,
 			'urgency' : $scope.urgency,
-			'body' : $scope.body
+			'body' : $scope.body,
+			'hospital' : $scope.hospital
 		};
 		$http.post("http://vm-cs462-g39.eecs.oregonstate.edu/wsdl.php", $data)
 		.then(function (response) 

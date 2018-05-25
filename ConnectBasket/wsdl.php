@@ -358,15 +358,16 @@ else if($data->method == "create_message")
 	$recipient = $data->recipient;
 	$contactMethod = $data->contactMethod;
 	$urgency = $data->urgency;
+	$hospital = $data->hospital
 		
 	$conn = new mysqli($details['server_host'], $details['mysql_name'],$details['mysql_password'], $details['mysql_database']);	
 	if ($conn->connect_error)
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?,?)');
+	$stmt = $conn->prepare('call addMessage(?,?,?,?,?,?,?,?,?,?)');
 	
-	$stmt->bind_param('sssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency,$username); 
+	$stmt->bind_param('sssssssss', $caseNumber,$patientName,$ownerName,$category,$body,$recipient,$contactMethod,$urgency,$username,$hospital); 
 	
 
 	$stmt->execute();
@@ -521,7 +522,7 @@ else if($data->method == "get_messages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID'], 'Urgency' => $row['Urgency']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID'], 'Urgency' => $row['Urgency'], 'Hospital' => $row['Hospital']);
 	}
 
 	$conn->close();
@@ -547,7 +548,7 @@ else if($data->method == "get_allMessages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'Status' => $row['Status'], 'MessageID' => $row['MessageID']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'Status' => $row['Status'], 'MessageID' => $row['MessageID'], 'Hospital' => $row['Hospital']);
 	}
 
 	$conn->close();
@@ -603,7 +604,7 @@ else if($data->method == "get_claimedMessages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID'], 'Urgency' => $row['Urgency']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID'], 'Urgency' => $row['Urgency'], 'Hospital' => $row['Hospital']);
 	}
 
 	$conn->close();
@@ -630,7 +631,7 @@ else if($data->method == "get_otherClaimedMessages")
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) 
 	{
-		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID'], 'Urgency' => $row['Urgency']);
+		$arr[] = array( 'CreateDate' => $row['CreateDate'], 'CreatedBy' => $row['CreatedBy'], 'Subject' => $row['Subject'], 'Recipient' => $row['Recipient'], 'MessageID' => $row['MessageID'], 'Urgency' => $row['Urgency'], 'Hospital' => $row['Hospital']);
 	}
 
 	$conn->close();
