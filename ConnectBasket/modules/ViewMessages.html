@@ -15,6 +15,7 @@
                     <th>Created By</th>
 					<th>Routed To</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
+					<th>Urgency Level</th>
                     <th>View Message Details</th>
 
                 </tr>
@@ -23,6 +24,7 @@
                     <td>{{ x.CreatedBy }}</td>
 					<td>{{ x.Recipient }}</td>
                     <td>{{ x.Subject }}</td>
+					<td>{{ x.Urgency }}</td>
                     <td>
                         <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
                             DETAILS
@@ -45,6 +47,7 @@
                     <th>Created By</th>
 					<th>Routed To</th>
                     <th>Message Subject: (Patient Name, Type of Call)</th>
+					<th>Urgency Level</th>
                     <th>View Message Details</th>
 
                 </tr>
@@ -53,6 +56,7 @@
                     <td>{{ x.CreatedBy }}</td>
 					<td>{{ x.Recipient }}</td>
                     <td>{{ x.Subject }}</td>
+					<td>{{ x.Urgency }}</td>
                     <td>
                         <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
                             DETAILS
@@ -61,7 +65,38 @@
                 </tr>
             </table>
         </div>
-        
+        <br />
+		<div>
+            <div class="subheader">CLAIMED MESSAGES FOR YOUR GROUP</div>
+            <h4>
+                Highest priority messages will appear at the top. Click the DETAILS button to view the specifics of a message.
+                All messages sent to any group you are a part of that have been claimed by another user will appear in this messages box.
+            </h4>
+
+            <table>
+                <tr>
+                    <th>Create Date</th>
+                    <th>Created By</th>
+					<th>Routed To</th>
+                    <th>Message Subject: (Patient Name, Type of Call)</th>
+					<th>Urgency Level</th>
+                    <th>View Message Details</th>
+
+                </tr>
+                <tr ng-repeat="x in otherclaimedmessages">
+                    <td>{{ x.CreateDate }}</td>
+                    <td>{{ x.CreatedBy }}</td>
+					<td>{{ x.Recipient }}</td>
+                    <td>{{ x.Subject }}</td>
+					<td>{{ x.Urgency }}</td>
+                    <td>
+                        <button type="button" class="button" ng-click="viewDetails(x.MessageID)">
+                            DETAILS
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         
 
     </div>
