@@ -1,0 +1,210 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+ 
+\urlstyle{same}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		ConnectBasket Development Team}
+\def \CapstoneTeamNumber{		39}
+\def \GroupMemberOne{			Henry Fowler}
+\def \GroupMemberTwo{			Kailyn Hellwege}
+\def \GroupMemberThree{			Taylor Kirkpatrick}
+\def \CapstoneProjectName{		ConnectBasket}
+\def \CapstoneSponsorCompany{	OSU MIME}
+\def \CapstoneSponsorPerson{		Dr. Chinweike Eseonu}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{		%Problem Statement
+				%Requirements Document
+				%Technology Review
+				%Design Document
+				Final Report
+				}
+			
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	\includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+                \NameSigPair{\GroupMemberThree}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        % 6. Fill in your abstract    
+        
+
+        \end{abstract}     
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+
+\section{Introduction to Project}
+
+\section{Requirements Document}
+
+\section{Design Document}
+
+\section{Tech Review}
+
+\section{Weekly Blog Posts}
+
+\subsection{Henry}
+
+\subsection{Kailyn}
+
+\subsection{Taylor}
+
+\section{Final Poster}
+
+
+\section{Project Documentation}
+
+
+\section{Recommended Technical Resources for Learning More}
+\subsection {Helpful Websites}
+\begin{itemize}
+\item https://docs.angularjs.org/guide/introduction
+\item https://www.w3schools.com/
+\item http://php.net/
+\item https://dev.mysql.com/doc/
+\end{itemize}
+
+
+\section{Conclusions and Reflections}
+
+\subsection{Henry}
+
+\subsubsection{What technical information did you learn?}
+
+\subsubsection{What non-technical information did you learn?}
+
+\subsubsection{What have you learned about project work?}
+
+\subsubsection{What have you learned about project management?}
+
+\subsubsection{What have you learned about working in teams?}
+
+\subsubsection{If you could do it all over, what would you do differently?}
+
+\subsection{Kailyn}
+
+\subsubsection{What technical information did you learn?}
+
+\subsubsection{What non-technical information did you learn?}
+
+\subsubsection{What have you learned about project work?}
+
+\subsubsection{What have you learned about project management?}
+
+\subsubsection{What have you learned about working in teams?}
+
+\subsubsection{If you could do it all over, what would you do differently?}
+
+\subsection{Taylor}
+
+\subsubsection{What technical information did you learn?}
+
+\subsubsection{What non-technical information did you learn?}
+
+\subsubsection{What have you learned about project work?}
+
+\subsubsection{What have you learned about project management?}
+
+\subsubsection{What have you learned about working in teams?}
+
+\subsubsection{If you could do it all over, what would you do differently?}
+
+
+
+\section{Appendix 1: Essential Code Listings}
+
+\section{Appendix 2: Photos of Project}
+
+
+\end{document}
