@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+
+\bibitem{ubuntu}
+K.~Hess, ``Ubuntu server: The linux server operating systems dark horse.''
+  \url{https://www.serverwatch.com/trends/article.php/3870141/Ubuntu-Server-The-Linux-Server-Operating-Systems-Dark-Horse.htm},
+  3 2010.
+
+\bibitem{apache}
+D.~Sullivan, ``Advantages of apache web server.''
+  \url{https://www.techwalla.com/articles/advantages-of-apache-web-server}.
+
+\bibitem{mysql}
+T.~Branson, ``8 major advantages of using mysql.''
+  \url{https://www.datamation.com/storage/8-major-advantages-of-using-mysql.html},
+  11 2016.
+
+\bibitem{notifications}
+M.~Grech, ``Twilio vs. nexmo: The head to head showdown for developers.''
+  \url{https://getvoip.com/blog/2017/01/05/twilio-vs-nexmo/}, 1 2017.
+
+\bibitem{huge}
+panique {\em et~al.}, ``Huge.'' \url{https://github.com/panique/huge/}, 4 2017.
+
+\bibitem{userfrosting}
+``Modern user management framework for php.''
+  \url{https://www.userfrosting.com/}.
+
+\bibitem{bestpractical}
+B.~Practical, ``Request tracker.''
+  \url{https://bestpractical.com/request-tracker/}.
+
+\bibitem{cdn}
+``What is a cdn?.''
+  \url{https://www.cloudflare.com/learning/cdn/what-is-a-cdn/}.
+
+\bibitem{cloudflare}
+``Fast, global content delivery network.''
+  \url{https://www.cloudflare.com/cdn/}.
+
+\bibitem{webdevframework}
+M.~Rouse, ``web development framework (wdf).''
+  \url{http://searchcontentmanagement.techtarget.com/definition/web-development-framework-WDF}.
+
+\bibitem{framework}
+C.~Wodehouse, ``What is a framework?.''
+  \url{https://www.upwork.com/hiring/development/understanding-software-frameworks/}.
+
+\bibitem{angular}
+``Angularjs - overview.''
+  \url{https://www.tutorialspoint.com/angularjs/angularjs_overview.htm}.
+
+\bibitem{mvc}
+Jithin, ``What is mvc? advantages and disadvantages of mv.''
+  \url{https://www.interserver.net/tips/kb/mvc-advantages-disadvantages-mvc/},
+  10 2016.
+
+\bibitem{windows}
+O.~Rist, ``Windows server top 5 benefits for today’s workforce.''
+  \url{https://blogs.technet.microsoft.com/windowsserverexperts/2010/02/08/windows-server-top-5-benefits-for-todays-workforce/},
+  2 2010.
+
+\bibitem{solaris}
+K.~Milberg, ``When to use solaris vs. linux: Operating system comparison.''
+  \url{http://searchdatacenter.techtarget.com/tip/When-to-use-Solaris-vs-Linux-Operating-system-comparison},
+  12 2008.
+
+\bibitem{cherokee}
+A.~L. Ortega, ``Cherokee basics.''
+  \url{http://cherokee-project.com/doc/basics_why_cherokee.html}.
+
+\bibitem{nginx}
+A.~Leslie, ``Nginx vs. apache (pro/con review, uses, \& hosting for each).''
+  \url{http://www.hostingadvice.com/how-to/nginx-vs-apache/}, 7 2017.
+
+\bibitem{sqlite}
+O.~Tezer, ``Sqlite vs mysql vs postgresql: A comparison of relational database
+  management systems.''
+  \url{https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems},
+  2 2014.
+
+\bibitem{sqlserver}
+G.~Farrar, ``Microsoft sql server: Advantages and challenges from the
+  virtualization admin’s view.''
+  \url{https://turbonomic.com/blog/microsoft-sql-server-advantages-challenges-virtualization-admins-view/},
+  8 2016.
+
+\bibitem{akamaicdn}
+``Cdn services.''
+  \url{https://www.akamai.com/us/en/resources/cdn-services.jsp}.
+
+\bibitem{amazoncloudfront}
+``Amazon cloudfront.'' \url{https://aws.amazon.com/cloudfront/}.
+
+\bibitem{asp.net}
+``Asp.net - introduction.''
+  \url{https://www.tutorialspoint.com/asp.net/asp.net_introduction.htm}.
+
+\bibitem{asp}
+A.~Hasan, ``Top 12 main advantages of asp.net framework.''
+  \url{http://www.arpatech.com/blog/top-advantages-of-asp-net-framework/}, 3
+  2017.
+
+\bibitem{angularjs}
+``Angularjs.'' \url{https://angularjs.org/}.
+
+\bibitem{react}
+``React.'' \url{https://www.tutorialspoint.com/reactjs/reactjs_overview.htm}.
+
+\bibitem{mvp}
+T.~Snyder, ``Mvc or mvp pattern – whats the difference?.''
+  \url{https://www.infragistics.com/community/blogs/todd_snyder/archive/2007/10/17/mvc-or-mvp-pattern-whats-the-difference.aspx},
+  10 2007.
+
+\bibitem{mvvm}
+B.~Jacobs, ``What are the benefits of model-view-viewmodel.''
+  \url{https://cocoacasts.com/what-are-the-benefits-of-model-view-viewmodel/},
+  11 2016.
+
+\bibitem{viewpoints}
+N.~Rozanki and E.~Woods, ``Viewpoints.''
+  \url{https://www.viewpoints-and-perspectives.info/home/viewpoints/}.
+
+\end{thebibliography}

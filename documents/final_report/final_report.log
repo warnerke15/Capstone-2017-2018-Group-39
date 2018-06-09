@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  3 JUN 2018 14:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  9 JUN 2018 14:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -339,7 +339,20 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
-(./final_report.aux)
+(./final_report.aux
+
+LaTeX Warning: Label `huge' multiply defined.
+
+
+LaTeX Warning: Label `userfrosting' multiply defined.
+
+
+LaTeX Warning: Label `bestpractical' multiply defined.
+
+
+LaTeX Warning: Label `asp' multiply defined.
+
+)
 \openout1 = `final_report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
@@ -440,48 +453,261 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6.6749> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <4.7678> on input line 2.
- [1] [2])
+ [1] [2] [3] [4] [5] [6])
 \tf@toc=\write4
 \openout4 = `final_report.toc'.
 
- [3]
+ [7]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 129.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 151.
- [4
+ [8
 
-] [5] [6] [7] [8] [9]
+] [9] [10] [11] [12]
+[13]
 File: gantt-chart.eps Graphic file (type eps)
- <gantt-chart.eps>
-[10] [11]
-Overfull \vbox (134.05203pt too high) has occurred while \output is active []
-
-
-[12]
+ <gantt-chart.eps> [14]
 File: final-gantt-chart.eps Graphic file (type eps)
- <final-gantt-chart.eps> [13] [14]
-Overfull \vbox (204.46811pt too high) has occurred while \output is active []
+ <final-gantt-chart.eps> [15] [16]
+File: functional_elements.eps Graphic file (type eps)
+
+<functional_elements.eps> [17]
+File: database_design.eps Graphic file (type eps)
+ <database_design.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18] [19] [20]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ù in font pplr7t!
+ [21]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ù in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ù in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ú in font pplr7t!
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ù in font pplr7t!
+ [22] [23]
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+ [24] [25] [26] [27]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28] [29] [30]
+Overfull \hbox (29.70747pt too wide) in paragraph at lines 638--646
+ [][] 
+ []
+
+[31] [32] [33] [34]
+Underfull \hbox (badness 5064) in paragraph at lines 732--732
+[]\OT1/ppl/m/n/9.53561 Works with all ma-
+ []
 
 
-[15] [16] [17] [18] [19] [20] [21] [22] [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
- [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 372.
+Underfull \hbox (badness 5064) in paragraph at lines 732--732
+[]\OT1/ppl/m/n/9.53561 Works with all ma-
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 734--734
+[]\OT1/ppl/m/n/9.53561 Easily in-te-grates with
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 734--734
+[]\OT1/ppl/m/n/9.53561 Easily in-te-grates with
+ []
+
+[35]
+Underfull \hbox (badness 4713) in paragraph at lines 768--768
+[]\OT1/ppl/m/n/9.53561 View, view in-ter-face,
+ []
+
+[36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 816--817
+[]\OT1/ppl/m/n/8.03 "Userfrosting | Mod-ern user man-age-ment frame-work for PH
+P", \OT1/ppl/m/it/8.03 User-frost-ing.com\OT1/ppl/m/n/8.03 , 2017. [On-line]. A
+vail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 816--817
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
+
+ []
+
+
+Underfull \hbox (badness 4229) in paragraph at lines 820--821
+[]\OT1/ppl/m/n/8.03 Microsoft, "In-tro-duc-tion to ASP.NET Iden-tity", \OT1/ppl
+/m/it/8.03 Docs.microsoft.com\OT1/ppl/m/n/8.03 , 2017. [On-line]. Avail-able: h
+ttps://docs.microsoft.com/en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 820--821
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--823
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--825
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--827
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 828--829
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 830--831
+
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 832.
+
+[39] [40] [41] [42] [43]
+File: poster.eps Graphic file (type eps)
+ <poster.eps> [44] [45] [46] [47] [48] [49]
+(./final_report.bbl
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8.03> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.62097> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.015> on input line 5.
+
+Overfull \hbox (247.87659pt too wide) in paragraph at lines 4--7
+[]\OT1/ppl/m/n/8.03 K. Hess, ``Ubuntu server: The linux server op-er-at-ing sys
+-tems dark horse.'' [][][][][][],
+ []
+
+
+Overfull \hbox (38.97585pt too wide) in paragraph at lines 41--43
+[]\OT1/ppl/m/n/8.03 M. Rouse, ``web de-vel-op-ment frame-work (wdf).'' [][][][]
+[][]. 
+ []
+
+
+Overfull \hbox (3.171pt too wide) in paragraph at lines 53--56
+[]\OT1/ppl/m/n/8.03 Jithin, ``What is mvc? ad-van-tages and dis-ad-van-tages of
+ mv.'' [][][][][][],
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Overfull \hbox (197.12607pt too wide) in paragraph at lines 58--61
+[]\OT1/ppl/m/n/8.03 O. Rist, ``Win-dows server top 5 ben-e-fits for to-days wor
+k-force.'' [][][][][][],
+ []
+
+
+Overfull \hbox (158.25461pt too wide) in paragraph at lines 63--66
+[]\OT1/ppl/m/n/8.03 K. Mil-berg, ``When to use so-laris vs. linux: Op-er-at-ing
+ sys-tem com-par-i-son.'' [][][][][][],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--80
+[]\OT1/ppl/m/n/8.03 O. Tezer, ``Sqlite vs mysql vs post-gresql: A com-par-i-son
+ of re-la-tional database man-age-ment sys-tems.''
+ []
+
+
+Overfull \hbox (32.21535pt too wide) in paragraph at lines 76--80
+[][][][][][]\OT1/ppl/m/n/8.03 ,
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
+[]\OT1/ppl/m/n/8.03 G. Far-rar, ``Mi-crosoft sql server: Ad-van-tages and chal-
+lenges from the vir-tu-al-iza-tion ad-mins view.''
+ []
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ì in font pplr7t!
+
+Overfull \hbox (190.8197pt too wide) in paragraph at lines 110--113
+[]\OT1/ppl/m/n/8.03 T. Sny-der, ``Mvc or mvp pat-tern  whats the dif-fer-ence?.
+'' [][][][][][],
+ []
+
+
+Overfull \hbox (1.14761pt too wide) in paragraph at lines 115--118
+[]\OT1/ppl/m/n/8.03 B. Ja-cobs, ``What are the ben-e-fits of model-view-viewmod
+el.'' [][][][][][],
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1028.
+ [50]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1028.
  (./final_report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1028.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1028.
+
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: 5FD1CD3FF8C471DF82768208B7B88F51;6211.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 372.
+(rerunfilecheck)             Checksum: DB593D74497590216A836CE6FD0255E6;17448.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1028.
  ) 
 Here is how much of TeX's memory you used:
- 7682 strings out of 495064
- 117860 string characters out of 3182224
- 224737 words of memory out of 3000000
- 10828 multiletter control sequences out of 15000+200000
- 29426 words of font info for 72 fonts, out of 3000000 for 9000
+ 7906 strings out of 495064
+ 121712 string characters out of 3182224
+ 243314 words of memory out of 3000000
+ 11040 multiletter control sequences out of 15000+200000
+ 31249 words of font info for 78 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,7n,35p,1257b,347s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,10n,35p,1464b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on final_report.dvi (25 pages, 110124 bytes).
+Output written on final_report.dvi (51 pages, 396440 bytes).

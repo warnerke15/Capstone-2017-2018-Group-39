@@ -1,79 +1,233 @@
-\contentsline {section}{\numberline {1}Introduction to Project}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Project Purpose}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Project Goals}{4}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Clients}{4}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Development Team}{4}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}Henry Fowler}{4}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}Kailyn Hellwege}{4}{subsubsection.1.4.2}
-\contentsline {subsubsection}{\numberline {1.4.3}Taylor Kirkpatrick}{5}{subsubsection.1.4.3}
-\contentsline {subsection}{\numberline {1.5}Role of the Clients}{5}{subsection.1.5}
-\contentsline {section}{\numberline {2}Requirements Document}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Introduction}{6}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Purpose}{6}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Scope}{6}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Definitions, Acronyms, and Abbreviations}{6}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}References}{6}{subsubsection.2.1.4}
-\contentsline {subsubsection}{\numberline {2.1.5}Overview}{6}{subsubsection.2.1.5}
-\contentsline {subsection}{\numberline {2.2}Overall Description}{6}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Product Perspective}{6}{subsubsection.2.2.1}
-\contentsline {paragraph}{\numberline {2.2.1.1}User Interfaces}{7}{paragraph.2.2.1.1}
-\contentsline {paragraph}{\numberline {2.2.1.2}Hardware Interfaces}{7}{paragraph.2.2.1.2}
-\contentsline {paragraph}{\numberline {2.2.1.3}Software Interfaces}{7}{paragraph.2.2.1.3}
-\contentsline {subsubsection}{\numberline {2.2.2}Product Functions}{7}{subsubsection.2.2.2}
-\contentsline {paragraph}{\numberline {2.2.2.1}User Stories}{7}{paragraph.2.2.2.1}
-\contentsline {paragraph}{\numberline {2.2.2.2}Function Dependencies}{7}{paragraph.2.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}User Characteristics}{7}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Constraints}{7}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Assumptions and Dependencies}{8}{subsubsection.2.2.5}
-\contentsline {subsection}{\numberline {2.3}Specific Requirements}{8}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}External interface requirements}{8}{subsubsection.2.3.1}
-\contentsline {paragraph}{\numberline {2.3.1.1}VetHosp}{8}{paragraph.2.3.1.1}
-\contentsline {subsubsection}{\numberline {2.3.2}System features}{8}{subsubsection.2.3.2}
-\contentsline {paragraph}{\numberline {2.3.2.1}Creation of Messages}{8}{paragraph.2.3.2.1}
-\contentsline {paragraph}{\numberline {2.3.2.2}Message Auto Population}{8}{paragraph.2.3.2.2}
-\contentsline {paragraph}{\numberline {2.3.2.3}Message Notification}{8}{paragraph.2.3.2.3}
-\contentsline {paragraph}{\numberline {2.3.2.4}Message Review and Forwarding}{9}{paragraph.2.3.2.4}
-\contentsline {paragraph}{\numberline {2.3.2.5}Message Resolution}{9}{paragraph.2.3.2.5}
-\contentsline {paragraph}{\numberline {2.3.2.6}Message Audit Record}{9}{paragraph.2.3.2.6}
-\contentsline {paragraph}{\numberline {2.3.2.7}Message Recipient Roles and Profile Roles}{9}{paragraph.2.3.2.7}
-\contentsline {subsubsection}{\numberline {2.3.3}Performance Requirements}{9}{subsubsection.2.3.3}
-\contentsline {paragraph}{\numberline {2.3.3.1}Web Service}{9}{paragraph.2.3.3.1}
-\contentsline {subsubsection}{\numberline {2.3.4}Design Constraints}{10}{subsubsection.2.3.4}
-\contentsline {subsection}{\numberline {2.4}Original Gantt Chart}{12}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Changes}{13}{subsection.2.5}
+\contentsline {section}{\numberline {1}Introduction to Project}{8}{section.1}
+\contentsline {subsection}{\numberline {1.1}Project Purpose}{8}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Project Goals}{8}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Clients}{8}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Development Team}{8}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Henry Fowler}{8}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Kailyn Hellwege}{8}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}Taylor Kirkpatrick}{9}{subsubsection.1.4.3}
+\contentsline {subsection}{\numberline {1.5}Role of the Clients}{9}{subsection.1.5}
+\contentsline {section}{\numberline {2}Requirements Document}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}Introduction}{10}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Purpose}{10}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Scope}{10}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Definitions, Acronyms, and Abbreviations}{10}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}References}{10}{subsubsection.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.5}Overview}{10}{subsubsection.2.1.5}
+\contentsline {subsection}{\numberline {2.2}Overall Description}{10}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Product Perspective}{10}{subsubsection.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.1.1}User Interfaces}{11}{paragraph.2.2.1.1}
+\contentsline {paragraph}{\numberline {2.2.1.2}Hardware Interfaces}{11}{paragraph.2.2.1.2}
+\contentsline {paragraph}{\numberline {2.2.1.3}Software Interfaces}{11}{paragraph.2.2.1.3}
+\contentsline {subsubsection}{\numberline {2.2.2}Product Functions}{11}{subsubsection.2.2.2}
+\contentsline {paragraph}{\numberline {2.2.2.1}User Stories}{11}{paragraph.2.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.2.2}Function Dependencies}{11}{paragraph.2.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}User Characteristics}{11}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Constraints}{11}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Assumptions and Dependencies}{12}{subsubsection.2.2.5}
+\contentsline {subsection}{\numberline {2.3}Specific Requirements}{12}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}External interface requirements}{12}{subsubsection.2.3.1}
+\contentsline {paragraph}{\numberline {2.3.1.1}VetHosp}{12}{paragraph.2.3.1.1}
+\contentsline {subsubsection}{\numberline {2.3.2}System features}{12}{subsubsection.2.3.2}
+\contentsline {paragraph}{\numberline {2.3.2.1}Creation of Messages}{12}{paragraph.2.3.2.1}
+\contentsline {paragraph}{\numberline {2.3.2.2}Message Auto Population}{12}{paragraph.2.3.2.2}
+\contentsline {paragraph}{\numberline {2.3.2.3}Message Notification}{12}{paragraph.2.3.2.3}
+\contentsline {paragraph}{\numberline {2.3.2.4}Message Review and Forwarding}{13}{paragraph.2.3.2.4}
+\contentsline {paragraph}{\numberline {2.3.2.5}Message Resolution}{13}{paragraph.2.3.2.5}
+\contentsline {paragraph}{\numberline {2.3.2.6}Message Audit Record}{13}{paragraph.2.3.2.6}
+\contentsline {paragraph}{\numberline {2.3.2.7}Message Recipient Roles and Profile Roles}{13}{paragraph.2.3.2.7}
+\contentsline {subsubsection}{\numberline {2.3.3}Performance Requirements}{13}{subsubsection.2.3.3}
+\contentsline {paragraph}{\numberline {2.3.3.1}Web Service}{13}{paragraph.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.4}Design Constraints}{14}{subsubsection.2.3.4}
+\contentsline {subsection}{\numberline {2.4}Original Gantt Chart}{14}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Changes}{14}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}Final Gantt Chart}{15}{subsection.2.6}
 \contentsline {section}{\numberline {3}Design Document}{16}{section.3}
-\contentsline {subsection}{\numberline {3.1}Changes}{16}{subsection.3.1}
-\contentsline {section}{\numberline {4}Tech Review}{17}{section.4}
-\contentsline {section}{\numberline {5}Weekly Blog Posts}{18}{section.5}
-\contentsline {subsection}{\numberline {5.1}Henry}{18}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Kailyn}{18}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Taylor}{18}{subsection.5.3}
-\contentsline {section}{\numberline {6}Final Poster}{19}{section.6}
-\contentsline {section}{\numberline {7}Project Documentation}{20}{section.7}
-\contentsline {section}{\numberline {8}Recommended Technical Resources for Learning More}{21}{section.8}
-\contentsline {subsection}{\numberline {8.1}Helpful Websites}{21}{subsection.8.1}
-\contentsline {section}{\numberline {9}Conclusions and Reflections}{22}{section.9}
-\contentsline {subsection}{\numberline {9.1}Henry}{22}{subsection.9.1}
-\contentsline {subsubsection}{\numberline {9.1.1}What technical information did you learn?}{22}{subsubsection.9.1.1}
-\contentsline {subsubsection}{\numberline {9.1.2}What non-technical information did you learn?}{22}{subsubsection.9.1.2}
-\contentsline {subsubsection}{\numberline {9.1.3}What have you learned about project work?}{22}{subsubsection.9.1.3}
-\contentsline {subsubsection}{\numberline {9.1.4}What have you learned about project management?}{22}{subsubsection.9.1.4}
-\contentsline {subsubsection}{\numberline {9.1.5}What have you learned about working in teams?}{22}{subsubsection.9.1.5}
-\contentsline {subsubsection}{\numberline {9.1.6}If you could do it all over, what would you do differently?}{22}{subsubsection.9.1.6}
-\contentsline {subsection}{\numberline {9.2}Kailyn}{22}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}What technical information did you learn?}{22}{subsubsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.2}What non-technical information did you learn?}{22}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}What have you learned about project work?}{22}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}What have you learned about project management?}{22}{subsubsection.9.2.4}
-\contentsline {subsubsection}{\numberline {9.2.5}What have you learned about working in teams?}{22}{subsubsection.9.2.5}
-\contentsline {subsubsection}{\numberline {9.2.6}If you could do it all over, what would you do differently?}{22}{subsubsection.9.2.6}
-\contentsline {subsection}{\numberline {9.3}Taylor}{22}{subsection.9.3}
-\contentsline {subsubsection}{\numberline {9.3.1}What technical information did you learn?}{22}{subsubsection.9.3.1}
-\contentsline {subsubsection}{\numberline {9.3.2}What non-technical information did you learn?}{22}{subsubsection.9.3.2}
-\contentsline {subsubsection}{\numberline {9.3.3}What have you learned about project work?}{22}{subsubsection.9.3.3}
-\contentsline {subsubsection}{\numberline {9.3.4}What have you learned about project management?}{22}{subsubsection.9.3.4}
-\contentsline {subsubsection}{\numberline {9.3.5}What have you learned about working in teams?}{22}{subsubsection.9.3.5}
-\contentsline {subsubsection}{\numberline {9.3.6}If you could do it all over, what would you do differently?}{22}{subsubsection.9.3.6}
-\contentsline {section}{\numberline {10}Appendix 1: Essential Code Listings}{23}{section.10}
-\contentsline {section}{\numberline {11}Appendix 2: Photos of Project}{24}{section.11}
+\contentsline {subsection}{\numberline {3.1}Introduction}{16}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Purpose}{16}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Scope}{16}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Intended Audience}{16}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Stakeholders}{16}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Glossary of Terms}{16}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Design Viewpoints}{17}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Functional Viewpoint}{17}{subsubsection.3.2.1}
+\contentsline {paragraph}{\numberline {3.2.1.1}Functional Elements}{17}{paragraph.3.2.1.1}
+\contentsline {paragraph}{\numberline {3.2.1.2}Responsibilities}{17}{paragraph.3.2.1.2}
+\contentsline {paragraph}{\numberline {3.2.1.3}Interfaces}{18}{paragraph.3.2.1.3}
+\contentsline {paragraph}{\numberline {3.2.1.4}Primary Interactions}{18}{paragraph.3.2.1.4}
+\contentsline {subsubsection}{\numberline {3.2.2}Context Viewpoint}{18}{subsubsection.3.2.2}
+\contentsline {paragraph}{\numberline {3.2.2.1}Relationships and Interactions}{18}{paragraph.3.2.2.1}
+\contentsline {paragraph}{\numberline {3.2.2.2}Dependencies}{18}{paragraph.3.2.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Information Context}{18}{subsubsection.3.2.3}
+\contentsline {paragraph}{\numberline {3.2.3.1}Information Storage}{18}{paragraph.3.2.3.1}
+\contentsline {subsection}{\numberline {3.3}Components}{18}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Server Setup}{18}{subsubsection.3.3.1}
+\contentsline {paragraph}{\numberline {3.3.1.1}Details}{18}{paragraph.3.3.1.1}
+\contentsline {paragraph}{\numberline {3.3.1.2}Design Decisions}{19}{paragraph.3.3.1.2}
+\contentsline {paragraph}{\numberline {3.3.1.3}Timeline}{19}{paragraph.3.3.1.3}
+\contentsline {paragraph}{\numberline {3.3.1.4}Testing}{19}{paragraph.3.3.1.4}
+\contentsline {subsubsection}{\numberline {3.3.2}Web Server}{19}{subsubsection.3.3.2}
+\contentsline {paragraph}{\numberline {3.3.2.1}Details}{19}{paragraph.3.3.2.1}
+\contentsline {paragraph}{\numberline {3.3.2.2}Design Decisions}{19}{paragraph.3.3.2.2}
+\contentsline {paragraph}{\numberline {3.3.2.3}Timeline}{20}{paragraph.3.3.2.3}
+\contentsline {paragraph}{\numberline {3.3.2.4}Testing}{20}{paragraph.3.3.2.4}
+\contentsline {subsubsection}{\numberline {3.3.3}Database}{20}{subsubsection.3.3.3}
+\contentsline {paragraph}{\numberline {3.3.3.1}Details}{20}{paragraph.3.3.3.1}
+\contentsline {paragraph}{\numberline {3.3.3.2}Design Decisions}{20}{paragraph.3.3.3.2}
+\contentsline {paragraph}{\numberline {3.3.3.3}Timeline}{20}{paragraph.3.3.3.3}
+\contentsline {paragraph}{\numberline {3.3.3.4}Testing}{21}{paragraph.3.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4}Mobile Notification System}{21}{subsubsection.3.3.4}
+\contentsline {paragraph}{\numberline {3.3.4.1}Details}{21}{paragraph.3.3.4.1}
+\contentsline {paragraph}{\numberline {3.3.4.2}Design Decisions}{21}{paragraph.3.3.4.2}
+\contentsline {paragraph}{\numberline {3.3.4.3}Timeline}{21}{paragraph.3.3.4.3}
+\contentsline {paragraph}{\numberline {3.3.4.4}Testing}{21}{paragraph.3.3.4.4}
+\contentsline {subsubsection}{\numberline {3.3.5}User Profile Framework}{22}{subsubsection.3.3.5}
+\contentsline {paragraph}{\numberline {3.3.5.1}Details}{22}{paragraph.3.3.5.1}
+\contentsline {paragraph}{\numberline {3.3.5.2}Design Decisions}{22}{paragraph.3.3.5.2}
+\contentsline {paragraph}{\numberline {3.3.5.3}Timeline}{22}{paragraph.3.3.5.3}
+\contentsline {paragraph}{\numberline {3.3.5.4}Testing}{22}{paragraph.3.3.5.4}
+\contentsline {subsubsection}{\numberline {3.3.6}Issue Tracker Framework}{23}{subsubsection.3.3.6}
+\contentsline {paragraph}{\numberline {3.3.6.1}Details}{23}{paragraph.3.3.6.1}
+\contentsline {paragraph}{\numberline {3.3.6.2}Design Decisions}{23}{paragraph.3.3.6.2}
+\contentsline {paragraph}{\numberline {3.3.6.3}Timeline}{23}{paragraph.3.3.6.3}
+\contentsline {paragraph}{\numberline {3.3.6.4}Testing}{23}{paragraph.3.3.6.4}
+\contentsline {subsubsection}{\numberline {3.3.7}Content Delivery Network}{23}{subsubsection.3.3.7}
+\contentsline {paragraph}{\numberline {3.3.7.1}Details}{23}{paragraph.3.3.7.1}
+\contentsline {paragraph}{\numberline {3.3.7.2}Design Decisions}{24}{paragraph.3.3.7.2}
+\contentsline {paragraph}{\numberline {3.3.7.3}Timeline}{24}{paragraph.3.3.7.3}
+\contentsline {paragraph}{\numberline {3.3.7.4}Testing}{24}{paragraph.3.3.7.4}
+\contentsline {subsubsection}{\numberline {3.3.8}Web Development Framework}{24}{subsubsection.3.3.8}
+\contentsline {paragraph}{\numberline {3.3.8.1}Details}{24}{paragraph.3.3.8.1}
+\contentsline {paragraph}{\numberline {3.3.8.2}Design Decisions}{24}{paragraph.3.3.8.2}
+\contentsline {paragraph}{\numberline {3.3.8.3}Timeline}{24}{paragraph.3.3.8.3}
+\contentsline {paragraph}{\numberline {3.3.8.4}Testing}{25}{paragraph.3.3.8.4}
+\contentsline {subsubsection}{\numberline {3.3.9}Software Design Pattern}{25}{subsubsection.3.3.9}
+\contentsline {paragraph}{\numberline {3.3.9.1}Details}{25}{paragraph.3.3.9.1}
+\contentsline {paragraph}{\numberline {3.3.9.2}Design Decisions}{25}{paragraph.3.3.9.2}
+\contentsline {paragraph}{\numberline {3.3.9.3}Timeline}{25}{paragraph.3.3.9.3}
+\contentsline {paragraph}{\numberline {3.3.9.4}Testing}{25}{paragraph.3.3.9.4}
+\contentsline {subsection}{\numberline {3.4}Conclusion}{25}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Summary}{25}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Changes}{26}{subsection.3.5}
+\contentsline {section}{\numberline {4}Tech Review (Henry)}{27}{section.4}
+\contentsline {subsection}{\numberline {4.1}Introduction}{27}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Reason for Project}{27}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Overview of Project}{27}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Server Operating System}{27}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Overview}{27}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Criteria}{27}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Potential Choices}{27}{subsubsection.4.2.3}
+\contentsline {paragraph}{\numberline {4.2.3.1}Linux Ubuntu Server}{27}{paragraph.4.2.3.1}
+\contentsline {paragraph}{\numberline {4.2.3.2}Windows Server}{28}{paragraph.4.2.3.2}
+\contentsline {paragraph}{\numberline {4.2.3.3}Solaris}{28}{paragraph.4.2.3.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Discussion}{28}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Conclusion}{28}{subsubsection.4.2.5}
+\contentsline {subsection}{\numberline {4.3}Web Server Software}{29}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Overview}{29}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Criteria}{29}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Potential Choices}{29}{subsubsection.4.3.3}
+\contentsline {paragraph}{\numberline {4.3.3.1}Apache HTTP}{29}{paragraph.4.3.3.1}
+\contentsline {paragraph}{\numberline {4.3.3.2}Cherokee}{29}{paragraph.4.3.3.2}
+\contentsline {paragraph}{\numberline {4.3.3.3}NGINX}{29}{paragraph.4.3.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Discussion}{30}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Conclusion}{30}{subsubsection.4.3.5}
+\contentsline {subsection}{\numberline {4.4}Database}{30}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Overview}{30}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Criteria}{30}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Potential Choices}{30}{subsubsection.4.4.3}
+\contentsline {paragraph}{\numberline {4.4.3.1}MySQL}{30}{paragraph.4.4.3.1}
+\contentsline {paragraph}{\numberline {4.4.3.2}SQLite}{31}{paragraph.4.4.3.2}
+\contentsline {paragraph}{\numberline {4.4.3.3}Microsoft SQL Server}{31}{paragraph.4.4.3.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Discussion}{31}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}Conclusion}{31}{subsubsection.4.4.5}
+\contentsline {section}{\numberline {5}Tech Review (Kailyn)}{32}{section.5}
+\contentsline {subsection}{\numberline {5.1}Introduction}{32}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Reason for Project}{32}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Overview of Project}{32}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Overview of Document}{32}{subsubsection.5.1.3}
+\contentsline {subsection}{\numberline {5.2}Content Delivery Networks}{32}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Overview}{32}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Criteria}{32}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Potential Choices}{33}{subsubsection.5.2.3}
+\contentsline {paragraph}{\numberline {5.2.3.1}Cloudflare}{33}{paragraph.5.2.3.1}
+\contentsline {paragraph}{\numberline {5.2.3.2}Akamai}{33}{paragraph.5.2.3.2}
+\contentsline {paragraph}{\numberline {5.2.3.3}Amazon CloudFront}{33}{paragraph.5.2.3.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Discussion}{33}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Conclusion}{33}{subsubsection.5.2.5}
+\contentsline {subsection}{\numberline {5.3}Web Development Frameworks}{34}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Overview}{34}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Criteria}{34}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Potential Choices}{34}{subsubsection.5.3.3}
+\contentsline {paragraph}{\numberline {5.3.3.1}ASP.NET}{34}{paragraph.5.3.3.1}
+\contentsline {paragraph}{\numberline {5.3.3.2}AngularJS}{34}{paragraph.5.3.3.2}
+\contentsline {paragraph}{\numberline {5.3.3.3}ReactJS}{35}{paragraph.5.3.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Discussion}{35}{subsubsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.5}Conclusion}{35}{subsubsection.5.3.5}
+\contentsline {subsection}{\numberline {5.4}Software Design Patterns}{35}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Overview}{35}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Criteria}{35}{subsubsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.3}Potential Choices}{36}{subsubsection.5.4.3}
+\contentsline {paragraph}{\numberline {5.4.3.1}MVC}{36}{paragraph.5.4.3.1}
+\contentsline {paragraph}{\numberline {5.4.3.2}MVP}{36}{paragraph.5.4.3.2}
+\contentsline {paragraph}{\numberline {5.4.3.3}MVVM}{36}{paragraph.5.4.3.3}
+\contentsline {subsubsection}{\numberline {5.4.4}Discussion}{36}{subsubsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.5}Conclusion}{36}{subsubsection.5.4.5}
+\contentsline {section}{\numberline {6}Tech Review (Taylor)}{38}{section.6}
+\contentsline {subsection}{\numberline {6.1}Introduction}{38}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Purpose}{38}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Scope}{38}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.3}Definitions, Acronyms, and Abbreviations}{38}{subsubsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.4}References}{38}{subsubsection.6.1.4}
+\contentsline {section}{References}{38}{section*.2}
+\contentsline {subsubsection}{\numberline {6.1.5}Overview}{39}{subsubsection.6.1.5}
+\contentsline {subsection}{\numberline {6.2}User Logins/Profiles}{39}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Userfrosting}{39}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}HUGE}{39}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.3}ASP.NET Identity}{40}{subsubsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.4}Comparison}{40}{subsubsection.6.2.4}
+\contentsline {subsubsection}{\numberline {6.2.5}Selection}{40}{subsubsection.6.2.5}
+\contentsline {subsection}{\numberline {6.3}Issue Tracker}{40}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Trello}{40}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}Request Tracker}{41}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}Manual Issue Tracking}{41}{subsubsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.4}Comparison}{41}{subsubsection.6.3.4}
+\contentsline {subsubsection}{\numberline {6.3.5}Selection}{41}{subsubsection.6.3.5}
+\contentsline {subsection}{\numberline {6.4}Notifications}{41}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Twilio}{41}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Nexmo}{42}{subsubsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.3}Manual Email}{42}{subsubsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.4}Comparison}{42}{subsubsection.6.4.4}
+\contentsline {subsubsection}{\numberline {6.4.5}Selection}{42}{subsubsection.6.4.5}
+\contentsline {section}{\numberline {7}Weekly Blog Posts}{43}{section.7}
+\contentsline {subsection}{\numberline {7.1}Henry}{43}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Kailyn}{43}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Taylor}{43}{subsection.7.3}
+\contentsline {section}{\numberline {8}Final Poster}{44}{section.8}
+\contentsline {section}{\numberline {9}Project Documentation}{45}{section.9}
+\contentsline {section}{\numberline {10}Recommended Technical Resources for Learning More}{46}{section.10}
+\contentsline {subsection}{\numberline {10.1}Helpful Websites}{46}{subsection.10.1}
+\contentsline {section}{\numberline {11}Conclusions and Reflections}{47}{section.11}
+\contentsline {subsection}{\numberline {11.1}Henry}{47}{subsection.11.1}
+\contentsline {subsubsection}{\numberline {11.1.1}What technical information did you learn?}{47}{subsubsection.11.1.1}
+\contentsline {subsubsection}{\numberline {11.1.2}What non-technical information did you learn?}{47}{subsubsection.11.1.2}
+\contentsline {subsubsection}{\numberline {11.1.3}What have you learned about project work?}{47}{subsubsection.11.1.3}
+\contentsline {subsubsection}{\numberline {11.1.4}What have you learned about project management?}{47}{subsubsection.11.1.4}
+\contentsline {subsubsection}{\numberline {11.1.5}What have you learned about working in teams?}{47}{subsubsection.11.1.5}
+\contentsline {subsubsection}{\numberline {11.1.6}If you could do it all over, what would you do differently?}{47}{subsubsection.11.1.6}
+\contentsline {subsection}{\numberline {11.2}Kailyn}{47}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}What technical information did you learn?}{47}{subsubsection.11.2.1}
+\contentsline {subsubsection}{\numberline {11.2.2}What non-technical information did you learn?}{47}{subsubsection.11.2.2}
+\contentsline {subsubsection}{\numberline {11.2.3}What have you learned about project work?}{47}{subsubsection.11.2.3}
+\contentsline {subsubsection}{\numberline {11.2.4}What have you learned about project management?}{47}{subsubsection.11.2.4}
+\contentsline {subsubsection}{\numberline {11.2.5}What have you learned about working in teams?}{47}{subsubsection.11.2.5}
+\contentsline {subsubsection}{\numberline {11.2.6}If you could do it all over, what would you do differently?}{47}{subsubsection.11.2.6}
+\contentsline {subsection}{\numberline {11.3}Taylor}{47}{subsection.11.3}
+\contentsline {subsubsection}{\numberline {11.3.1}What technical information did you learn?}{47}{subsubsection.11.3.1}
+\contentsline {subsubsection}{\numberline {11.3.2}What non-technical information did you learn?}{47}{subsubsection.11.3.2}
+\contentsline {subsubsection}{\numberline {11.3.3}What have you learned about project work?}{47}{subsubsection.11.3.3}
+\contentsline {subsubsection}{\numberline {11.3.4}What have you learned about project management?}{47}{subsubsection.11.3.4}
+\contentsline {subsubsection}{\numberline {11.3.5}What have you learned about working in teams?}{47}{subsubsection.11.3.5}
+\contentsline {subsubsection}{\numberline {11.3.6}If you could do it all over, what would you do differently?}{47}{subsubsection.11.3.6}
+\contentsline {section}{\numberline {12}Appendix 1: Essential Code Listings}{48}{section.12}
+\contentsline {section}{\numberline {13}Appendix 2: Photos of Project}{49}{section.13}
+\contentsline {section}{References}{50}{section*.3}

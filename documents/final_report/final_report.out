@@ -43,37 +43,191 @@
 \BOOKMARK [2][-]{subsection.2.5}{Changes}{section.2}% 43
 \BOOKMARK [2][-]{subsection.2.6}{Final Gantt Chart}{section.2}% 44
 \BOOKMARK [1][-]{section.3}{Design Document}{}% 45
-\BOOKMARK [2][-]{subsection.3.1}{Changes}{section.3}% 46
-\BOOKMARK [1][-]{section.4}{Tech Review}{}% 47
-\BOOKMARK [1][-]{section.5}{Weekly Blog Posts}{}% 48
-\BOOKMARK [2][-]{subsection.5.1}{Henry}{section.5}% 49
-\BOOKMARK [2][-]{subsection.5.2}{Kailyn}{section.5}% 50
-\BOOKMARK [2][-]{subsection.5.3}{Taylor}{section.5}% 51
-\BOOKMARK [1][-]{section.6}{Final Poster}{}% 52
-\BOOKMARK [1][-]{section.7}{Project Documentation}{}% 53
-\BOOKMARK [1][-]{section.8}{Recommended Technical Resources for Learning More}{}% 54
-\BOOKMARK [2][-]{subsection.8.1}{Helpful Websites}{section.8}% 55
-\BOOKMARK [1][-]{section.9}{Conclusions and Reflections}{}% 56
-\BOOKMARK [2][-]{subsection.9.1}{Henry}{section.9}% 57
-\BOOKMARK [3][-]{subsubsection.9.1.1}{What technical information did you learn?}{subsection.9.1}% 58
-\BOOKMARK [3][-]{subsubsection.9.1.2}{What non-technical information did you learn?}{subsection.9.1}% 59
-\BOOKMARK [3][-]{subsubsection.9.1.3}{What have you learned about project work?}{subsection.9.1}% 60
-\BOOKMARK [3][-]{subsubsection.9.1.4}{What have you learned about project management?}{subsection.9.1}% 61
-\BOOKMARK [3][-]{subsubsection.9.1.5}{What have you learned about working in teams?}{subsection.9.1}% 62
-\BOOKMARK [3][-]{subsubsection.9.1.6}{If you could do it all over, what would you do differently?}{subsection.9.1}% 63
-\BOOKMARK [2][-]{subsection.9.2}{Kailyn}{section.9}% 64
-\BOOKMARK [3][-]{subsubsection.9.2.1}{What technical information did you learn?}{subsection.9.2}% 65
-\BOOKMARK [3][-]{subsubsection.9.2.2}{What non-technical information did you learn?}{subsection.9.2}% 66
-\BOOKMARK [3][-]{subsubsection.9.2.3}{What have you learned about project work?}{subsection.9.2}% 67
-\BOOKMARK [3][-]{subsubsection.9.2.4}{What have you learned about project management?}{subsection.9.2}% 68
-\BOOKMARK [3][-]{subsubsection.9.2.5}{What have you learned about working in teams?}{subsection.9.2}% 69
-\BOOKMARK [3][-]{subsubsection.9.2.6}{If you could do it all over, what would you do differently?}{subsection.9.2}% 70
-\BOOKMARK [2][-]{subsection.9.3}{Taylor}{section.9}% 71
-\BOOKMARK [3][-]{subsubsection.9.3.1}{What technical information did you learn?}{subsection.9.3}% 72
-\BOOKMARK [3][-]{subsubsection.9.3.2}{What non-technical information did you learn?}{subsection.9.3}% 73
-\BOOKMARK [3][-]{subsubsection.9.3.3}{What have you learned about project work?}{subsection.9.3}% 74
-\BOOKMARK [3][-]{subsubsection.9.3.4}{What have you learned about project management?}{subsection.9.3}% 75
-\BOOKMARK [3][-]{subsubsection.9.3.5}{What have you learned about working in teams?}{subsection.9.3}% 76
-\BOOKMARK [3][-]{subsubsection.9.3.6}{If you could do it all over, what would you do differently?}{subsection.9.3}% 77
-\BOOKMARK [1][-]{section.10}{Appendix 1: Essential Code Listings}{}% 78
-\BOOKMARK [1][-]{section.11}{Appendix 2: Photos of Project}{}% 79
+\BOOKMARK [2][-]{subsection.3.1}{Introduction}{section.3}% 46
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Purpose}{subsection.3.1}% 47
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Scope}{subsection.3.1}% 48
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Intended Audience}{subsection.3.1}% 49
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Stakeholders}{subsection.3.1}% 50
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Glossary of Terms}{subsection.3.1}% 51
+\BOOKMARK [2][-]{subsection.3.2}{Design Viewpoints}{section.3}% 52
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Functional Viewpoint}{subsection.3.2}% 53
+\BOOKMARK [4][-]{paragraph.3.2.1.1}{Functional Elements}{subsubsection.3.2.1}% 54
+\BOOKMARK [4][-]{paragraph.3.2.1.2}{Responsibilities}{subsubsection.3.2.1}% 55
+\BOOKMARK [4][-]{paragraph.3.2.1.3}{Interfaces}{subsubsection.3.2.1}% 56
+\BOOKMARK [4][-]{paragraph.3.2.1.4}{Primary Interactions}{subsubsection.3.2.1}% 57
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Context Viewpoint}{subsection.3.2}% 58
+\BOOKMARK [4][-]{paragraph.3.2.2.1}{Relationships and Interactions}{subsubsection.3.2.2}% 59
+\BOOKMARK [4][-]{paragraph.3.2.2.2}{Dependencies}{subsubsection.3.2.2}% 60
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Information Context}{subsection.3.2}% 61
+\BOOKMARK [4][-]{paragraph.3.2.3.1}{Information Storage}{subsubsection.3.2.3}% 62
+\BOOKMARK [2][-]{subsection.3.3}{Components}{section.3}% 63
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Server Setup}{subsection.3.3}% 64
+\BOOKMARK [4][-]{paragraph.3.3.1.1}{Details}{subsubsection.3.3.1}% 65
+\BOOKMARK [4][-]{paragraph.3.3.1.2}{Design Decisions}{subsubsection.3.3.1}% 66
+\BOOKMARK [4][-]{paragraph.3.3.1.3}{Timeline}{subsubsection.3.3.1}% 67
+\BOOKMARK [4][-]{paragraph.3.3.1.4}{Testing}{subsubsection.3.3.1}% 68
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Web Server}{subsection.3.3}% 69
+\BOOKMARK [4][-]{paragraph.3.3.2.1}{Details}{subsubsection.3.3.2}% 70
+\BOOKMARK [4][-]{paragraph.3.3.2.2}{Design Decisions}{subsubsection.3.3.2}% 71
+\BOOKMARK [4][-]{paragraph.3.3.2.3}{Timeline}{subsubsection.3.3.2}% 72
+\BOOKMARK [4][-]{paragraph.3.3.2.4}{Testing}{subsubsection.3.3.2}% 73
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Database}{subsection.3.3}% 74
+\BOOKMARK [4][-]{paragraph.3.3.3.1}{Details}{subsubsection.3.3.3}% 75
+\BOOKMARK [4][-]{paragraph.3.3.3.2}{Design Decisions}{subsubsection.3.3.3}% 76
+\BOOKMARK [4][-]{paragraph.3.3.3.3}{Timeline}{subsubsection.3.3.3}% 77
+\BOOKMARK [4][-]{paragraph.3.3.3.4}{Testing}{subsubsection.3.3.3}% 78
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Mobile Notification System}{subsection.3.3}% 79
+\BOOKMARK [4][-]{paragraph.3.3.4.1}{Details}{subsubsection.3.3.4}% 80
+\BOOKMARK [4][-]{paragraph.3.3.4.2}{Design Decisions}{subsubsection.3.3.4}% 81
+\BOOKMARK [4][-]{paragraph.3.3.4.3}{Timeline}{subsubsection.3.3.4}% 82
+\BOOKMARK [4][-]{paragraph.3.3.4.4}{Testing}{subsubsection.3.3.4}% 83
+\BOOKMARK [3][-]{subsubsection.3.3.5}{User Profile Framework}{subsection.3.3}% 84
+\BOOKMARK [4][-]{paragraph.3.3.5.1}{Details}{subsubsection.3.3.5}% 85
+\BOOKMARK [4][-]{paragraph.3.3.5.2}{Design Decisions}{subsubsection.3.3.5}% 86
+\BOOKMARK [4][-]{paragraph.3.3.5.3}{Timeline}{subsubsection.3.3.5}% 87
+\BOOKMARK [4][-]{paragraph.3.3.5.4}{Testing}{subsubsection.3.3.5}% 88
+\BOOKMARK [3][-]{subsubsection.3.3.6}{Issue Tracker Framework}{subsection.3.3}% 89
+\BOOKMARK [4][-]{paragraph.3.3.6.1}{Details}{subsubsection.3.3.6}% 90
+\BOOKMARK [4][-]{paragraph.3.3.6.2}{Design Decisions}{subsubsection.3.3.6}% 91
+\BOOKMARK [4][-]{paragraph.3.3.6.3}{Timeline}{subsubsection.3.3.6}% 92
+\BOOKMARK [4][-]{paragraph.3.3.6.4}{Testing}{subsubsection.3.3.6}% 93
+\BOOKMARK [3][-]{subsubsection.3.3.7}{Content Delivery Network}{subsection.3.3}% 94
+\BOOKMARK [4][-]{paragraph.3.3.7.1}{Details}{subsubsection.3.3.7}% 95
+\BOOKMARK [4][-]{paragraph.3.3.7.2}{Design Decisions}{subsubsection.3.3.7}% 96
+\BOOKMARK [4][-]{paragraph.3.3.7.3}{Timeline}{subsubsection.3.3.7}% 97
+\BOOKMARK [4][-]{paragraph.3.3.7.4}{Testing}{subsubsection.3.3.7}% 98
+\BOOKMARK [3][-]{subsubsection.3.3.8}{Web Development Framework}{subsection.3.3}% 99
+\BOOKMARK [4][-]{paragraph.3.3.8.1}{Details}{subsubsection.3.3.8}% 100
+\BOOKMARK [4][-]{paragraph.3.3.8.2}{Design Decisions}{subsubsection.3.3.8}% 101
+\BOOKMARK [4][-]{paragraph.3.3.8.3}{Timeline}{subsubsection.3.3.8}% 102
+\BOOKMARK [4][-]{paragraph.3.3.8.4}{Testing}{subsubsection.3.3.8}% 103
+\BOOKMARK [3][-]{subsubsection.3.3.9}{Software Design Pattern}{subsection.3.3}% 104
+\BOOKMARK [4][-]{paragraph.3.3.9.1}{Details}{subsubsection.3.3.9}% 105
+\BOOKMARK [4][-]{paragraph.3.3.9.2}{Design Decisions}{subsubsection.3.3.9}% 106
+\BOOKMARK [4][-]{paragraph.3.3.9.3}{Timeline}{subsubsection.3.3.9}% 107
+\BOOKMARK [4][-]{paragraph.3.3.9.4}{Testing}{subsubsection.3.3.9}% 108
+\BOOKMARK [2][-]{subsection.3.4}{Conclusion}{section.3}% 109
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Summary}{subsection.3.4}% 110
+\BOOKMARK [2][-]{subsection.3.5}{Changes}{section.3}% 111
+\BOOKMARK [1][-]{section.4}{Tech Review \(Henry\)}{}% 112
+\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 113
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Reason for Project}{subsection.4.1}% 114
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Overview of Project}{subsection.4.1}% 115
+\BOOKMARK [2][-]{subsection.4.2}{Server Operating System}{section.4}% 116
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Overview}{subsection.4.2}% 117
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Criteria}{subsection.4.2}% 118
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Potential Choices}{subsection.4.2}% 119
+\BOOKMARK [4][-]{paragraph.4.2.3.1}{Linux Ubuntu Server}{subsubsection.4.2.3}% 120
+\BOOKMARK [4][-]{paragraph.4.2.3.2}{Windows Server}{subsubsection.4.2.3}% 121
+\BOOKMARK [4][-]{paragraph.4.2.3.3}{Solaris}{subsubsection.4.2.3}% 122
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Discussion}{subsection.4.2}% 123
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Conclusion}{subsection.4.2}% 124
+\BOOKMARK [2][-]{subsection.4.3}{Web Server Software}{section.4}% 125
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Overview}{subsection.4.3}% 126
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Criteria}{subsection.4.3}% 127
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Potential Choices}{subsection.4.3}% 128
+\BOOKMARK [4][-]{paragraph.4.3.3.1}{Apache HTTP}{subsubsection.4.3.3}% 129
+\BOOKMARK [4][-]{paragraph.4.3.3.2}{Cherokee}{subsubsection.4.3.3}% 130
+\BOOKMARK [4][-]{paragraph.4.3.3.3}{NGINX}{subsubsection.4.3.3}% 131
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Discussion}{subsection.4.3}% 132
+\BOOKMARK [3][-]{subsubsection.4.3.5}{Conclusion}{subsection.4.3}% 133
+\BOOKMARK [2][-]{subsection.4.4}{Database}{section.4}% 134
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Overview}{subsection.4.4}% 135
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Criteria}{subsection.4.4}% 136
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Potential Choices}{subsection.4.4}% 137
+\BOOKMARK [4][-]{paragraph.4.4.3.1}{MySQL}{subsubsection.4.4.3}% 138
+\BOOKMARK [4][-]{paragraph.4.4.3.2}{SQLite}{subsubsection.4.4.3}% 139
+\BOOKMARK [4][-]{paragraph.4.4.3.3}{Microsoft SQL Server}{subsubsection.4.4.3}% 140
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Discussion}{subsection.4.4}% 141
+\BOOKMARK [3][-]{subsubsection.4.4.5}{Conclusion}{subsection.4.4}% 142
+\BOOKMARK [1][-]{section.5}{Tech Review \(Kailyn\)}{}% 143
+\BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 144
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Reason for Project}{subsection.5.1}% 145
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Overview of Project}{subsection.5.1}% 146
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Overview of Document}{subsection.5.1}% 147
+\BOOKMARK [2][-]{subsection.5.2}{Content Delivery Networks}{section.5}% 148
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Overview}{subsection.5.2}% 149
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Criteria}{subsection.5.2}% 150
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Potential Choices}{subsection.5.2}% 151
+\BOOKMARK [4][-]{paragraph.5.2.3.1}{Cloudflare}{subsubsection.5.2.3}% 152
+\BOOKMARK [4][-]{paragraph.5.2.3.2}{Akamai}{subsubsection.5.2.3}% 153
+\BOOKMARK [4][-]{paragraph.5.2.3.3}{Amazon CloudFront}{subsubsection.5.2.3}% 154
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Discussion}{subsection.5.2}% 155
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Conclusion}{subsection.5.2}% 156
+\BOOKMARK [2][-]{subsection.5.3}{Web Development Frameworks}{section.5}% 157
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Overview}{subsection.5.3}% 158
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Criteria}{subsection.5.3}% 159
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Potential Choices}{subsection.5.3}% 160
+\BOOKMARK [4][-]{paragraph.5.3.3.1}{ASP.NET}{subsubsection.5.3.3}% 161
+\BOOKMARK [4][-]{paragraph.5.3.3.2}{AngularJS}{subsubsection.5.3.3}% 162
+\BOOKMARK [4][-]{paragraph.5.3.3.3}{ReactJS}{subsubsection.5.3.3}% 163
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Discussion}{subsection.5.3}% 164
+\BOOKMARK [3][-]{subsubsection.5.3.5}{Conclusion}{subsection.5.3}% 165
+\BOOKMARK [2][-]{subsection.5.4}{Software Design Patterns}{section.5}% 166
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Overview}{subsection.5.4}% 167
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Criteria}{subsection.5.4}% 168
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Potential Choices}{subsection.5.4}% 169
+\BOOKMARK [4][-]{paragraph.5.4.3.1}{MVC}{subsubsection.5.4.3}% 170
+\BOOKMARK [4][-]{paragraph.5.4.3.2}{MVP}{subsubsection.5.4.3}% 171
+\BOOKMARK [4][-]{paragraph.5.4.3.3}{MVVM}{subsubsection.5.4.3}% 172
+\BOOKMARK [3][-]{subsubsection.5.4.4}{Discussion}{subsection.5.4}% 173
+\BOOKMARK [3][-]{subsubsection.5.4.5}{Conclusion}{subsection.5.4}% 174
+\BOOKMARK [1][-]{section.6}{Tech Review \(Taylor\)}{}% 175
+\BOOKMARK [2][-]{subsection.6.1}{Introduction}{section.6}% 176
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Purpose}{subsection.6.1}% 177
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Scope}{subsection.6.1}% 178
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Definitions, Acronyms, and Abbreviations}{subsection.6.1}% 179
+\BOOKMARK [3][-]{subsubsection.6.1.4}{References}{subsection.6.1}% 180
+\BOOKMARK [1][-]{section*.2}{References}{}% 181
+\BOOKMARK [2][-]{subsubsection.6.1.5}{Overview}{section*.2}% 182
+\BOOKMARK [2][-]{subsection.6.2}{User Logins/Profiles}{section*.2}% 183
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Userfrosting}{subsection.6.2}% 184
+\BOOKMARK [3][-]{subsubsection.6.2.2}{HUGE}{subsection.6.2}% 185
+\BOOKMARK [3][-]{subsubsection.6.2.3}{ASP.NET Identity}{subsection.6.2}% 186
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Comparison}{subsection.6.2}% 187
+\BOOKMARK [3][-]{subsubsection.6.2.5}{Selection}{subsection.6.2}% 188
+\BOOKMARK [2][-]{subsection.6.3}{Issue Tracker}{section*.2}% 189
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Trello}{subsection.6.3}% 190
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Request Tracker}{subsection.6.3}% 191
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Manual Issue Tracking}{subsection.6.3}% 192
+\BOOKMARK [3][-]{subsubsection.6.3.4}{Comparison}{subsection.6.3}% 193
+\BOOKMARK [3][-]{subsubsection.6.3.5}{Selection}{subsection.6.3}% 194
+\BOOKMARK [2][-]{subsection.6.4}{Notifications}{section*.2}% 195
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Twilio}{subsection.6.4}% 196
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Nexmo}{subsection.6.4}% 197
+\BOOKMARK [3][-]{subsubsection.6.4.3}{Manual Email}{subsection.6.4}% 198
+\BOOKMARK [3][-]{subsubsection.6.4.4}{Comparison}{subsection.6.4}% 199
+\BOOKMARK [3][-]{subsubsection.6.4.5}{Selection}{subsection.6.4}% 200
+\BOOKMARK [1][-]{section.7}{Weekly Blog Posts}{}% 201
+\BOOKMARK [2][-]{subsection.7.1}{Henry}{section.7}% 202
+\BOOKMARK [2][-]{subsection.7.2}{Kailyn}{section.7}% 203
+\BOOKMARK [2][-]{subsection.7.3}{Taylor}{section.7}% 204
+\BOOKMARK [1][-]{section.8}{Final Poster}{}% 205
+\BOOKMARK [1][-]{section.9}{Project Documentation}{}% 206
+\BOOKMARK [1][-]{section.10}{Recommended Technical Resources for Learning More}{}% 207
+\BOOKMARK [2][-]{subsection.10.1}{Helpful Websites}{section.10}% 208
+\BOOKMARK [1][-]{section.11}{Conclusions and Reflections}{}% 209
+\BOOKMARK [2][-]{subsection.11.1}{Henry}{section.11}% 210
+\BOOKMARK [3][-]{subsubsection.11.1.1}{What technical information did you learn?}{subsection.11.1}% 211
+\BOOKMARK [3][-]{subsubsection.11.1.2}{What non-technical information did you learn?}{subsection.11.1}% 212
+\BOOKMARK [3][-]{subsubsection.11.1.3}{What have you learned about project work?}{subsection.11.1}% 213
+\BOOKMARK [3][-]{subsubsection.11.1.4}{What have you learned about project management?}{subsection.11.1}% 214
+\BOOKMARK [3][-]{subsubsection.11.1.5}{What have you learned about working in teams?}{subsection.11.1}% 215
+\BOOKMARK [3][-]{subsubsection.11.1.6}{If you could do it all over, what would you do differently?}{subsection.11.1}% 216
+\BOOKMARK [2][-]{subsection.11.2}{Kailyn}{section.11}% 217
+\BOOKMARK [3][-]{subsubsection.11.2.1}{What technical information did you learn?}{subsection.11.2}% 218
+\BOOKMARK [3][-]{subsubsection.11.2.2}{What non-technical information did you learn?}{subsection.11.2}% 219
+\BOOKMARK [3][-]{subsubsection.11.2.3}{What have you learned about project work?}{subsection.11.2}% 220
+\BOOKMARK [3][-]{subsubsection.11.2.4}{What have you learned about project management?}{subsection.11.2}% 221
+\BOOKMARK [3][-]{subsubsection.11.2.5}{What have you learned about working in teams?}{subsection.11.2}% 222
+\BOOKMARK [3][-]{subsubsection.11.2.6}{If you could do it all over, what would you do differently?}{subsection.11.2}% 223
+\BOOKMARK [2][-]{subsection.11.3}{Taylor}{section.11}% 224
+\BOOKMARK [3][-]{subsubsection.11.3.1}{What technical information did you learn?}{subsection.11.3}% 225
+\BOOKMARK [3][-]{subsubsection.11.3.2}{What non-technical information did you learn?}{subsection.11.3}% 226
+\BOOKMARK [3][-]{subsubsection.11.3.3}{What have you learned about project work?}{subsection.11.3}% 227
+\BOOKMARK [3][-]{subsubsection.11.3.4}{What have you learned about project management?}{subsection.11.3}% 228
+\BOOKMARK [3][-]{subsubsection.11.3.5}{What have you learned about working in teams?}{subsection.11.3}% 229
+\BOOKMARK [3][-]{subsubsection.11.3.6}{If you could do it all over, what would you do differently?}{subsection.11.3}% 230
+\BOOKMARK [1][-]{section.12}{Appendix 1: Essential Code Listings}{}% 231
+\BOOKMARK [1][-]{section.13}{Appendix 2: Photos of Project}{}% 232
+\BOOKMARK [1][-]{section*.3}{References}{}% 233
